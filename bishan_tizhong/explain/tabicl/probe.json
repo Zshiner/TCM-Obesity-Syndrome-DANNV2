@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-08 22:28:25 +08:00",
+  "model_path": "/root/autodl-tmp/bishan_exp/bishan_g/rebuilt_s0/obesity_syndrome/br-tabicl/final/best_model.joblib",
+  "model_sha256": "0c178d16a302b0c35afe36519bca43106ea3f4b1bcbd338d9c83427341e49484",
+  "sub_model_class": "tcmhubd.models.builtins.ml.tabicl.TabICLClassifierAdapter",
+  "sub_model_params": {
+    "device": "cuda:0",
+    "model_path": "/root/autodl-tmp/bishan_exp/fw_batch_g4/weights/tabicl/tabicl-classifier-v2-20260212.ckpt",
+    "n_estimators": 8,
+    "n_jobs": null,
+    "random_state": 3631933196
+  },
+  "kv_cache_param": null,
+  "kv_cache_initial": null,
+  "rebuild_max_abs_diff": 0.0,
+  "predict_full_308_s": 13.16,
+  "t_query_50_s": 1.12,
+  "t_query_2000_s": 2.4,
+  "memorization": [
+    {
+      "label": "心",
+      "dev100_acc": 0.99,
+      "test_acc": 0.9415584415584416,
+      "dev100_pos": 5,
+      "test_pos": 34,
+      "dev100_auroc": 0.9957894736842106,
+      "test_auroc": 0.9456848432803778
+    },
+    {
+      "label": "脾",
+      "dev100_acc": 0.98,
+      "test_acc": 0.8636363636363636,
+      "dev100_pos": 45,
+      "test_pos": 170,
+      "dev100_auroc": 0.9991919191919192,
+      "test_auroc": 0.9423273657289003
+    },
+    {
+      "label": "肝",
+      "dev100_acc": 0.97,
+      "test_acc": 0.9025974025974026,
+      "dev100_pos": 26,
+      "test_pos": 71,
+      "dev100_auroc": 0.9948024948024947,
+      "test_auroc": 0.9520413620966305
+    },
+    {
+      "label": "肾",
+      "dev100_acc": 1.0,
+      "test_acc": 0.935064935064935,
+      "dev100_pos": 24,
+      "test_pos": 58,
+      "dev100_auroc": 1.0,
+      "test_auroc": 0.9524137931034482
+    },
+    {
+      "label": "痰",
+      "dev100_acc": 0.98,
+      "test_acc": 0.8311688311688312,
+      "dev100_pos": 39,
+      "test_pos": 119,
+      "dev100_auroc": 0.9974779319041615,
+      "test_auroc": 0.906807167311369
+    },
+    {
+      "label": "湿",
+      "dev100_acc": 1.0,
+      "test_acc": 0.8474025974025974,
+      "dev100_pos": 65,
+      "test_pos": 212,
+      "dev100_auroc": 1.0,
+      "test_auroc": 0.9254127358490566
+    },
+    {
+      "label": "热",
+      "dev100_acc": 0.98,
+      "test_acc": 0.8993506493506493,
+      "dev100_pos": 52,
+      "test_pos": 135,
+      "dev100_auroc": 1.0,
+      "test_auroc": 0.9658103189895098
+    },
+    {
+      "label": "气滞",
+      "dev100_acc": 0.95,
+      "test_acc": 0.8896103896103896,
+      "dev100_pos": 20,
+      "test_pos": 75,
+      "dev100_auroc": 0.990625,
+      "test_auroc": 0.9434620886981403
+    },
+    {
+      "label": "血瘀",
+      "dev100_acc": 0.99,
+      "test_acc": 0.9090909090909091,
+      "dev100_pos": 27,
+      "test_pos": 79,
+      "dev100_auroc": 0.995433789954338,
+      "test_auroc": 0.9528771212204964
+    },
+    {
+      "label": "气虚",
+      "dev100_acc": 0.99,
+      "test_acc": 0.8311688311688312,
+      "dev100_pos": 33,
+      "test_pos": 121,
+      "dev100_auroc": 0.9990954319312528,
+      "test_auroc": 0.9198302912449727
+    },
+    {
+      "label": "阳虚",
+      "dev100_acc": 0.98,
+      "test_acc": 0.9318181818181818,
+      "dev100_pos": 10,
+      "test_pos": 45,
+      "dev100_auroc": 1.0,
+      "test_auroc": 0.97482044782425
+    }
+  ],
+  "varying_features_M": {
+    "min": 7,
+    "median": 17.0,
+    "max": 38,
+    "n_exact_enumeration(M<=11)": 28,
+    "n_cases": 308
+  },
+  "kernelshap_one_case_median": {
+    "case_id": 224,
+    "M": 17,
+    "seconds": 3.43,
+    "additivity_err": 2.220446049250313e-16
+  },
+  "kernelshap_one_case_max": {
+    "case_id": 143,
+    "M": 38,
+    "seconds": 3.47,
+    "additivity_err": 2.7755575615628914e-17
+  },
+  "estimated_total_hours_at_median": 3.23,
+  "predict_proba_identical_after_probe": true
+}

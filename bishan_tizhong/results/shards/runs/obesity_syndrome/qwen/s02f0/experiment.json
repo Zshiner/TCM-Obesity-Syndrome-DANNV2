@@ -1,0 +1,335 @@
+{
+  "view": "umbrella",
+  "schema_version": "3.0",
+  "tcmhubd_version": "1.0.0",
+  "metadata": {
+    "experiment_name": "obesity_syndrome__qwen__s02f0",
+    "output_dir": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/qwen/s02f0",
+    "git_commit": null,
+    "primary_seed": 2,
+    "started_at": "2026-10-12T17:24:37Z",
+    "ended_at": "2026-10-12T17:24:39Z",
+    "total_seconds": 2.0,
+    "seconds_in_engines": 2.03237416036427,
+    "seeds_requested": [
+      2
+    ],
+    "seeds_completed": [
+      2
+    ],
+    "seeds_failed": [],
+    "seeds_orphan": [],
+    "exit_status": "ok"
+  },
+  "config_snapshot": {
+    "config_version": "1.0",
+    "experiment_name": "obesity_syndrome__qwen__s02f0",
+    "seeds": [
+      2
+    ],
+    "parallelism": 1,
+    "phase1_nested_cv": true,
+    "p1_fold_only": 0,
+    "multilabel_strategies": [
+      "br"
+    ],
+    "data": {
+      "data_dir": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/data",
+      "nan_strategy": "warn",
+      "validate_data": true,
+      "datasets": [
+        "obesity_syndrome"
+      ],
+      "column_roles": {
+        "obesity_syndrome": {
+          "missing": {
+            "年龄": -1.0,
+            "性别": -1.0,
+            "病程": -1.0
+          },
+          "continuous": [
+            "年龄",
+            "病程"
+          ]
+        }
+      }
+    },
+    "models": [
+      {
+        "name": "qwen",
+        "class_path": "qwen",
+        "enabled": true,
+        "shap": false,
+        "save_model": false
+      }
+    ],
+    "training": {
+      "max_epochs": 1000,
+      "early_stopping_patience": 16,
+      "loss": "auto",
+      "gradient_clipping": null,
+      "mixed_precision": false,
+      "checkpoint_every_n_epochs": 50,
+      "multilabel_threshold": 0.5
+    },
+    "evaluation": {
+      "primary_metric": "macro_f1",
+      "metrics": [
+        "macro_f1",
+        "micro_f1",
+        "weighted_f1",
+        "sample_f1",
+        "macro_precision",
+        "macro_recall",
+        "subset_accuracy",
+        "hamming_loss",
+        "macro_auroc",
+        "micro_auroc",
+        "macro_auprc",
+        "micro_auprc",
+        "label_ranking_average_precision",
+        "label_ranking_loss",
+        "coverage_error",
+        "brier_score",
+        "expected_calibration_error",
+        "maximum_calibration_error"
+      ],
+      "cv_folds": 5,
+      "k_inner": 3,
+      "epoch_aggregator": "median",
+      "focus_k_values": [
+        3
+      ],
+      "optimize_threshold": true,
+      "threshold_search_grid": null,
+      "propensity_a": null,
+      "propensity_b": null,
+      "compute_decision_curve": true
+    },
+    "search": {
+      "strategy": "optuna",
+      "n_trials_budget": 200,
+      "timeout_seconds": null,
+      "infra_max_retry": 3,
+      "infra_retry_backoff_seconds": 1.0,
+      "pruner": {
+        "type": "none"
+      },
+      "tpe_n_startup_trials": 10,
+      "tpe_group": false,
+      "failed_ratio_threshold": null,
+      "failed_min_terminal_trials": 5,
+      "early_fail_threshold": null,
+      "watchdog_stall_seconds": 1800,
+      "watchdog_poll_interval_seconds": 5,
+      "worker_cleanup_grace_seconds": 60,
+      "halt_poll_interval_seconds": 2,
+      "storage_backend": "journal"
+    },
+    "prompts": null,
+    "analysis": {
+      "case_study_n_samples": 10,
+      "max_plot_features": 10,
+      "max_plot_labels": 5,
+      "max_plot_params": 4,
+      "fanova_min_trials": 30,
+      "fanova_bias_ratio_threshold": 0.3,
+      "feature_importance": {
+        "channels": [
+          "magnitude",
+          "signed"
+        ],
+        "top_k": 20,
+        "shap_kernel_background_size": 200,
+        "shap_kernel_explain_size": -1,
+        "shap_tree_explain_size": -1,
+        "background_split": "train_pool",
+        "explain_split": "train_pool",
+        "pin_library_versions": true
+      },
+      "test_set_bootstrap": {
+        "enabled": true,
+        "n_boot": 10000,
+        "method": "percentile",
+        "confidence": 0.95
+      },
+      "required": [],
+      "fail_fast": false
+    },
+    "output": {
+      "dir": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/qwen/s02f0/seed_2",
+      "formats": [
+        "csv",
+        "pdf"
+      ],
+      "log_batch_losses": false,
+      "auto_cleanup_checkpoints": true,
+      "save_models": true,
+      "save_cv_predictions": true
+    },
+    "runtime": {
+      "device": "cuda",
+      "gpu_ids": "auto",
+      "dl_vram_safety_fraction": 0.95,
+      "num_workers": 0,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false,
+      "allow_reactive_micro_halving": false,
+      "pinned_micro_batch": null,
+      "llm_max_retries": 3,
+      "retry_llm_failures": false
+    },
+    "custom_models_dir": null,
+    "definition": {
+      "file": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/bishan_tizhong_experiment.py",
+      "experiment": "bishan_tizhong",
+      "fingerprint": "7ec9767640c37556817e398cd86f48aa800ec6bf8cd195725f88dcbf12d2592f",
+      "learner_fingerprints": {
+        "qwen": "b0e4d958a51ac4fa146b5132124279d9a703c39d03f55896c8bfe89c44e6bf7f"
+      }
+    }
+  },
+  "environment": {
+    "python_version": "3.12.13 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:38:16) [GCC 14.3.0]",
+    "python_implementation": "CPython",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "hostname": "autodl-container-43724ba760-0092a71f",
+    "pid": 834371,
+    "executable": "/root/autodl-tmp/feipang_exp/venv/bin/python",
+    "git": {
+      "commit": null,
+      "branch": null,
+      "is_dirty": false
+    }
+  },
+  "cost_summary": {
+    "total_seconds": 2.014243746176362,
+    "by_phase": {},
+    "by_stage": {
+      "config": 0.000897970050573349,
+      "data": 0.1810622662305832,
+      "run": 1.2060755174607038,
+      "analysis_output": 0.6246950644999743
+    },
+    "orchestration_seconds": null,
+    "events_total": 133,
+    "events_jsonl_size_bytes": 12741,
+    "peak_gpu_memory_mb": null
+  },
+  "degradations": [
+    {
+      "kind": "analysis_step_skipped",
+      "stage_label": "analysis/obesity_syndrome/hyperparameter",
+      "message": "超参数分析：1 个模型都跳过（no_search_history）",
+      "details": {
+        "step_id": "hyperparameter",
+        "required": false,
+        "elapsed_s": 0.00017714500427246094,
+        "dataset": "obesity_syndrome",
+        "reason": "超参数分析"
+      },
+      "traceback": null,
+      "breadcrumb_at_emit": [
+        {
+          "kind": "dataset",
+          "name": "obesity_syndrome",
+          "depth": 3
+        },
+        {
+          "kind": "analysis",
+          "name": "",
+          "depth": 4
+        }
+      ],
+      "timestamp": "2026-10-12T17:24:38.760Z",
+      "sequence": 112,
+      "seed": 2
+    },
+    {
+      "kind": "analysis_step_skipped",
+      "stage_label": "analysis/obesity_syndrome/feature_importance",
+      "message": "特征重要性：1 个模型都跳过（no_data: 本分片不训练最终模型（外层折分片），特征重要性由全量分片承担）",
+      "details": {
+        "step_id": "feature_importance",
+        "required": false,
+        "elapsed_s": 0.0002994537353515625,
+        "dataset": "obesity_syndrome",
+        "reason": "特征重要性"
+      },
+      "traceback": null,
+      "breadcrumb_at_emit": [
+        {
+          "kind": "dataset",
+          "name": "obesity_syndrome",
+          "depth": 3
+        },
+        {
+          "kind": "analysis",
+          "name": "",
+          "depth": 4
+        }
+      ],
+      "timestamp": "2026-10-12T17:24:38.760Z",
+      "sequence": 114,
+      "seed": 2
+    },
+    {
+      "kind": "analysis_step_skipped",
+      "stage_label": "analysis/obesity_syndrome/dann_depth_sign_preservation",
+      "message": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "details": {
+        "step_id": "dann_depth_sign_preservation",
+        "required": false,
+        "elapsed_s": 1.2874603271484375e-05,
+        "dataset": "obesity_syndrome",
+        "reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个"
+      },
+      "traceback": null,
+      "breadcrumb_at_emit": [
+        {
+          "kind": "dataset",
+          "name": "obesity_syndrome",
+          "depth": 3
+        },
+        {
+          "kind": "analysis",
+          "name": "",
+          "depth": 4
+        }
+      ],
+      "timestamp": "2026-10-12T17:24:38.760Z",
+      "sequence": 116,
+      "seed": 2
+    },
+    {
+      "kind": "analysis_step_skipped",
+      "stage_label": "analysis/obesity_syndrome/test_set_bootstrap",
+      "message": "本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap",
+      "details": {
+        "step_id": "test_set_bootstrap",
+        "required": false,
+        "elapsed_s": 1.3589859008789062e-05,
+        "dataset": "obesity_syndrome",
+        "reason": "本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap"
+      },
+      "traceback": null,
+      "breadcrumb_at_emit": [
+        {
+          "kind": "dataset",
+          "name": "obesity_syndrome",
+          "depth": 3
+        },
+        {
+          "kind": "analysis",
+          "name": "",
+          "depth": 4
+        }
+      ],
+      "timestamp": "2026-10-12T17:24:38.760Z",
+      "sequence": 118,
+      "seed": 2
+    }
+  ],
+  "errors": [],
+  "cancellations": []
+}

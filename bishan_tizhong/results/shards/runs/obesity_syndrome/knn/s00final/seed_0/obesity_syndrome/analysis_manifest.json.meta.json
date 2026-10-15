@@ -1,0 +1,9 @@
+{
+  "schema_version": "analysis.manifest.v1",
+  "artifact_path": "analysis_manifest.json",
+  "size_bytes": 4115,
+  "sha256": "bb532d2191d96f151b62940f56103f65d98a5e336d033d2ba479f49dbc9e5b9b",
+  "producer": "tcmhubd.output.analysis_manifest:write_analysis_manifest_json",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T04:35:06Z"
+}

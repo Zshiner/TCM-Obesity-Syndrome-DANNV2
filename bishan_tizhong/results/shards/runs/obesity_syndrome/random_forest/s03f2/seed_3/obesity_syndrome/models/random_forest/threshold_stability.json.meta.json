@@ -1,0 +1,9 @@
+{
+  "schema_version": "threshold_stability.v2",
+  "artifact_path": "threshold_stability.json",
+  "size_bytes": 1270,
+  "sha256": "80fbd4eb03762b4ce0191794386022da04fc82b398a877ef996a95f7541d4527",
+  "producer": "tcmhubd.output.persistence.ModelPersister.write_result_json",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T04:20:34Z"
+}

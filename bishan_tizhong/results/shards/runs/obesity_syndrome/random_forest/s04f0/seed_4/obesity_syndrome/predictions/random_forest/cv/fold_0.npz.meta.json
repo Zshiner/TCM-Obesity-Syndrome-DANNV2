@@ -1,0 +1,9 @@
+{
+  "schema_version": "predictions.npz.v2",
+  "artifact_path": "fold_0.npz",
+  "size_bytes": 33832,
+  "sha256": "e8e72d7c2e78acf3dd4b8d9c9697556f0c237e683825c11f5ab7945e6f56857f",
+  "producer": "tcmhubd.output.persistence.ModelPersister:cv/fold_0_predictions",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T04:38:56Z"
+}

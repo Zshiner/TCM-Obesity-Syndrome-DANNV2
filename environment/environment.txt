@@ -1,0 +1,79 @@
+记录时间（北京时间）：2026-10-14 19:11:40
+== 操作系统
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+5.15.0-119-generic
+== CPU
+CPU(s):                               128
+Model name:                           Intel(R) Xeon(R) Gold 6430
+Thread(s) per core:                   2
+Core(s) per socket:                   32
+Socket(s):                            2
+容器核数限额（cgroup cpu.max）：3200000 100000
+== 内存
+               total        used        free      shared  buff/cache   available
+Mem:            1007          33         703           8         270         959
+容器内存限额（cgroup memory.max）：269509197824
+== 显卡
+NVIDIA A100 80GB PCIe, 81920 MiB, 535.183.01
+== 解释器与主要依赖
+Python 3.12.13
+torch 2.6.0+cu124
+numpy 2.4.4
+scipy 1.17.1
+sklearn 1.8.0
+pandas 3.0.2
+optuna 4.8.0
+joblib 1.5.3
+tabpfn 8.0.8
+tabicl ?
+tabdpt ?
+pytabkit ?
+transformers 4.57.6
+xgboost 3.2.0
+lightgbm 4.6.0
+catboost 未安装或导入失败（ModuleNotFoundError）
+torch CUDA 版本 12.4 ；cuDNN 90100 ；CUDA 可用 True
+== 框架副本
+fw_16b292d: DEPLOYED_COMMIT=16b292d ；_commit.py: 16b292d1b027c696534ab09d40e1c43bc8879125
+fw_2cb76b4: DEPLOYED_COMMIT= ；_commit.py: 2cb76b480af270fce38e5daa4c402daa9b5bd4e4
+fw_5a777e1: DEPLOYED_COMMIT= ；_commit.py: 5a777e1d3b68161e8518c1981ca909cf65f62410
+fw_619a590: DEPLOYED_COMMIT=619a590ded45724377d8170724bd4ca15d787f2f ；_commit.py: 619a590ded45724377d8170724bd4ca15d787f2f
+fw_8c6e2ab: DEPLOYED_COMMIT= ；_commit.py: 8c6e2abad84b5115b7f73d91e38db2f50a82bf2d
+fw_base_j: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_a: DEPLOYED_COMMIT=27a6472 ；_commit.py: 
+fw_batch_a2: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_a3: DEPLOYED_COMMIT=6f95520 ；_commit.py: 
+fw_batch_b: DEPLOYED_COMMIT= ；_commit.py: c7208e78c156915bdb3d75f030664603f2f195c7
+fw_batch_b2: DEPLOYED_COMMIT= ；_commit.py: 613213c6a34ea047566999ea42fe4e1f14d41278
+fw_batch_c: DEPLOYED_COMMIT= ；_commit.py: 59ba0a1686f07c704cf27594e1ff44e55ab08356
+fw_batch_c2: DEPLOYED_COMMIT= ；_commit.py: 035f1fad7ec954d0e8397cf089799aba62425068
+fw_batch_c2_fix: DEPLOYED_COMMIT= ；_commit.py: a958113008986f0f7643e240e151fa4470990340
+fw_batch_c_wp1: DEPLOYED_COMMIT= ；_commit.py: 6e5afa8dd11a86719a5895656a7c875c2cf1cfe4
+fw_batch_f: DEPLOYED_COMMIT= ；_commit.py: 40c49b2b399098b616b1dfd96fcf0adf5610f770
+fw_batch_g: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g2: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g3: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g4: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g5: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g6: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g7: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_g8: DEPLOYED_COMMIT= ；_commit.py: 
+fw_batch_j: DEPLOYED_COMMIT= ；_commit.py: 
+fw_bcdd2ef: DEPLOYED_COMMIT=bcdd2ef ；_commit.py: bcdd2ef3f3a2101726cbe2b0fe13af1f77703e94
+fw_c9b959c: DEPLOYED_COMMIT=c9b959c ；_commit.py: c9b959cdeb50b27db258943f8bbf9813400bc2bc
+fw_efdacde: DEPLOYED_COMMIT=efdacde ；_commit.py: efdacde48e58581eee80fa5984c6e6c503c712f0
+fw_fix_baseline: DEPLOYED_COMMIT= ；_commit.py: 4abb2d026f0e5f220f43202cb3f7f433410abd1f
+记录环境时指向的框架副本：/root/autodl-tmp/bishan_exp/fw_2cb76b4（各学习器实际出自哪个提交，以分片里的 definition.json 为准）
+== 定义、锁文件、数据的 SHA-256
+c479f7a64cd2a2aa8547046889e599d8e1e63aa49feb3deeb32384db041eccf4  /root/autodl-tmp/bishan_exp/bishan_tizhong/bishan_tizhong_experiment.py
+5931302741e8a3ddac680d3ed470c5e8ed6f74fae5dbc7e0ac824ece4654754f  /root/autodl-tmp/bishan_exp/bishan_tizhong/results/experiment.lock.json
+736e0f11ac18419ba786d1277dd55980b4184f4e0e1f4a4c6d419f08f5093df1  /root/autodl-tmp/bishan_exp/bishan_tizhong/data/obesity_syndrome/data.json
+== 单线程环境变量
+MKL_NUM_THREADS=1
+NUMEXPR_NUM_THREADS=1
+OMP_NUM_THREADS=1
+OPENBLAS_NUM_THREADS=1
+PYTHONPATH=/root/autodl-tmp/bishan_exp/fw_2cb76b4

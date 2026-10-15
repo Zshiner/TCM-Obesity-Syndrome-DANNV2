@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.0",
+  "tcmhubd_version": "1.0.0",
+  "metadata": {
+    "experiment_name": null,
+    "started_at": null,
+    "ended_at": null,
+    "total_seconds": null,
+    "output_dir": null,
+    "exit_status": "in_progress",
+    "run_id": "20261012-3cc09ae8",
+    "events_jsonl_path": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/deepseek/s00f0/aggregate/events.jsonl.gz",
+    "events_jsonl_sha256": "9b2776accf9f5bb203d1dcc8afd7d236a0fa4895e0a2598ddd930ff93b211ea7",
+    "primary_seed": null,
+    "all_seeds": [],
+    "git_commit": null
+  },
+  "config_snapshot": {},
+  "environment": {},
+  "datasets": [],
+  "degradations": [],
+  "errors": [],
+  "cancellations": [],
+  "cost_summary": {
+    "total_seconds": null,
+    "by_stage": {},
+    "by_phase": {},
+    "orchestration_seconds": null,
+    "peak_gpu_memory_mb": null,
+    "events_total": 30,
+    "events_jsonl_size_bytes": 2886,
+    "experiment_json_size_bytes": 983
+  }
+}

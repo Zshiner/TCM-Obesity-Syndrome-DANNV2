@@ -1,0 +1,8 @@
+model,param_name,unique_ratio,cv,n_folds_present
+random_forest,bootstrap,1.0,nan,1
+random_forest,criterion,1.0,nan,1
+random_forest,max_depth,1.0,nan,1
+random_forest,max_features,1.0,nan,1
+random_forest,min_samples_leaf,1.0,0.0,1
+random_forest,min_samples_split,1.0,0.0,1
+random_forest,n_estimators,1.0,0.0,1

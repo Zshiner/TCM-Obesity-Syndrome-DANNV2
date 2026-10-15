@@ -1,0 +1,1486 @@
+{
+  "_schema_version": 1,
+  "model_name": "glm",
+  "best_params": {
+    "model_id": "glm-5.3",
+    "thinking_enabled": "enabled",
+    "predict_multi_class": "auto",
+    "predict_multi_label": "auto",
+    "feature_importance": "auto",
+    "system_prompt": "",
+    "prompt_formatter": "auto",
+    "negatives": "omit",
+    "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+  },
+  "seeds": [
+    0
+  ],
+  "cv_per_seed_fold_metrics": [
+    [
+      {
+        "precision@1": {
+          "status": "computed",
+          "value": 0.946360153256705,
+          "n_effective": 261
+        },
+        "recall@1": {
+          "status": "computed",
+          "value": 0.3365581098339719,
+          "n_effective": 261
+        },
+        "f1@1": {
+          "status": "computed",
+          "value": 0.4745788481420666,
+          "n_effective": 261
+        },
+        "ndcg@1": {
+          "status": "computed",
+          "value": 0.946360153256705,
+          "n_effective": 261
+        },
+        "psp@1": {
+          "status": "computed",
+          "value": 1.5665937037225341,
+          "n_effective": 261
+        },
+        "psndcg@1": {
+          "status": "computed",
+          "value": 1.5665937037225341,
+          "n_effective": 261
+        },
+        "precision@2": {
+          "status": "computed",
+          "value": 0.8486590038314177,
+          "n_effective": 261
+        },
+        "recall@2": {
+          "status": "computed",
+          "value": 0.5653256704980844,
+          "n_effective": 261
+        },
+        "f1@2": {
+          "status": "computed",
+          "value": 0.6502919175332967,
+          "n_effective": 261
+        },
+        "ndcg@2": {
+          "status": "computed",
+          "value": 0.8915189506985516,
+          "n_effective": 261
+        },
+        "psp@2": {
+          "status": "computed",
+          "value": 1.3972601470641868,
+          "n_effective": 261
+        },
+        "psndcg@2": {
+          "status": "computed",
+          "value": 1.4685721500954914,
+          "n_effective": 261
+        },
+        "precision@3": {
+          "status": "computed",
+          "value": 0.7547892720306513,
+          "n_effective": 261
+        },
+        "recall@3": {
+          "status": "computed",
+          "value": 0.7296615581098339,
+          "n_effective": 261
+        },
+        "f1@3": {
+          "status": "computed",
+          "value": 0.7119755297916216,
+          "n_effective": 261
+        },
+        "ndcg@3": {
+          "status": "computed",
+          "value": 0.870900040601443,
+          "n_effective": 261
+        },
+        "psp@3": {
+          "status": "computed",
+          "value": 1.2432752539902108,
+          "n_effective": 261
+        },
+        "psndcg@3": {
+          "status": "computed",
+          "value": 1.4333346727610898,
+          "n_effective": 261
+        },
+        "precision@4": {
+          "status": "computed",
+          "value": 0.6618773946360154,
+          "n_effective": 261
+        },
+        "recall@4": {
+          "status": "computed",
+          "value": 0.8271392081736909,
+          "n_effective": 261
+        },
+        "f1@4": {
+          "status": "computed",
+          "value": 0.7071367755275801,
+          "n_effective": 261
+        },
+        "ndcg@4": {
+          "status": "computed",
+          "value": 0.8758098075491978,
+          "n_effective": 261
+        },
+        "psp@4": {
+          "status": "computed",
+          "value": 1.0913354639441404,
+          "n_effective": 261
+        },
+        "psndcg@4": {
+          "status": "computed",
+          "value": 1.4405760259508165,
+          "n_effective": 261
+        },
+        "precision@5": {
+          "status": "computed",
+          "value": 0.5800766283524904,
+          "n_effective": 261
+        },
+        "recall@5": {
+          "status": "computed",
+          "value": 0.8903895274584929,
+          "n_effective": 261
+        },
+        "f1@5": {
+          "status": "computed",
+          "value": 0.6770171718447581,
+          "n_effective": 261
+        },
+        "ndcg@5": {
+          "status": "computed",
+          "value": 0.8908051485624723,
+          "n_effective": 261
+        },
+        "psp@5": {
+          "status": "computed",
+          "value": 0.9573751337107463,
+          "n_effective": 261
+        },
+        "psndcg@5": {
+          "status": "computed",
+          "value": 1.464861994680831,
+          "n_effective": 261
+        },
+        "precision@6": {
+          "status": "computed",
+          "value": 0.5140485312899107,
+          "n_effective": 261
+        },
+        "recall@6": {
+          "status": "computed",
+          "value": 0.9375478927203065,
+          "n_effective": 261
+        },
+        "f1@6": {
+          "status": "computed",
+          "value": 0.6409096437832069,
+          "n_effective": 261
+        },
+        "ndcg@6": {
+          "status": "computed",
+          "value": 0.9117862004172402,
+          "n_effective": 261
+        },
+        "psp@6": {
+          "status": "computed",
+          "value": 0.8478301103061903,
+          "n_effective": 261
+        },
+        "psndcg@6": {
+          "status": "computed",
+          "value": 1.4985909725755802,
+          "n_effective": 261
+        },
+        "precision@7": {
+          "status": "computed",
+          "value": 0.45758073344280237,
+          "n_effective": 261
+        },
+        "recall@7": {
+          "status": "computed",
+          "value": 0.9647828863346105,
+          "n_effective": 261
+        },
+        "f1@7": {
+          "status": "computed",
+          "value": 0.6004187170853837,
+          "n_effective": 261
+        },
+        "ndcg@7": {
+          "status": "computed",
+          "value": 0.9260250575791611,
+          "n_effective": 261
+        },
+        "psp@7": {
+          "status": "computed",
+          "value": 0.7556916998181111,
+          "n_effective": 261
+        },
+        "psndcg@7": {
+          "status": "computed",
+          "value": 1.522806705474955,
+          "n_effective": 261
+        },
+        "precision@8": {
+          "status": "computed",
+          "value": 0.4075670498084291,
+          "n_effective": 261
+        },
+        "recall@8": {
+          "status": "computed",
+          "value": 0.9786717752234994,
+          "n_effective": 261
+        },
+        "f1@8": {
+          "status": "computed",
+          "value": 0.5576072288715966,
+          "n_effective": 261
+        },
+        "ndcg@8": {
+          "status": "computed",
+          "value": 0.9325691174262104,
+          "n_effective": 261
+        },
+        "psp@8": {
+          "status": "computed",
+          "value": 0.6734793767758658,
+          "n_effective": 261
+        },
+        "psndcg@8": {
+          "status": "computed",
+          "value": 1.5338741797851616,
+          "n_effective": 261
+        },
+        "macro_f1": {
+          "status": "computed",
+          "value": 0.6559695721321526,
+          "n_effective": 261
+        },
+        "micro_f1": {
+          "status": "computed",
+          "value": 0.6873469387755102,
+          "n_effective": 261
+        },
+        "weighted_f1": {
+          "status": "computed",
+          "value": 0.7064081261349539,
+          "n_effective": 261
+        },
+        "sample_f1": {
+          "status": "computed",
+          "value": 0.6786430507863909,
+          "n_effective": 261
+        },
+        "macro_precision": {
+          "status": "computed",
+          "value": 0.5102880335982811,
+          "n_effective": 261
+        },
+        "macro_recall": {
+          "status": "computed",
+          "value": 0.9581328905601899,
+          "n_effective": 261
+        },
+        "subset_accuracy": {
+          "status": "computed",
+          "value": 0.038314176245210725,
+          "n_effective": 261
+        },
+        "hamming_loss": {
+          "status": "computed",
+          "value": 0.266805990943922,
+          "n_effective": 261
+        },
+        "macro_auroc": {
+          "status": "computed",
+          "value": 0.9136959291984375,
+          "n_effective": 261
+        },
+        "micro_auroc": {
+          "status": "computed",
+          "value": 0.9192471809299145,
+          "n_effective": 261
+        },
+        "macro_auprc": {
+          "status": "computed",
+          "value": 0.8024947571186025,
+          "n_effective": 261
+        },
+        "micro_auprc": {
+          "status": "computed",
+          "value": 0.8288206102343625,
+          "n_effective": 261
+        },
+        "label_ranking_average_precision": {
+          "status": "computed",
+          "value": 0.8750863243823013,
+          "n_effective": 261
+        },
+        "label_ranking_loss": {
+          "status": "computed",
+          "value": 0.0977999756735389,
+          "n_effective": 261
+        },
+        "coverage_error": {
+          "status": "computed",
+          "value": 5.076628352490421,
+          "n_effective": 261
+        },
+        "brier_score": {
+          "status": "computed",
+          "value": 0.1340385928247997,
+          "n_effective": 261
+        },
+        "expected_calibration_error": {
+          "status": "computed",
+          "value": 0.1344479275513758,
+          "n_effective": 261
+        },
+        "maximum_calibration_error": {
+          "status": "computed",
+          "value": 0.47030379049602244,
+          "n_effective": 261
+        }
+      }
+    ]
+  ],
+  "cv_fold_metrics": [
+    {
+      "precision@1": {
+        "status": "computed",
+        "value": 0.946360153256705,
+        "n_effective": 261
+      },
+      "recall@1": {
+        "status": "computed",
+        "value": 0.3365581098339719,
+        "n_effective": 261
+      },
+      "f1@1": {
+        "status": "computed",
+        "value": 0.4745788481420666,
+        "n_effective": 261
+      },
+      "ndcg@1": {
+        "status": "computed",
+        "value": 0.946360153256705,
+        "n_effective": 261
+      },
+      "psp@1": {
+        "status": "computed",
+        "value": 1.5665937037225341,
+        "n_effective": 261
+      },
+      "psndcg@1": {
+        "status": "computed",
+        "value": 1.5665937037225341,
+        "n_effective": 261
+      },
+      "precision@2": {
+        "status": "computed",
+        "value": 0.8486590038314177,
+        "n_effective": 261
+      },
+      "recall@2": {
+        "status": "computed",
+        "value": 0.5653256704980844,
+        "n_effective": 261
+      },
+      "f1@2": {
+        "status": "computed",
+        "value": 0.6502919175332967,
+        "n_effective": 261
+      },
+      "ndcg@2": {
+        "status": "computed",
+        "value": 0.8915189506985516,
+        "n_effective": 261
+      },
+      "psp@2": {
+        "status": "computed",
+        "value": 1.3972601470641868,
+        "n_effective": 261
+      },
+      "psndcg@2": {
+        "status": "computed",
+        "value": 1.4685721500954914,
+        "n_effective": 261
+      },
+      "precision@3": {
+        "status": "computed",
+        "value": 0.7547892720306513,
+        "n_effective": 261
+      },
+      "recall@3": {
+        "status": "computed",
+        "value": 0.7296615581098339,
+        "n_effective": 261
+      },
+      "f1@3": {
+        "status": "computed",
+        "value": 0.7119755297916216,
+        "n_effective": 261
+      },
+      "ndcg@3": {
+        "status": "computed",
+        "value": 0.870900040601443,
+        "n_effective": 261
+      },
+      "psp@3": {
+        "status": "computed",
+        "value": 1.2432752539902108,
+        "n_effective": 261
+      },
+      "psndcg@3": {
+        "status": "computed",
+        "value": 1.4333346727610898,
+        "n_effective": 261
+      },
+      "precision@4": {
+        "status": "computed",
+        "value": 0.6618773946360154,
+        "n_effective": 261
+      },
+      "recall@4": {
+        "status": "computed",
+        "value": 0.8271392081736909,
+        "n_effective": 261
+      },
+      "f1@4": {
+        "status": "computed",
+        "value": 0.7071367755275801,
+        "n_effective": 261
+      },
+      "ndcg@4": {
+        "status": "computed",
+        "value": 0.8758098075491978,
+        "n_effective": 261
+      },
+      "psp@4": {
+        "status": "computed",
+        "value": 1.0913354639441404,
+        "n_effective": 261
+      },
+      "psndcg@4": {
+        "status": "computed",
+        "value": 1.4405760259508165,
+        "n_effective": 261
+      },
+      "precision@5": {
+        "status": "computed",
+        "value": 0.5800766283524904,
+        "n_effective": 261
+      },
+      "recall@5": {
+        "status": "computed",
+        "value": 0.8903895274584929,
+        "n_effective": 261
+      },
+      "f1@5": {
+        "status": "computed",
+        "value": 0.6770171718447581,
+        "n_effective": 261
+      },
+      "ndcg@5": {
+        "status": "computed",
+        "value": 0.8908051485624723,
+        "n_effective": 261
+      },
+      "psp@5": {
+        "status": "computed",
+        "value": 0.9573751337107463,
+        "n_effective": 261
+      },
+      "psndcg@5": {
+        "status": "computed",
+        "value": 1.464861994680831,
+        "n_effective": 261
+      },
+      "precision@6": {
+        "status": "computed",
+        "value": 0.5140485312899107,
+        "n_effective": 261
+      },
+      "recall@6": {
+        "status": "computed",
+        "value": 0.9375478927203065,
+        "n_effective": 261
+      },
+      "f1@6": {
+        "status": "computed",
+        "value": 0.6409096437832069,
+        "n_effective": 261
+      },
+      "ndcg@6": {
+        "status": "computed",
+        "value": 0.9117862004172402,
+        "n_effective": 261
+      },
+      "psp@6": {
+        "status": "computed",
+        "value": 0.8478301103061903,
+        "n_effective": 261
+      },
+      "psndcg@6": {
+        "status": "computed",
+        "value": 1.4985909725755802,
+        "n_effective": 261
+      },
+      "precision@7": {
+        "status": "computed",
+        "value": 0.45758073344280237,
+        "n_effective": 261
+      },
+      "recall@7": {
+        "status": "computed",
+        "value": 0.9647828863346105,
+        "n_effective": 261
+      },
+      "f1@7": {
+        "status": "computed",
+        "value": 0.6004187170853837,
+        "n_effective": 261
+      },
+      "ndcg@7": {
+        "status": "computed",
+        "value": 0.9260250575791611,
+        "n_effective": 261
+      },
+      "psp@7": {
+        "status": "computed",
+        "value": 0.7556916998181111,
+        "n_effective": 261
+      },
+      "psndcg@7": {
+        "status": "computed",
+        "value": 1.522806705474955,
+        "n_effective": 261
+      },
+      "precision@8": {
+        "status": "computed",
+        "value": 0.4075670498084291,
+        "n_effective": 261
+      },
+      "recall@8": {
+        "status": "computed",
+        "value": 0.9786717752234994,
+        "n_effective": 261
+      },
+      "f1@8": {
+        "status": "computed",
+        "value": 0.5576072288715966,
+        "n_effective": 261
+      },
+      "ndcg@8": {
+        "status": "computed",
+        "value": 0.9325691174262104,
+        "n_effective": 261
+      },
+      "psp@8": {
+        "status": "computed",
+        "value": 0.6734793767758658,
+        "n_effective": 261
+      },
+      "psndcg@8": {
+        "status": "computed",
+        "value": 1.5338741797851616,
+        "n_effective": 261
+      },
+      "macro_f1": {
+        "status": "computed",
+        "value": 0.6559695721321526,
+        "n_effective": 261
+      },
+      "micro_f1": {
+        "status": "computed",
+        "value": 0.6873469387755102,
+        "n_effective": 261
+      },
+      "weighted_f1": {
+        "status": "computed",
+        "value": 0.7064081261349539,
+        "n_effective": 261
+      },
+      "sample_f1": {
+        "status": "computed",
+        "value": 0.6786430507863909,
+        "n_effective": 261
+      },
+      "macro_precision": {
+        "status": "computed",
+        "value": 0.5102880335982811,
+        "n_effective": 261
+      },
+      "macro_recall": {
+        "status": "computed",
+        "value": 0.9581328905601899,
+        "n_effective": 261
+      },
+      "subset_accuracy": {
+        "status": "computed",
+        "value": 0.038314176245210725,
+        "n_effective": 261
+      },
+      "hamming_loss": {
+        "status": "computed",
+        "value": 0.266805990943922,
+        "n_effective": 261
+      },
+      "macro_auroc": {
+        "status": "computed",
+        "value": 0.9136959291984375,
+        "n_effective": 261
+      },
+      "micro_auroc": {
+        "status": "computed",
+        "value": 0.9192471809299145,
+        "n_effective": 261
+      },
+      "macro_auprc": {
+        "status": "computed",
+        "value": 0.8024947571186025,
+        "n_effective": 261
+      },
+      "micro_auprc": {
+        "status": "computed",
+        "value": 0.8288206102343625,
+        "n_effective": 261
+      },
+      "label_ranking_average_precision": {
+        "status": "computed",
+        "value": 0.8750863243823013,
+        "n_effective": 261
+      },
+      "label_ranking_loss": {
+        "status": "computed",
+        "value": 0.0977999756735389,
+        "n_effective": 261
+      },
+      "coverage_error": {
+        "status": "computed",
+        "value": 5.076628352490421,
+        "n_effective": 261
+      },
+      "brier_score": {
+        "status": "computed",
+        "value": 0.1340385928247997,
+        "n_effective": 261
+      },
+      "expected_calibration_error": {
+        "status": "computed",
+        "value": 0.1344479275513758,
+        "n_effective": 261
+      },
+      "maximum_calibration_error": {
+        "status": "computed",
+        "value": 0.47030379049602244,
+        "n_effective": 261
+      }
+    }
+  ],
+  "cv_mean_metrics": {
+    "brier_score": {
+      "status": "computed",
+      "value": 0.1340385928247997,
+      "n_effective": 1
+    },
+    "coverage_error": {
+      "status": "computed",
+      "value": 5.076628352490421,
+      "n_effective": 1
+    },
+    "expected_calibration_error": {
+      "status": "computed",
+      "value": 0.1344479275513758,
+      "n_effective": 1
+    },
+    "f1@1": {
+      "status": "computed",
+      "value": 0.4745788481420666,
+      "n_effective": 1
+    },
+    "f1@2": {
+      "status": "computed",
+      "value": 0.6502919175332967,
+      "n_effective": 1
+    },
+    "f1@3": {
+      "status": "computed",
+      "value": 0.7119755297916216,
+      "n_effective": 1
+    },
+    "f1@4": {
+      "status": "computed",
+      "value": 0.7071367755275801,
+      "n_effective": 1
+    },
+    "f1@5": {
+      "status": "computed",
+      "value": 0.6770171718447581,
+      "n_effective": 1
+    },
+    "f1@6": {
+      "status": "computed",
+      "value": 0.6409096437832069,
+      "n_effective": 1
+    },
+    "f1@7": {
+      "status": "computed",
+      "value": 0.6004187170853837,
+      "n_effective": 1
+    },
+    "f1@8": {
+      "status": "computed",
+      "value": 0.5576072288715966,
+      "n_effective": 1
+    },
+    "hamming_loss": {
+      "status": "computed",
+      "value": 0.266805990943922,
+      "n_effective": 1
+    },
+    "label_ranking_average_precision": {
+      "status": "computed",
+      "value": 0.8750863243823013,
+      "n_effective": 1
+    },
+    "label_ranking_loss": {
+      "status": "computed",
+      "value": 0.0977999756735389,
+      "n_effective": 1
+    },
+    "macro_auprc": {
+      "status": "computed",
+      "value": 0.8024947571186025,
+      "n_effective": 1
+    },
+    "macro_auroc": {
+      "status": "computed",
+      "value": 0.9136959291984375,
+      "n_effective": 1
+    },
+    "macro_f1": {
+      "status": "computed",
+      "value": 0.6559695721321526,
+      "n_effective": 1
+    },
+    "macro_precision": {
+      "status": "computed",
+      "value": 0.5102880335982811,
+      "n_effective": 1
+    },
+    "macro_recall": {
+      "status": "computed",
+      "value": 0.9581328905601899,
+      "n_effective": 1
+    },
+    "maximum_calibration_error": {
+      "status": "computed",
+      "value": 0.47030379049602244,
+      "n_effective": 1
+    },
+    "micro_auprc": {
+      "status": "computed",
+      "value": 0.8288206102343625,
+      "n_effective": 1
+    },
+    "micro_auroc": {
+      "status": "computed",
+      "value": 0.9192471809299145,
+      "n_effective": 1
+    },
+    "micro_f1": {
+      "status": "computed",
+      "value": 0.6873469387755102,
+      "n_effective": 1
+    },
+    "ndcg@1": {
+      "status": "computed",
+      "value": 0.946360153256705,
+      "n_effective": 1
+    },
+    "ndcg@2": {
+      "status": "computed",
+      "value": 0.8915189506985516,
+      "n_effective": 1
+    },
+    "ndcg@3": {
+      "status": "computed",
+      "value": 0.870900040601443,
+      "n_effective": 1
+    },
+    "ndcg@4": {
+      "status": "computed",
+      "value": 0.8758098075491978,
+      "n_effective": 1
+    },
+    "ndcg@5": {
+      "status": "computed",
+      "value": 0.8908051485624723,
+      "n_effective": 1
+    },
+    "ndcg@6": {
+      "status": "computed",
+      "value": 0.9117862004172402,
+      "n_effective": 1
+    },
+    "ndcg@7": {
+      "status": "computed",
+      "value": 0.9260250575791611,
+      "n_effective": 1
+    },
+    "ndcg@8": {
+      "status": "computed",
+      "value": 0.9325691174262104,
+      "n_effective": 1
+    },
+    "precision@1": {
+      "status": "computed",
+      "value": 0.946360153256705,
+      "n_effective": 1
+    },
+    "precision@2": {
+      "status": "computed",
+      "value": 0.8486590038314177,
+      "n_effective": 1
+    },
+    "precision@3": {
+      "status": "computed",
+      "value": 0.7547892720306513,
+      "n_effective": 1
+    },
+    "precision@4": {
+      "status": "computed",
+      "value": 0.6618773946360154,
+      "n_effective": 1
+    },
+    "precision@5": {
+      "status": "computed",
+      "value": 0.5800766283524904,
+      "n_effective": 1
+    },
+    "precision@6": {
+      "status": "computed",
+      "value": 0.5140485312899107,
+      "n_effective": 1
+    },
+    "precision@7": {
+      "status": "computed",
+      "value": 0.45758073344280237,
+      "n_effective": 1
+    },
+    "precision@8": {
+      "status": "computed",
+      "value": 0.4075670498084291,
+      "n_effective": 1
+    },
+    "psndcg@1": {
+      "status": "computed",
+      "value": 1.5665937037225341,
+      "n_effective": 1
+    },
+    "psndcg@2": {
+      "status": "computed",
+      "value": 1.4685721500954914,
+      "n_effective": 1
+    },
+    "psndcg@3": {
+      "status": "computed",
+      "value": 1.4333346727610898,
+      "n_effective": 1
+    },
+    "psndcg@4": {
+      "status": "computed",
+      "value": 1.4405760259508165,
+      "n_effective": 1
+    },
+    "psndcg@5": {
+      "status": "computed",
+      "value": 1.464861994680831,
+      "n_effective": 1
+    },
+    "psndcg@6": {
+      "status": "computed",
+      "value": 1.4985909725755802,
+      "n_effective": 1
+    },
+    "psndcg@7": {
+      "status": "computed",
+      "value": 1.522806705474955,
+      "n_effective": 1
+    },
+    "psndcg@8": {
+      "status": "computed",
+      "value": 1.5338741797851616,
+      "n_effective": 1
+    },
+    "psp@1": {
+      "status": "computed",
+      "value": 1.5665937037225341,
+      "n_effective": 1
+    },
+    "psp@2": {
+      "status": "computed",
+      "value": 1.3972601470641868,
+      "n_effective": 1
+    },
+    "psp@3": {
+      "status": "computed",
+      "value": 1.2432752539902108,
+      "n_effective": 1
+    },
+    "psp@4": {
+      "status": "computed",
+      "value": 1.0913354639441404,
+      "n_effective": 1
+    },
+    "psp@5": {
+      "status": "computed",
+      "value": 0.9573751337107463,
+      "n_effective": 1
+    },
+    "psp@6": {
+      "status": "computed",
+      "value": 0.8478301103061903,
+      "n_effective": 1
+    },
+    "psp@7": {
+      "status": "computed",
+      "value": 0.7556916998181111,
+      "n_effective": 1
+    },
+    "psp@8": {
+      "status": "computed",
+      "value": 0.6734793767758658,
+      "n_effective": 1
+    },
+    "recall@1": {
+      "status": "computed",
+      "value": 0.3365581098339719,
+      "n_effective": 1
+    },
+    "recall@2": {
+      "status": "computed",
+      "value": 0.5653256704980844,
+      "n_effective": 1
+    },
+    "recall@3": {
+      "status": "computed",
+      "value": 0.7296615581098339,
+      "n_effective": 1
+    },
+    "recall@4": {
+      "status": "computed",
+      "value": 0.8271392081736909,
+      "n_effective": 1
+    },
+    "recall@5": {
+      "status": "computed",
+      "value": 0.8903895274584929,
+      "n_effective": 1
+    },
+    "recall@6": {
+      "status": "computed",
+      "value": 0.9375478927203065,
+      "n_effective": 1
+    },
+    "recall@7": {
+      "status": "computed",
+      "value": 0.9647828863346105,
+      "n_effective": 1
+    },
+    "recall@8": {
+      "status": "computed",
+      "value": 0.9786717752234994,
+      "n_effective": 1
+    },
+    "sample_f1": {
+      "status": "computed",
+      "value": 0.6786430507863909,
+      "n_effective": 1
+    },
+    "subset_accuracy": {
+      "status": "computed",
+      "value": 0.038314176245210725,
+      "n_effective": 1
+    },
+    "weighted_f1": {
+      "status": "computed",
+      "value": 0.7064081261349539,
+      "n_effective": 1
+    }
+  },
+  "cv_std_metrics": {
+    "brier_score": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "coverage_error": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "expected_calibration_error": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "f1@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "hamming_loss": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "label_ranking_average_precision": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "label_ranking_loss": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "macro_auprc": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "macro_auroc": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "macro_f1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "macro_precision": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "macro_recall": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "maximum_calibration_error": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "micro_auprc": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "micro_auroc": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "micro_f1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "ndcg@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "precision@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psndcg@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "psp@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@2": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@3": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@4": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@5": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@6": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@7": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "recall@8": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "sample_f1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "subset_accuracy": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    },
+    "weighted_f1": {
+      "status": "skipped",
+      "reason": "no_folds_computed",
+      "detail": "std undefined for n=1 valid fold"
+    }
+  },
+  "cv_training_logs": [
+    {
+      "model_name": "glm",
+      "fold_index": -2,
+      "params": {
+        "model_id": "glm-5.3",
+        "thinking_enabled": "enabled",
+        "predict_multi_class": "auto",
+        "predict_multi_label": "auto",
+        "feature_importance": "auto",
+        "system_prompt": "",
+        "prompt_formatter": "auto",
+        "negatives": "omit",
+        "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+      },
+      "epochs_run": 0,
+      "best_epoch": 0,
+      "best_val_metric": 0.0,
+      "epoch_logs": [],
+      "cost": {
+        "fit_time_seconds": 0.0,
+        "predict_time_seconds": 0.0,
+        "epoch_times_seconds": null,
+        "peak_gpu_memory_mb": null,
+        "origin": "llm_api",
+        "inference_time_seconds": 3377.7187925893813
+      },
+      "device": "api",
+      "batch_accounting": null
+    }
+  ],
+  "cv_per_seed_training_logs": [
+    [
+      {
+        "model_name": "glm",
+        "fold_index": -2,
+        "params": {
+          "model_id": "glm-5.3",
+          "thinking_enabled": "enabled",
+          "predict_multi_class": "auto",
+          "predict_multi_label": "auto",
+          "feature_importance": "auto",
+          "system_prompt": "",
+          "prompt_formatter": "auto",
+          "negatives": "omit",
+          "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+        },
+        "epochs_run": 0,
+        "best_epoch": 0,
+        "best_val_metric": 0.0,
+        "epoch_logs": [],
+        "cost": {
+          "fit_time_seconds": 0.0,
+          "predict_time_seconds": 0.0,
+          "epoch_times_seconds": null,
+          "peak_gpu_memory_mb": null,
+          "origin": "llm_api",
+          "inference_time_seconds": 3377.7187925893813
+        },
+        "device": "api",
+        "batch_accounting": null
+      }
+    ]
+  ],
+  "final_per_seed_training_log": [
+    null
+  ],
+  "final_test_metrics": {},
+  "final_test_per_seed_metrics": [
+    {}
+  ],
+  "final_test_per_seed_per_class": [
+    {}
+  ],
+  "final_training_log": null,
+  "full_train_hpo_search_time_seconds": 0.0,
+  "oof_calibration_time_seconds": 0.0,
+  "final_predictions": null,
+  "cv_predictions": [
+    {
+      "path": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/glm/s00f1/seed_0/obesity_syndrome/predictions/glm/cv/fold_1.npz",
+      "fold_index": 1,
+      "split": "cv_test"
+    }
+  ],
+  "search_result": null,
+  "artifacts": {},
+  "feature_importance": null,
+  "feature_importance_error": null,
+  "feature_importance_skip_reason": "本分片不训练最终模型（外层折分片），特征重要性由全量分片承担",
+  "feature_importance_degradations": [],
+  "llm_degradations": [],
+  "param_space_adjustments": [],
+  "hpo_inner_fold_metrics": null,
+  "result_cube": null,
+  "per_fold_best_params": [],
+  "per_fold_study_summaries": [],
+  "per_fold_tuned_thresholds": [],
+  "final_train_best_params": {},
+  "final_train_search_summary": {
+    "strategy": "llm_skip",
+    "n_trials_complete": 0,
+    "best_value": null,
+    "halt_reason": null,
+    "journal_path": null,
+    "sidecar_path": null,
+    "config_hash": null,
+    "split_hash": null,
+    "gpu_assignment": null
+  },
+  "final_train_hpo_inner_fold_metrics": [],
+  "final_train_oof_artifact": null,
+  "final_train_tau_star": null,
+  "final_train_target_epoch": null,
+  "final_train_hpo_run_seed": null,
+  "final_train_oof_run_seeds": [],
+  "per_seed_run_seeds": {
+    "0": {
+      "cv_folds": [
+        530533183
+      ],
+      "final": null
+    }
+  },
+  "per_seed_wrapper_random_states": {
+    "0": {
+      "cv_folds": [
+        530533183
+      ],
+      "final": null
+    }
+  },
+  "model_complexity": null,
+  "deploy_cost": null
+}

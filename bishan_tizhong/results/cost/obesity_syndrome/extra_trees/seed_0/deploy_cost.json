@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-10-09T01:38:38+08:00",
+  "framework": {
+    "version": "1.0.0",
+    "commit": null
+  },
+  "source_dir": "/root/autodl-tmp/bishan_exp/bishan_g/bishan_tizhong/results/shards/runs/obesity_syndrome/extra_trees/s00final/seed_0/obesity_syndrome",
+  "n_single": 100,
+  "time_cap_s": 600.0,
+  "units": {
+    "extra_trees": {
+      "comparison": "identical",
+      "detail": "y_pred、y_prob 与保存的逐位相同（308 行）",
+      "error": "",
+      "measurement": {
+        "schema_version": 1,
+        "n_test": 308,
+        "n_single": 100,
+        "time_cap_s": 600.0,
+        "model_file": null,
+        "environment": {
+          "cpu_model": "Intel(R) Xeon(R) Gold 6430",
+          "logical_cores": 32,
+          "memory_gb": 1007.47,
+          "system": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+          "python": "3.12.13",
+          "torch": "2.6.0+cu124",
+          "framework_version": "1.0.0",
+          "framework_commit": null,
+          "process_threads": 4,
+          "concurrent_shards": null,
+          "gpu_name": "NVIDIA A100 80GB PCIe",
+          "measured_at": "2026-10-09T01:38:12+08:00"
+        },
+        "modes": {
+          "train_device": {
+            "device": "cpu",
+            "runnable": true,
+            "reason": "",
+            "load_s": 0.10330879129469395,
+            "load_source": "pickle_roundtrip",
+            "warmup_ms": 135.4195,
+            "single_ms_median": 120.9088,
+            "single_ms_p95": 134.598,
+            "n_single_measured": 100,
+            "batch_s": 0.217844,
+            "peak_rss_mb": 1291.46,
+            "rss_before_mb": 1291.46,
+            "peak_gpu_mb": 0.0,
+            "threads": 1,
+            "timeout_projected": "",
+            "projected_single_s": 12.898,
+            "projected_batch_s": 0.2218,
+            "elapsed_s": 13.0806,
+            "note": "没有模型文件：加载时间按 pickle 往返计"
+          },
+          "cpu": {
+            "device": "cpu",
+            "runnable": true,
+            "reason": "",
+            "load_s": 0.10209223628044128,
+            "load_source": "pickle_roundtrip",
+            "warmup_ms": 119.7793,
+            "single_ms_median": 120.4572,
+            "single_ms_p95": 125.0237,
+            "n_single_measured": 100,
+            "batch_s": 0.212813,
+            "peak_rss_mb": 1291.46,
+            "rss_before_mb": 1291.46,
+            "peak_gpu_mb": 0.0,
+            "threads": 1,
+            "timeout_projected": "",
+            "projected_single_s": 11.9771,
+            "projected_batch_s": 0.2171,
+            "elapsed_s": 12.8644,
+            "note": "没有模型文件：加载时间按 pickle 往返计"
+          }
+        },
+        "rebuild": {
+          "comparison": "identical",
+          "detail": "y_pred、y_prob 与保存的逐位相同（308 行）",
+          "params_source": "训练日志",
+          "run_seed": 3631933196,
+          "target_epoch": 1,
+          "fit_seconds": 2.7605,
+          "params": {
+            "n_estimators": 822,
+            "max_features": "log2",
+            "max_depth": 20,
+            "min_samples_split": 27,
+            "min_samples_leaf": 1,
+            "criterion": "gini",
+            "bootstrap": true,
+            "random_state": 3631933196
+          }
+        }
+      }
+    }
+  }
+}

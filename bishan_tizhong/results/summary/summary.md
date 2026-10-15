@@ -1,0 +1,169 @@
+# 结果汇总：bishan_tizhong
+
+生成时间（北京时间）：2026-10-14T19:43:22+08:00
+
+## 主口径
+
+- 依赖阈值的指标：交叉验证取**嵌套阈值**（`at_tau_nested`，每个外层折用它自己内层折外预测按逐标签 F1 选出的阈值）；外部测试集取**部署阈值**（`at_tau_per_label`，全量训练的折外预测上选出、冻结后只用一次；micro 指标用按 micro-F1 选出的全局阈值 `at_tau_micro`）。阈值一律在训练一侧的数据上选，从不在被评估的数据上选。
+- 大模型学习器（deepseek、glm、qwen）零样本、不用训练数据，不做阈值选择：依赖阈值的指标取模型自己的判定（回答里选中的标签记阳性，`raw`），交叉验证与外部测试集都如此；它的概率是模型对选中标签给出的置信度，没选中的标签记 0。
+- 与阈值无关的指标（AUROC、AUPRC、Brier、排序类）只有一种算法。
+- 0.5 口径只作敏感性对照，归入存档。
+- “±”为跨种子标准差（交叉验证先对每个种子的外层折取均值，再跨种子取样本标准差；外部测试集直接跨种子）：它只反映换种子带来的波动（分折方式、调参路径、训练随机性），不是置信区间，不含抽样不确定性，不能用来判断两个模型的差别是否显著。
+- “[ , ]”为合并种子的 bootstrap 95% 区间：对测试集做患者级重抽样，每次重抽样对各种子算指标后取均值，再取百分位——它是“跨种子均值”这个点估计的测试集抽样区间，条件于冻结的模型与阈值，不含训练与调参的随机性，未作多重比较校正。所有学习器、所有种子共用同一批重抽样索引（公共索引矩阵，种子见表的 bootstrap_seed 列），逐种子区间、合并种子区间与成对检验因此彼此配对。两个模型有无差异看成对检验（test_paired_differences.csv 的Holm 校正后 P），不看区间是否重叠。报告层的区间与运行时分片里的区间（archive/test_bootstrap.csv）抽样流不同，数值略有差别；主表以报告层为准。
+- 成对检验（test_paired_differences.csv）：外部测试集上模型间的差异采用患者级成对 bootstrap检验（各模型使用相同的重抽样本），同一指标内的两两比较采用 Holm 法校正多重比较，校正后 P<0.05（significant 列）视为差异有统计学意义。diff 为两学习器跨种子均值之差；ci_lower / ci_upper 为同一批重抽样下合并种子差值的 2.5% 与 97.5% 百分位，未作多重比较校正；p_value 为双侧 P（差值落在 0 两侧的比例，分子分母各加 1，只用算得出的重抽样）；p_holm 为校正后 P；有效重抽次数不足 0.9 × n_boot 的比较记为不可计算（available 为假），不报 P、不计入族。交叉验证一侧不做检验。
+- 主结果在 `main/`：只含主口径、只含定义里声明且能比较的指标（能做外部测试集区间与成对检验）、只含每个种子都齐全的学习器（数据描述 `data_description.csv` 与开发集标签共现 `label_cooccurrence*.csv`、`cv.csv`、`test.csv`、逐标签 `per_label_*.csv`、逐种子的 `*_long.csv`、成对检验 `test_paired_differences.csv`、部署阈值、全量训练模型的参数、计算开销、作图数据 `curves/`、`methods.md`）。其它口径、全部指标、逐折逐种子数值、未齐全的学习器、bootstrap、折间标准差、测试集标签共现与案例导出在 `archive/`。
+- 定义里另声明了 `coverage_error`、`expected_calibration_error`、`maximum_calibration_error`：它们不能做外部测试集区间与成对检验（重抽样下有偏或不稳，注册表 `bootstrap_safe` 为假），不进报告；逐折与逐种子数值只在 `archive/cv_long_all.csv`、`archive/test_long_all.csv`。
+- 外部测试集主口径的 bootstrap 置信区间（逐种子，条件于冻结的阈值与模型，只重抽测试样本）在 `main/test_long.csv` 的 `ci_lower` / `ci_upper`（报告层按公共索引矩阵重算，全部口径在 `archive/test_bootstrap_recomputed.csv`，结果矩阵在 `archive/test_bootstrap_matrix.npz`）。
+- 计算开销 `main/compute_cost.csv`：每个 学习器 × 种子 一行。训练侧取自引擎计时（`p2_hpo_search_s` 全量调参、`p3_train_s` 最终拟合、`serialized_size_mb` 模型文件大小、`train_peak_gpu_mb` 训练峰值显存）；部署侧两口径（`train_device_*` 训练时的设备、`cpu_*` 单线程 CPU）各有加载秒数、逐例延迟中位数 / P95（毫秒，逐条调用 predict 实测，不是摊销值）、整个测试集一次的秒数、峰值内存 / 显存。全部阶段与摊销延迟（`infer_latency_per_sample_ms`）在 `archive/compute_cost_all.csv`，部署侧长表（含测量环境）在 `archive/deploy_cost_long.csv`。
+- 部署侧数据来源：事后用 `cost` 子命令补算；测量时同机在跑的分片数未知（`concurrent_shards` 为空）。并发背景不同的数字不要直接横比；要在安静环境重测用 `cost` 子命令。
+
+## 数据处理声明
+
+数据处理声明：以下学习器带折内数据处理步骤（每次拟合只用当次训练部分估计，再原样作用于验证与测试数据）——
+  用户指定：knn —— missing_indicator: MissingIndicator(columns=cols.missing) → impute: Impute(columns=cols.missing, strategy='auto') → standardize: Standardize(columns=cols.continuous)
+其余学习器（decision_tree、random_forest、extra_trees、dannv2_beta、realmlp、tabpfn_v3、tabicl、tabdpt、deepseek、glm、qwen）直接使用原始特征。
+
+## 完备性
+
+完备：60/60 个 学习器 × 种子。
+报告层 bootstrap：60 个 单元 × 种子，n_boot = 10000，公共索引矩阵的种子 bootstrap_seed = 0。
+成对检验：15 项 数据集 × 指标，每项内全部两两比较为一族（族大小 66），共 990 对；不可计算 0 对（不报 P、不计入族）；Holm 校正后 P<0.05 的 753 对（逐对见 `main/test_paired_differences.csv`）。
+复现自检：用 knn（obesity_syndrome，种子 0）运行时记录的 bootstrap_seed = 2277126854 重算 7 个区间，与分片里的数值逐位相同（`archive/test_bootstrap_check.csv`）。
+案例导出：`archive/cases_test_long.csv`（203280 行）与 `archive/cases_test_summary.csv`（308 例）——**含患者级特征，不要外传**。
+
+## 主表：obesity_syndrome
+
+每格为跨种子均值±标准差，测试集一侧方括号内为合并种子的 bootstrap 95% 区间（含义见“主口径”一节）。只列每个种子都齐全的学习器；两侧列同一组指标。按交叉验证 macro_f1（嵌套 τ*） 排列，仅作呈现，不构成选模结论。
+
+| 学习器 | 运行单元 | 种子数 | CV macro_f1（嵌套 τ*） | CV micro_f1（嵌套 τ*） | CV weighted_f1（嵌套 τ*） | CV sample_f1（嵌套 τ*） | 测试 macro_f1（部署 τ*） | 测试 micro_f1（部署 τ*（micro）） | 测试 weighted_f1（部署 τ*） | 测试 sample_f1（部署 τ*） |
+|---|---|---|---|---|---|---|---|---|---|---|
+| tabpfn_v3 | br-tabpfn_v3 | 5 | 0.788±0.002 | 0.806±0.003 | 0.807±0.002 | 0.784±0.002 | 0.796±0.006 [0.773, 0.815] | 0.828±0.007 [0.812, 0.843] | 0.825±0.004 [0.809, 0.840] | 0.816±0.006 [0.798, 0.833] |
+| tabicl | br-tabicl | 5 | 0.785±0.003 | 0.810±0.002 | 0.808±0.002 | 0.786±0.002 | 0.802±0.006 [0.779, 0.822] | 0.834±0.003 [0.818, 0.850] | 0.829±0.002 [0.812, 0.844] | 0.820±0.002 [0.803, 0.838] |
+| dannv2_beta | dannv2_beta | 5 | 0.779±0.004 | 0.802±0.001 | 0.800±0.002 | 0.779±0.003 | 0.784±0.006 [0.761, 0.803] | 0.825±0.003 [0.810, 0.840] | 0.818±0.003 [0.802, 0.833] | 0.810±0.004 [0.792, 0.827] |
+| extra_trees | extra_trees | 5 | 0.753±0.001 | 0.720±0.010 | 0.775±0.001 | 0.754±0.002 | 0.769±0.008 [0.746, 0.790] | 0.745±0.006 [0.724, 0.765] | 0.798±0.005 [0.781, 0.816] | 0.785±0.005 [0.765, 0.805] |
+| random_forest | random_forest | 5 | 0.750±0.001 | 0.716±0.006 | 0.772±0.001 | 0.750±0.001 | 0.771±0.004 [0.746, 0.791] | 0.752±0.006 [0.732, 0.772] | 0.799±0.002 [0.781, 0.816] | 0.786±0.003 [0.765, 0.805] |
+| realmlp | br-realmlp | 5 | 0.746±0.006 | 0.777±0.005 | 0.773±0.005 | 0.749±0.005 | 0.766±0.012 [0.744, 0.785] | 0.804±0.007 [0.789, 0.819] | 0.798±0.009 [0.783, 0.813] | 0.786±0.010 [0.770, 0.802] |
+| tabdpt | br-tabdpt | 5 | 0.726±0.004 | 0.754±0.003 | 0.750±0.003 | 0.728±0.004 | 0.739±0.008 [0.714, 0.760] | 0.781±0.004 [0.763, 0.798] | 0.774±0.002 [0.756, 0.792] | 0.766±0.003 [0.747, 0.785] |
+| knn | knn | 5 | 0.686±0.002 | 0.689±0.003 | 0.722±0.002 | 0.695±0.002 | 0.700±0.003 [0.672, 0.724] | 0.727±0.003 [0.706, 0.748] | 0.744±0.003 [0.724, 0.763] | 0.725±0.003 [0.703, 0.747] |
+| decision_tree | decision_tree | 5 | 0.580±0.008 | 0.632±0.006 | 0.633±0.004 | 0.600±0.006 | 0.587±0.005 [0.560, 0.611] | 0.663±0.003 [0.642, 0.683] | 0.657±0.003 [0.636, 0.679] | 0.634±0.015 [0.612, 0.655] |
+
+## 框架提交
+
+| 数据集 | 学习器 | 框架提交 | 版本 | 分片数 |
+|---|---|---|---|---|
+| obesity_syndrome | knn | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | decision_tree | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | random_forest | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | extra_trees | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | dannv2_beta | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | realmlp | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | tabpfn_v3 | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | tabicl | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | tabdpt | efdacde48e58581eee80fa5984c6e6c503c712f0 | 1.0.0 | 30 |
+| obesity_syndrome | deepseek | 8c6e2abad84b5115b7f73d91e38db2f50a82bf2d | 1.0.0 | 30 |
+| obesity_syndrome | glm | 8c6e2abad84b5115b7f73d91e38db2f50a82bf2d | 1.0.0 | 30 |
+| obesity_syndrome | qwen | 8c6e2abad84b5115b7f73d91e38db2f50a82bf2d | 1.0.0 | 30 |
+
+## 各学习器的参数
+
+搜索的参数给出范围或候选；固定的参数给出取值；破折号后面是来由，括号里是出处。完整的表见 main/learner_params.csv。
+
+**knn**（搜索 3 个，固定 0 个）
+
+- 搜索 `n_neighbors`：1–51（整数） —— 内置搜索空间（范围 [1, 51] 取自 Probst, Boulesteix & Bischl 2019 的可调性研究（k 是 KNN 唯一有显著调优增益的超参，建议区间 [1, ~50]）与 van Rijn & Hutter 2018 的 fANOVA；上界按训练集行数裁剪）
+- 搜索 `weights`：候选：uniform、distance —— 内置搜索空间（Probst et al. 2019：weights 有小但可测的效果；uniform 与 distance 两种标准方案都保留）
+- 搜索 `p`：候选：1、2 —— 内置搜索空间（Probst et al. 2019：距离度量影响低；p=1 曼哈顿与 p=2 欧氏覆盖常用场景）
+
+**decision_tree**（搜索 5 个，固定 0 个）
+
+- 搜索 `max_depth`：候选：None、2、3、4、5、6、7、8、9、10、12、14、16、18、20、25、30、40、50 —— 内置搜索空间（Mantovani et al. 2018 与 Probst et al. 2019：第二重要的剪枝参数；null（不限）到 50 密集覆盖）
+- 搜索 `min_samples_split`：2–50（整数） —— 内置搜索空间（Probst et al. 2019 重要性第三、Mantovani et al. 2018 确认其正则化效果；[2, 50]）
+- 搜索 `min_samples_leaf`：1–50（整数） —— 内置搜索空间（Probst et al. 2019 可调性排名第一的决策树超参；[1, 50]）
+- 搜索 `criterion`：候选：gini、entropy —— 内置搜索空间（Mantovani et al. 2018 与 Probst et al. 2019：gini 与 entropy 影响可忽略、依数据而定；纳入只为完备（用户 2026-10-08 裁决不固定））
+- 搜索 `max_features`：候选：None、sqrt、log2、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、1 —— 内置搜索空间（Probst et al. 2019：高维数据上中等重要；null（全部特征，CART 默认）、sqrt、log2 与 0.2–1.0 比例）
+
+**random_forest**（搜索 7 个，固定 0 个）
+
+- 搜索 `n_estimators`：50–2000（整数） —— 内置搜索空间（Probst & Boulesteix 2018：性能约 500 棵后饱和、理论上不必调；仍保留 [50, 2000] 让数据印证（用户 2026-10-08 裁决保持搜索））
+- 搜索 `max_features`：候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1 —— 内置搜索空间（Probst, Wright & Boulesteix 2019 的 fANOVA：随机森林最重要的超参；sqrt、log2 与 0.1–1.0 比例）
+- 搜索 `max_depth`：候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50 —— 内置搜索空间（Probst et al. 2019：重要性低、不限深通常即最优；仍给 null 到 50）
+- 搜索 `min_samples_split`：2–50（整数） —— 内置搜索空间（Probst et al. 2019：与 min_samples_leaf 相关、独立调优增益有限；[2, 50]）
+- 搜索 `min_samples_leaf`：1–50（整数） —— 内置搜索空间（Probst et al. 2019 与 van Rijn & Hutter 2018：仅次于 max_features 的第二重要超参；[1, 50]）
+- 搜索 `criterion`：候选：gini、entropy —— 内置搜索空间（Probst et al. 2019：gini 与 entropy 影响极小；纳入只为完备（用户 2026-10-08 裁决不固定））
+- 搜索 `bootstrap`：候选：True、False —— 内置搜索空间（Probst et al. 2019：无放回子采样在部分场景有小幅正效应（+0.002）；两种都搜）
+
+**extra_trees**（搜索 7 个，固定 0 个）
+
+- 搜索 `n_estimators`：50–2000（整数） —— 内置搜索空间（Probst & Boulesteix 2018：不应调、取计算可行的大值；仍保留 [50, 2000]（用户 2026-10-08 裁决保持搜索））
+- 搜索 `max_features`：候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1 —— 内置搜索空间（Geurts et al. 2006 的 K（分类默认 √n）；Probst et al. 2019 §3.1 最可调的森林超参（+0.006 AUC）；sqrt、log2 与 0.1–1.0 比例）
+- 搜索 `max_depth`：候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50 —— 内置搜索空间（Probst et al. 2019：控制树规模的参数增益最小（+0.001）；仍给 null 到 50）
+- 搜索 `min_samples_split`：2–50（整数） —— 内置搜索空间（Geurts et al. 2006 的 n_min（分类默认 2，“平滑强度”参数）；[2, 50]）
+- 搜索 `min_samples_leaf`：1–50（整数） —— 内置搜索空间（van Rijn & Hutter 2018 的 fANOVA：与 max_features 并列最关键；[1, 50]）
+- 搜索 `criterion`：候选：gini、entropy —— 内置搜索空间（Probst et al. 2019 §2.1.5：没有普遍更优的分裂规则；纳入只为完备（用户 2026-10-08 裁决不固定））
+- 搜索 `bootstrap`：候选：False、True —— 内置搜索空间（Geurts et al. 2006 原始算法用整体样本（false）以最小化偏差；Probst et al. 2019 报告无放回有小幅正效应；两者都搜（用户 2026-10-08 裁决保持搜索））
+
+**dannv2_beta**：没有声明参数：全部使用模型类自己的默认值。
+
+**realmlp**（搜索 0 个，固定 2 个）
+
+- 固定 `n_cv`：1 —— 框架约定（关闭 RealMLP 内部交叉拟合，避免与框架的嵌套交叉验证双层嵌套（库默认即 1））
+- 固定 `n_refit`：0 —— 框架约定（关闭 RealMLP 内部 refit 集成（库默认即 0））
+
+**tabpfn_v3**（搜索 0 个，固定 2 个）
+
+- 固定 `n_estimators`：8 —— 模型推荐值（tabpfn 8.0.8 库默认 8（作者推荐的免调参配置，同 tabpfn_v2））
+- 固定 `ignore_pretraining_limits`：False —— 框架约定（超出预训练分布的样本 / 特征上限即报错，不静默外推）
+
+**tabicl**（搜索 0 个，固定 1 个）
+
+- 固定 `n_estimators`：8 —— 模型推荐值（tabicl 2.1.1 库默认 8；TabArena 2025 评 TabICL 也用 8）
+
+**tabdpt**（搜索 0 个，固定 2 个）
+
+- 固定 `use_flash`：False —— 框架约定（关闭 flash-attention：依赖 flash-attn 包，跨环境安全）
+- 固定 `compile`：False —— 框架约定（关闭 torch.compile：依赖 Triton / MSVC，跨环境安全）
+
+**deepseek**（搜索 0 个，固定 9 个）
+
+- 固定 `model_id`：deepseek-v4-pro —— 内置默认（未注明来由）
+- 固定 `thinking_enabled`：enabled —— 内置默认（未注明来由）
+- 固定 `predict_multi_class`：auto —— 内置默认（未注明来由）
+- 固定 `predict_multi_label`：auto —— 内置默认（未注明来由）
+- 固定 `feature_importance`：auto —— 内置默认（未注明来由）
+- 固定 `system_prompt`： —— 内置默认（未注明来由）
+- 固定 `prompt_formatter`：auto —— 内置默认（未注明来由）
+- 固定 `negatives`：omit —— 内置默认（未注明来由）
+- 省略 `temperature`：用模型自己的默认值 —— —
+- 省略 `top_p`：用模型自己的默认值 —— —
+- 省略 `max_tokens`：用模型自己的默认值 —— —
+- 固定 `prompt_data`：{"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}} —— 数据集声明（label_kind / value_text）
+
+**glm**（搜索 0 个，固定 9 个）
+
+- 固定 `model_id`：glm-5.3 —— 内置默认（未注明来由）
+- 固定 `thinking_enabled`：enabled —— 内置默认（未注明来由）
+- 固定 `predict_multi_class`：auto —— 内置默认（未注明来由）
+- 固定 `predict_multi_label`：auto —— 内置默认（未注明来由）
+- 固定 `feature_importance`：auto —— 内置默认（未注明来由）
+- 固定 `system_prompt`： —— 内置默认（未注明来由）
+- 固定 `prompt_formatter`：auto —— 内置默认（未注明来由）
+- 固定 `negatives`：omit —— 内置默认（未注明来由）
+- 省略 `temperature`：用模型自己的默认值 —— —
+- 省略 `top_p`：用模型自己的默认值 —— —
+- 省略 `max_tokens`：用模型自己的默认值 —— —
+- 固定 `prompt_data`：{"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}} —— 数据集声明（label_kind / value_text）
+
+**qwen**（搜索 0 个，固定 9 个）
+
+- 固定 `model_id`：qwen3.8-max-0902 —— 内置默认（未注明来由）
+- 固定 `thinking_enabled`：enabled —— 内置默认（未注明来由）
+- 固定 `predict_multi_class`：auto —— 内置默认（未注明来由）
+- 固定 `predict_multi_label`：auto —— 内置默认（未注明来由）
+- 固定 `feature_importance`：auto —— 内置默认（未注明来由）
+- 固定 `system_prompt`： —— 内置默认（未注明来由）
+- 固定 `prompt_formatter`：auto —— 内置默认（未注明来由）
+- 固定 `negatives`：omit —— 内置默认（未注明来由）
+- 省略 `temperature`：用模型自己的默认值 —— —
+- 省略 `top_p`：用模型自己的默认值 —— —
+- 省略 `max_tokens`：用模型自己的默认值 —— —
+- 固定 `prompt_data`：{"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}} —— 数据集声明（label_kind / value_text）

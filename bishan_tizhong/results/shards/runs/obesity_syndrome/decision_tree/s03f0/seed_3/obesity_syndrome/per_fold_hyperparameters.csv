@@ -1,0 +1,6 @@
+model,outer_fold,param_name,param_value
+decision_tree,0,criterion,entropy
+decision_tree,0,max_depth,16
+decision_tree,0,max_features,0.4
+decision_tree,0,min_samples_leaf,8
+decision_tree,0,min_samples_split,35

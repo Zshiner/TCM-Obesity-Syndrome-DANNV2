@@ -1,0 +1,5 @@
+# 三个预训练表格基础模型的权重文件（不随包，请从各自发布方获取；TabPFN v3 需先在 Prior Labs 接受许可）。校验值 2026-10-07 算出
+文件	字节	SHA-256
+weights/tabpfn_3/tabpfn-v3-classifier-v3_default.ckpt	212804803	d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988
+weights/tabicl/tabicl-classifier-v2-20260212.ckpt	110368038	bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0
+weights/tabdpt/tabdpt1_2.safetensors	254098072	06680220fd66c4524051706b98c1c659a674d19d3a766cd0bb276505e99faccd

@@ -1,0 +1,9 @@
+{
+  "schema_version": "provenance.nested_split_indices.v1",
+  "artifact_path": "90e197b48679393f2b2a2825bde62afb40a58699a50e3ab699dc6713f28fcbd3.json",
+  "size_bytes": 266151,
+  "sha256": "01afe9e818ba44008bb02076aacffef5e9fe1c9b5acaa0225aed7b7896951090",
+  "producer": "tcmhubd.search._provenance:write_nested_split_indices",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-12T17:12:11Z"
+}

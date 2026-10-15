@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "experiment_seed": 0,
+  "tcmhubd_version": "1.0.0",
+  "started_at": "2026-10-12T17:16:31.042888+00:00",
+  "finished_at": "2026-10-12T17:24:24.932861+00:00",
+  "primary_metric": "macro_f1",
+  "dataset_name": "obesity_syndrome",
+  "totals": {
+    "ok": 6,
+    "skipped": 3,
+    "failed": 0
+  },
+  "steps": [
+    {
+      "step_id": "hyperparameter",
+      "display_name": "超参数敏感性 (fANOVA)",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 0.00018358230590820312,
+      "started_at": "2026-10-12T17:16:31.043132+00:00",
+      "finished_at": "2026-10-12T17:16:31.043318+00:00",
+      "skip_reason": "超参数分析：1 个模型都跳过（no_search_history）",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "feature_importance",
+      "display_name": "特征重要性分析",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 0.0003154277801513672,
+      "started_at": "2026-10-12T17:16:31.043665+00:00",
+      "finished_at": "2026-10-12T17:16:31.043983+00:00",
+      "skip_reason": "特征重要性：1 个模型都跳过（no_data: model_type=llm: feature importance not supported (no SHAP / no gradient by design; v1.1 §7)）",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "dann_depth_sign_preservation",
+      "display_name": "DANN 深度 sign-preservation",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 1.1444091796875e-05,
+      "started_at": "2026-10-12T17:16:31.044248+00:00",
+      "finished_at": "2026-10-12T17:16:31.044261+00:00",
+      "skip_reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "case_study",
+      "display_name": "Case Study",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0006375312805175781,
+      "started_at": "2026-10-12T17:16:31.044588+00:00",
+      "finished_at": "2026-10-12T17:16:31.045228+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "training_curves",
+      "display_name": "训练曲线",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 1.811981201171875e-05,
+      "started_at": "2026-10-12T17:16:31.046729+00:00",
+      "finished_at": "2026-10-12T17:16:31.046749+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "supplementary",
+      "display_name": "补充分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.00010943412780761719,
+      "started_at": "2026-10-12T17:16:31.046984+00:00",
+      "finished_at": "2026-10-12T17:16:31.047094+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "calibration",
+      "display_name": "校准分析 (Brier/ECE/MCE)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0029726028442382812,
+      "started_at": "2026-10-12T17:16:31.047320+00:00",
+      "finished_at": "2026-10-12T17:16:31.050295+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "decision_curve",
+      "display_name": "决策曲线分析 (DCA, per-label)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0012447834014892578,
+      "started_at": "2026-10-12T17:16:31.050629+00:00",
+      "finished_at": "2026-10-12T17:16:31.051875+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "test_set_bootstrap",
+      "display_name": "Patient-level bootstrap CI (final test)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 473.87984824180603,
+      "started_at": "2026-10-12T17:16:31.052183+00:00",
+      "finished_at": "2026-10-12T17:24:24.932036+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    }
+  ],
+  "llm_summary": {
+    "qwen": {
+      "total_api_calls": 308,
+      "total_cache_hits": 0,
+      "cache_hit_rate": 0.0,
+      "drift_events": 0,
+      "parse_failures": 0,
+      "total_prompt_tokens": 99463,
+      "total_completion_tokens": 697204
+    }
+  }
+}

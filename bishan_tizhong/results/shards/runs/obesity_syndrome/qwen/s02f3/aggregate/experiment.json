@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.0",
+  "tcmhubd_version": "1.0.0",
+  "metadata": {
+    "experiment_name": null,
+    "started_at": null,
+    "ended_at": null,
+    "total_seconds": null,
+    "output_dir": null,
+    "exit_status": "in_progress",
+    "run_id": "20261012-b2a6f62e",
+    "events_jsonl_path": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/qwen/s02f3/aggregate/events.jsonl.gz",
+    "events_jsonl_sha256": "e4183faf9a57a183537d1781cef6a6db2171c3cbba5489626a3e6cf1a53fbe6a",
+    "primary_seed": null,
+    "all_seeds": [],
+    "git_commit": null
+  },
+  "config_snapshot": {},
+  "environment": {},
+  "datasets": [],
+  "degradations": [],
+  "errors": [],
+  "cancellations": [],
+  "cost_summary": {
+    "total_seconds": null,
+    "by_stage": {},
+    "by_phase": {},
+    "orchestration_seconds": null,
+    "peak_gpu_memory_mb": null,
+    "events_total": 29,
+    "events_jsonl_size_bytes": 2722,
+    "experiment_json_size_bytes": 979
+  }
+}

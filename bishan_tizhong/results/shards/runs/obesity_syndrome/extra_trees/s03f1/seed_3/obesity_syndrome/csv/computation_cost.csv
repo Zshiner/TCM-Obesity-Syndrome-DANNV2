@@ -1,0 +1,2 @@
+﻿model,origin,device,n_outer_folds,p1_hpo_search_s,p1_train_s,p1_infer_s,p1_eval_overhead_s,p2_hpo_search_s,p2_oof_calibration_s,p3_train_s,p3_infer_s,p3_eval_overhead_s,orchestration_s,model_wall_clock_s,infer_latency_per_sample_ms,n_params,flops_forward,family_size,serialized_size_mb,peak_gpu_mb,selected_params_hash
+extra_trees,sklearn_fit,cpu,1,4633.429099410772,6.758572057820857,0.5477886172011495,1.5319192307069898,0.0,0.0,0.0,0.0,0.0,22.87740225531161,4665.144781571813,,,,,,,d36d761eaee8948791a1b5ae2dbe5a73d9e7a779

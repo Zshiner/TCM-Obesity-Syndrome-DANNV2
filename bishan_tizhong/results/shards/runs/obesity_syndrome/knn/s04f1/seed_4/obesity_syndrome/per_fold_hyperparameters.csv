@@ -1,0 +1,4 @@
+model,outer_fold,param_name,param_value
+knn,0,n_neighbors,51
+knn,0,p,1
+knn,0,weights,distance

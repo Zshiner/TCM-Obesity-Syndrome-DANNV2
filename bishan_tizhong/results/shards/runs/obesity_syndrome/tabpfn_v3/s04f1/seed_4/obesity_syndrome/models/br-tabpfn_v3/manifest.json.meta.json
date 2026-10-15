@@ -1,0 +1,9 @@
+{
+  "schema_version": "manifest.json.v2",
+  "artifact_path": "manifest.json",
+  "size_bytes": 16069,
+  "sha256": "a423364ce7df66d05385e2bebc5c9ac8869347c48c11d73de4d81a3d80aa151f",
+  "producer": "tcmhubd.output.persistence.ModelPersister.write_manifest",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-07T03:35:24Z"
+}

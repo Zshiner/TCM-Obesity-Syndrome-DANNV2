@@ -1,0 +1,2 @@
+model,train_time_median_s,train_time_min_s,train_time_max_s,infer_latency_per_sample_ms_median,infer_latency_per_sample_ms_min,infer_latency_per_sample_ms_max,peak_gpu_mb_max,n_params_median,flops_forward_median,family_size,serialized_size_mb_median,origin,device,n_seeds
+extra_trees,2.3897143313661218,2.3897143313661218,2.3897143313661218,0.7481162992681002,0.7481162992681002,0.7481162992681002,,,,872.0,42.64517402648926,sklearn_fit,cpu,1

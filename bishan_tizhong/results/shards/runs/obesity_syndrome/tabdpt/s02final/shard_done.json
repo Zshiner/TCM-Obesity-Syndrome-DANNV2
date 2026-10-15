@@ -1,0 +1,689 @@
+{
+ "shard_id": "obesity_syndrome/tabdpt/r02f-1",
+ "status": "completed",
+ "fingerprint": {
+  "config_sha256": "ff24fbf2d8b0afc08dd558e537a8bf53257f4c6eaff2e89be18e097afff66a2e",
+  "data_sha256": "736e0f11ac18419ba786d1277dd55980b4184f4e0e1f4a4c6d419f08f5093df1"
+ },
+ "run_dir": "/root/autodl-tmp/bishan_exp/bishan_tizhong/results/shards/runs/obesity_syndrome/tabdpt/s02final",
+ "kind": "p2_final",
+ "dataset": "obesity_syndrome",
+ "model": "tabdpt",
+ "repeat": 2,
+ "fold": -1,
+ "wall_seconds": 847.033,
+ "peak_vram_bytes": 3592856576,
+ "budget_override": null,
+ "metric_source": "final_test_metrics_aggregate.csv",
+ "metric_rows": [
+  {
+   "model": "br-tabdpt",
+   "metric": "brier_score",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1048562412274112,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "coverage_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 5.1103896103896105,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "expected_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.0477520050245803,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4229205318491032,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6309059987631416,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7180529787672645,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7377164502164502,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7214526995371151,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6734945069360654,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6328525911318119,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "f1@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5942094701834962,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "hamming_loss",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.1579102715466351,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "hamming_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1481700118063754,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "label_ranking_average_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8819704214822486,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "label_ranking_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.0857426303854875,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8303275139848801,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8981184183304092,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.741804688349535,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7308677480254808,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_precision",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7293773177248,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7865513963332053,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_recall",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7723601443821032,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "macro_recall",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6907149849107115,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "maximum_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2748297025892112,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "micro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.869420637522141,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "micro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9188652589531908,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "micro_f1",
+   "threshold_kind": "at_tau_micro",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7779215178956447,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "micro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7673772011121409,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9318181818181818,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.891954581993292,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8710514237484258,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.867769554603162,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8903310888349978,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9018211750344768,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9166784910326596,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "ndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9276005267882343,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9318181818181818,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8701298701298701,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7954545454545454,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7142857142857143,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6363636363636364,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5541125541125541,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4930426716141001,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "precision@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4431818181818182,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4441774538993877,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3836077948533745,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3557855713262528,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3544911084046876,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3936119258237116,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.413804648435369,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4393518873384412,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4571729975113257,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4441774538993877,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.349931640859039,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.2400606025192829,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.1185780669632548,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.0019424428863173,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8750927259635276,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7808527281009408,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "psp@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7024564698925688,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2842377860235003,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.521722325293754,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6942949907235622,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.813164811379097,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8915043290043291,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9231447124304268,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9529143475572048,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "recall@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9745361781076066,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "sample_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7640573892197269,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "sample_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7534336875245966,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "subset_accuracy",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.2142857142857142,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "subset_accuracy",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2142857142857142,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "weighted_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7733930676129144,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "br-tabdpt",
+   "metric": "weighted_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7641738576888248,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  }
+ ],
+ "split_hashes": {
+  "2": "6f5cb05430f30e51670015c8de9943d9282b4a265471c91c63c59821895c7cc1"
+ }
+}

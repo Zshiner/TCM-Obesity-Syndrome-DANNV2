@@ -1,0 +1,21 @@
+{
+  "scale_factor_k": 11,
+  "additivity_max_err": 1.0308086273447259e-08,
+  "additivity_err_by_k": {
+    "1": 0.836626481548811,
+    "2": 0.7529638340282716,
+    "11": 1.0308086273447259e-08,
+    "22": 0.9202891163825171
+  },
+  "least_squares_k": 11.000000050622209,
+  "expected_value_vs_reference_row_prediction_max_err": 5.551115123125783e-16,
+  "shap_output_layout": "raw shape (308, 348, 22)；第三维按 (证素 j 类 0, 类 1) 交错，取 1::2",
+  "expected_value_size": 22,
+  "fidelity_max_abs_diff": 0.0,
+  "predict_proba_identical_after_explain": true,
+  "runtime_s": 6.05,
+  "predict_runtime_s": 0.062,
+  "n_trees": 1138,
+  "n_outputs": 11,
+  "date": "2026-10-08 22:19:39 +08:00"
+}

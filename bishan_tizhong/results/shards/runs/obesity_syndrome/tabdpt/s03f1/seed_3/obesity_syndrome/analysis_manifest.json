@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "experiment_seed": 3,
+  "tcmhubd_version": "1.0.0",
+  "started_at": "2026-10-07T04:26:26.640986+00:00",
+  "finished_at": "2026-10-07T04:26:26.648945+00:00",
+  "primary_metric": "macro_f1",
+  "dataset_name": "obesity_syndrome",
+  "totals": {
+    "ok": 7,
+    "skipped": 2,
+    "failed": 0
+  },
+  "steps": [
+    {
+      "step_id": "hyperparameter",
+      "display_name": "超参数敏感性 (fANOVA)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0001537799835205078,
+      "started_at": "2026-10-07T04:26:26.641222+00:00",
+      "finished_at": "2026-10-07T04:26:26.641378+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "feature_importance",
+      "display_name": "特征重要性分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0002701282501220703,
+      "started_at": "2026-10-07T04:26:26.641695+00:00",
+      "finished_at": "2026-10-07T04:26:26.641967+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "dann_depth_sign_preservation",
+      "display_name": "DANN 深度 sign-preservation",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 1.1682510375976562e-05,
+      "started_at": "2026-10-07T04:26:26.642244+00:00",
+      "finished_at": "2026-10-07T04:26:26.642257+00:00",
+      "skip_reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "case_study",
+      "display_name": "Case Study",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.00010228157043457031,
+      "started_at": "2026-10-07T04:26:26.642521+00:00",
+      "finished_at": "2026-10-07T04:26:26.642625+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "training_curves",
+      "display_name": "训练曲线",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 9.918212890625e-05,
+      "started_at": "2026-10-07T04:26:26.642858+00:00",
+      "finished_at": "2026-10-07T04:26:26.642958+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "supplementary",
+      "display_name": "补充分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 7.295608520507812e-05,
+      "started_at": "2026-10-07T04:26:26.643193+00:00",
+      "finished_at": "2026-10-07T04:26:26.643267+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "calibration",
+      "display_name": "校准分析 (Brier/ECE/MCE)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0034122467041015625,
+      "started_at": "2026-10-07T04:26:26.643525+00:00",
+      "finished_at": "2026-10-07T04:26:26.646939+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "decision_curve",
+      "display_name": "决策曲线分析 (DCA, per-label)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0010721683502197266,
+      "started_at": "2026-10-07T04:26:26.647314+00:00",
+      "finished_at": "2026-10-07T04:26:26.648388+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "test_set_bootstrap",
+      "display_name": "Patient-level bootstrap CI (final test)",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 1.1205673217773438e-05,
+      "started_at": "2026-10-07T04:26:26.648718+00:00",
+      "finished_at": "2026-10-07T04:26:26.648731+00:00",
+      "skip_reason": "本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    }
+  ]
+}

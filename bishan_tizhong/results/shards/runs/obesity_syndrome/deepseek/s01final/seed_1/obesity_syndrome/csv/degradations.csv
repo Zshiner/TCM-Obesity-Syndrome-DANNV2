@@ -1,0 +1,4 @@
+﻿stage,kind,model,reason,message,first_seen_at,count
+analysis/obesity_syndrome/hyperparameter,analysis_step_skipped,,超参数分析,超参数分析：1 个模型都跳过（no_search_history）,2026-10-12T17:21:54+00:00,1
+analysis/obesity_syndrome/feature_importance,analysis_step_skipped,,特征重要性,特征重要性：1 个模型都跳过（no_data: model_type=llm: feature importance not supported (no SHAP / no gradient by design; v1.1 §7)）,2026-10-12T17:21:54+00:00,1
+analysis/obesity_syndrome/dann_depth_sign_preservation,analysis_step_skipped,,需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个,需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个,2026-10-12T17:21:54+00:00,1

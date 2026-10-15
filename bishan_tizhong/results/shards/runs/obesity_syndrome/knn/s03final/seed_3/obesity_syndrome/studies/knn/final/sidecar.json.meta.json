@@ -1,0 +1,9 @@
+{
+  "schema_version": "search.per_fold_sidecar.v1",
+  "artifact_path": "sidecar.json",
+  "size_bytes": 63203,
+  "sha256": "2df7f589ef3aa8daca0013d7e99bc50cb75b7e012823ce38fc8dceb71ca965bc",
+  "producer": "tcmhubd.search.per_fold_sidecar:write_per_fold_sidecar",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T04:33:40Z"
+}

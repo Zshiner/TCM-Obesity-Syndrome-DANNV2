@@ -1,0 +1,2 @@
+﻿model,task_type,label,n_samples,brier_score,ece,mce,macro_brier,macro_ece,macro_mce,skipped,skip_reason
+decision_tree,multi_label,,0,,,,,,,True,no predictions for source=outer_cv

@@ -1,0 +1,10 @@
+{
+  "seed": 2,
+  "status": "completed",
+  "fingerprint": "96abf4ae8e6c4b03d4c403e56a0595e02d1d3e2880b16d8bcfe692200b205fdb",
+  "duration_sec": 4225.2299020001665,
+  "started_at": "2026-10-06T02:30:20Z",
+  "finished_at": "2026-10-06T03:40:45Z",
+  "engine_version": "1.0.0",
+  "error": null
+}

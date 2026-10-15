@@ -1,0 +1,9 @@
+{
+  "schema_version": "predictions.npz.v2",
+  "artifact_path": "final_test.npz",
+  "size_bytes": 40729,
+  "sha256": "698538b52ccff87c74d868d00baa48da5769aaac21d16807736f7b507603c80b",
+  "producer": "tcmhubd.output.persistence.ModelPersister:final_predictions",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T02:54:01Z"
+}

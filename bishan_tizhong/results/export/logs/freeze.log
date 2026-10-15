@@ -1,0 +1,177 @@
+$ -B -m tcmhubd freeze bishan_tizhong/bishan_tizhong_experiment.py
+退出码 0
+---- 标准输出 ----
+实验 'bishan_tizhong' 的校验（正式协议；不训练任何模型）
+  定义文件：/root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/bishan_tizhong_experiment.py
+  结果目录：/root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/results
+  框架：tcmhubd 1.0.0 @ 2cb76b480af270fce38e5daa4c402daa9b5bd4e4（/root/autodl-tmp/bishan_exp/fw_2cb76b4/tcmhubd）
+  解释器：/root/autodl-tmp/feipang_exp/venv/bin/python（Python 3.12.13）；torch 2.6.0+cu124；CUDA 可用（NVIDIA A100 80GB PCIe）
+
+== 数据 ==
+  obesity_syndrome：多标签，开发集 1278 例、外部测试集 308 例，特征 348 个，标签 11 个，SHA-256 736e0f11ac18
+      缺失哨兵：{'年龄': -1.0, '性别': -1.0, '病程': -1.0}；连续特征：['年龄', '病程']
+      标签类别名：证素；取值文字说明：{'年龄': 'age_years', '性别': {'0': '女', '1': '男'}, '病程': {'1': '不足 1 个月', '2': '1 个月至不足 6 个月', '3': '6 个月至不足 5 年', '4': '5 年及以上'}}
+      每例标签数中位数 3；最稀有标签 心（开发集阳性 146 例）
+      没有任何阳性标签的样本：开发集 3 例、外部测试集 0 例（多标签允许；sample_* 与 @k 指标对这些样本记 0）
+
+== 学习器构成（共 12 个）==
+  学习器         模型                                   家族             设备  多标签  步骤来源  搜索维度     调参
+  knn            knn                                    近邻             CPU   原生    用户指定  3（步骤 0）  是
+  decision_tree  decision_tree                          决策树           CPU   原生    无        5（步骤 0）  是
+  random_forest  random_forest                          随机森林/极端树  CPU   原生    无        7（步骤 0）  是
+  extra_trees    extra_trees                            随机森林/极端树  CPU   原生    无        7（步骤 0）  是
+  dannv2_beta    dannv2_beta_ml.DANNV2BetaMLClassifier  （未声明）       GPU   原生    无        0            否
+  realmlp        realmlp                                表格深度网络     GPU   br      无        0            否
+  tabpfn_v3      tabpfn_v3                              表格基础模型     GPU   br      无        0            否
+  tabicl         tabicl                                 表格基础模型     GPU   br      无        0            否
+  tabdpt         tabdpt                                 表格基础模型     GPU   br      无        0            否
+  deepseek       deepseek                               通用大模型       CPU   原生    无        0            否
+  glm            glm                                    通用大模型       CPU   原生    无        0            否
+  qwen           qwen                                   通用大模型       CPU   原生    无        0            否
+  各学习器的步骤（按执行顺序）：
+    knn：missing_indicator: MissingIndicator(columns=cols.missing) → impute: Impute(columns=cols.missing, strategy='auto') → standardize: Standardize(columns=cols.continuous)
+    decision_tree：（无步骤，直接使用原始特征）
+    random_forest：（无步骤，直接使用原始特征）
+    extra_trees：（无步骤，直接使用原始特征）
+    dannv2_beta：（无步骤，直接使用原始特征）
+    realmlp：（无步骤，直接使用原始特征）
+    tabpfn_v3：（无步骤，直接使用原始特征）
+    tabicl：（无步骤，直接使用原始特征）
+    tabdpt：（无步骤，直接使用原始特征）
+    deepseek：（无步骤，直接使用原始特征）
+    glm：（无步骤，直接使用原始特征）
+    qwen：（无步骤，直接使用原始特征）
+  数据处理声明：以下学习器带折内数据处理步骤（每次拟合只用当次训练部分估计，再原样作用于验证与测试数据）——
+    用户指定：knn —— missing_indicator: MissingIndicator(columns=cols.missing) → impute: Impute(columns=cols.missing, strategy='auto') → standardize: Standardize(columns=cols.continuous)
+  其余学习器（decision_tree、random_forest、extra_trees、dannv2_beta、realmlp、tabpfn_v3、tabicl、tabdpt、deepseek、glm、qwen）直接使用原始特征。
+  各学习器的参数（搜索：范围或候选；固定：取值与来由）：
+    knn（搜索 3 个，固定 0 个）：
+      参数         处理  范围或取值               来由
+      n_neighbors  搜索  1–51（整数）             内置搜索空间
+      weights      搜索  候选：uniform、distance  内置搜索空间
+      p            搜索  候选：1、2               内置搜索空间
+    decision_tree（搜索 5 个，固定 0 个）：
+      参数               处理  范围或取值                                                                  来由
+      max_depth          搜索  候选：None、2、3、4、5、6、7、8、9、10、12、14、16、18、20、25、30、40、50  内置搜索空间
+      min_samples_split  搜索  2–50（整数）                                                                内置搜索空间
+      min_samples_leaf   搜索  1–50（整数）                                                                内置搜索空间
+      criterion          搜索  候选：gini、entropy                                                         内置搜索空间
+      max_features       搜索  候选：None、sqrt、log2、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、1           内置搜索空间
+    random_forest（搜索 7 个，固定 0 个）：
+      参数               处理  范围或取值                                                                                                              来由
+      n_estimators       搜索  50–2000（整数）                                                                                                         内置搜索空间
+      max_features       搜索  候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1  内置搜索空间
+      max_depth          搜索  候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50                                                      内置搜索空间
+      min_samples_split  搜索  2–50（整数）                                                                                                            内置搜索空间
+      min_samples_leaf   搜索  1–50（整数）                                                                                                            内置搜索空间
+      criterion          搜索  候选：gini、entropy                                                                                                     内置搜索空间
+      bootstrap          搜索  候选：True、False                                                                                                       内置搜索空间
+    extra_trees（搜索 7 个，固定 0 个）：
+      参数               处理  范围或取值                                                                                                              来由
+      n_estimators       搜索  50–2000（整数）                                                                                                         内置搜索空间
+      max_features       搜索  候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1  内置搜索空间
+      max_depth          搜索  候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50                                                      内置搜索空间
+      min_samples_split  搜索  2–50（整数）                                                                                                            内置搜索空间
+      min_samples_leaf   搜索  1–50（整数）                                                                                                            内置搜索空间
+      criterion          搜索  候选：gini、entropy                                                                                                     内置搜索空间
+      bootstrap          搜索  候选：False、True                                                                                                       内置搜索空间
+    dannv2_beta：没有声明参数：全部使用模型类自己的默认值
+    realmlp（搜索 0 个，固定 2 个）：
+      参数     处理  范围或取值  来由
+      n_cv     固定  1           框架约定
+      n_refit  固定  0           框架约定
+    tabpfn_v3（搜索 0 个，固定 2 个）：
+      参数                       处理  范围或取值  来由
+      n_estimators               固定  8           模型推荐值
+      ignore_pretraining_limits  固定  False       框架约定
+    tabicl（搜索 0 个，固定 1 个）：
+      参数          处理  范围或取值  来由
+      n_estimators  固定  8           模型推荐值
+    tabdpt（搜索 0 个，固定 2 个）：
+      参数       处理  范围或取值  来由
+      use_flash  固定  False       框架约定
+      compile    固定  False       框架约定
+    deepseek（搜索 0 个，固定 9 个）：
+      参数                 处理  范围或取值                                                                                                                                                                                             来由
+      model_id             固定  deepseek-v4-pro                                                                                                                                                                                        内置默认（未注明来由）
+      thinking_enabled     固定  enabled                                                                                                                                                                                                内置默认（未注明来由）
+      predict_multi_class  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      predict_multi_label  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      feature_importance   固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      system_prompt        固定                                                                                                                                                                                                         内置默认（未注明来由）
+      prompt_formatter     固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      negatives            固定  omit                                                                                                                                                                                                   内置默认（未注明来由）
+      temperature          省略  用模型自己的默认值                                                                                                                                                                                     —
+      top_p                省略  用模型自己的默认值                                                                                                                                                                                     —
+      max_tokens           省略  用模型自己的默认值                                                                                                                                                                                     —
+      prompt_data          固定  {"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}}  数据集声明（label_kind / value_text）
+    glm（搜索 0 个，固定 9 个）：
+      参数                 处理  范围或取值                                                                                                                                                                                             来由
+      model_id             固定  glm-5.3                                                                                                                                                                                                内置默认（未注明来由）
+      thinking_enabled     固定  enabled                                                                                                                                                                                                内置默认（未注明来由）
+      predict_multi_class  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      predict_multi_label  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      feature_importance   固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      system_prompt        固定                                                                                                                                                                                                         内置默认（未注明来由）
+      prompt_formatter     固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      negatives            固定  omit                                                                                                                                                                                                   内置默认（未注明来由）
+      temperature          省略  用模型自己的默认值                                                                                                                                                                                     —
+      top_p                省略  用模型自己的默认值                                                                                                                                                                                     —
+      max_tokens           省略  用模型自己的默认值                                                                                                                                                                                     —
+      prompt_data          固定  {"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}}  数据集声明（label_kind / value_text）
+    qwen（搜索 0 个，固定 9 个）：
+      参数                 处理  范围或取值                                                                                                                                                                                             来由
+      model_id             固定  qwen3.8-max-0902                                                                                                                                                                                       内置默认（未注明来由）
+      thinking_enabled     固定  enabled                                                                                                                                                                                                内置默认（未注明来由）
+      predict_multi_class  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      predict_multi_label  固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      feature_importance   固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      system_prompt        固定                                                                                                                                                                                                         内置默认（未注明来由）
+      prompt_formatter     固定  auto                                                                                                                                                                                                   内置默认（未注明来由）
+      negatives            固定  omit                                                                                                                                                                                                   内置默认（未注明来由）
+      temperature          省略  用模型自己的默认值                                                                                                                                                                                     —
+      top_p                省略  用模型自己的默认值                                                                                                                                                                                     —
+      max_tokens           省略  用模型自己的默认值                                                                                                                                                                                     —
+      prompt_data          固定  {"obesity_syndrome":{"label_kind":"证素","value_text":{"年龄":"age_years","性别":{"0":"女","1":"男"},"病程":{"1":"不足 1 个月","2":"1 个月至不足 6 个月","3":"6 个月至不足 5 年","4":"5 年及以上"}}}}  数据集声明（label_kind / value_text）
+
+== 协议（正式）==
+  种子 [0, 1, 2, 3, 4]（5 个）；外层 5 折 × 内层 3 折；每次调参 200 次；主指标 macro_f1
+  多标签策略 br；阈值选择 开；测试集 bootstrap 10000 次；决策曲线 开
+  指标（18 个）：macro_f1、micro_f1、weighted_f1、sample_f1、macro_precision、macro_recall、subset_accuracy、hamming_loss、macro_auroc、micro_auroc、macro_auprc、micro_auprc、label_ranking_average_precision、label_ranking_loss、coverage_error、brier_score、expected_calibration_error、maximum_calibration_error
+
+== 工作量估算 ==
+  学习器         域   搜索    拟合次数  分片
+  knn            CPU  调参      18,030    30
+  decision_tree  CPU  调参      18,030    30
+  random_forest  CPU  调参      18,030    30
+  extra_trees    CPU  调参      18,030    30
+  dannv2_beta    GPU  不调参       120    30
+  realmlp        GPU  不调参       120    30
+  tabpfn_v3      GPU  不调参       120    30
+  tabicl         GPU  不调参       120    30
+  tabdpt         GPU  不调参       120    30
+  deepseek       CPU  不调参       120    30
+  glm            CPU  不调参       120    30
+  qwen           CPU  不调参       120    30
+  合计 CPU 域：拟合 72,480 次 / 分片 210；GPU 域：拟合 600 次 / 分片 150
+  注：非原生多标签的学习器每次拟合包含 11 个二分类器（BR）
+
+== 自定义部件的契约检查 ==
+  ✓ learner:dannv2_beta / model｜构造约定
+  ✓ learner:dannv2_beta / model｜模型输出：已检查：obesity_syndrome·真实小样、obesity_syndrome·合成数据
+  ✓ learner:dannv2_beta / model｜确定性：已检查：obesity_syndrome·真实小样、obesity_syndrome·合成数据
+  ✓ learner:dannv2_beta / model｜可序列化：已检查：obesity_syndrome·真实小样、obesity_syndrome·合成数据；obesity_syndrome·真实小样：加载后按整批在 CPU 上推理，与保存前有浮点舍入级的差别（最大 6.0e-08）；obesity_syndrome·合成数据：加载后按整批在 CPU 上推理，与保存前有浮点舍入级的差别（最大 1.2e-07）
+
+== 警告与提示 ==
+  · 提示：分片模式下不做梯度累积切分（物理批 = 有效批）：显存不够由调度器降并发重发，或用 --gpu-cap 按学习器限每卡并发；自定义模型有没有批归一化层未声明（训练时才检查）：['dannv2_beta']
+  · 提示：超参数敏感性（fANOVA）：外层折的从各折 study.journal 重建、全量调参的单独一份，都进报告的存档层（summary/archive/hyperparameter_importance.csv）；完成的试验少于 30 次的 study 跳过并记降级（n_trials=200）
+  · 提示：指标 coverage_error、expected_calibration_error、maximum_calibration_error 不能做外部测试集区间与成对检验（重抽样下有偏或不稳），不进报告，只留存档；建议从 metrics 里去掉
+  · 提示：基线家族 M1（经典机器学习，每类至少一个）：缺 广义线性、概率生成、AdaBoost、梯度提升；已有 近邻、决策树、随机森林/极端树
+  · 提示：基线家族 M3（语言模型，每类至少一个）：缺 中医语言模型；已有 通用大模型
+  · 提示：未声明家族的学习器：dannv2_beta——不计入上面的对照；th.Learner(..., family="…") 可声明（家族只用于这条提示与学习器构成表，不进指纹）
+
+✓ 校验通过（只做了检查，没有训练任何模型）
+已冻结：/root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/results/experiment.lock.json（冻结于 2026-10-14T19:12:54+08:00）
+
+---- 标准错误 ----
+数据集 'obesity_syndrome' 未声明 patient_id / group_id 字段——框架默认每行=一独立观测单位。若同患者多次记录，请在数据进入框架前完成患者级聚合，或提交 issue 请求 GroupKFold 支持。[PATIENT_LEVEL_AGGREGATION_NOT_DECLARED]

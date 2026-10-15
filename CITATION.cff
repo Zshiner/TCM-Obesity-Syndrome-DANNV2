@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "如使用本仓库的结果、模型或代码，请引用对应论文（论文发表后在此补充期刊信息）。If you use these results, models or code, please cite the paper."
+title: "基于分布感知算法的低算力场景肥胖症可解释性智能辨证研究：复现包（Interpretable Intelligent Syndrome Differentiation for Obesity in Low-computing-power Scenarios: reproducibility package）"
+type: software
+repository-code: "https://github.com/Zshiner/TCM-Obesity-Syndrome-DANNV2"
+authors:
+  - family-names: Zhao
+    given-names: ZongYao
+    affiliation: "Chongqing College of Traditional Chinese Medicine; Beijing Jiaotong University"
+  - family-names: Tang
+    given-names: LiLing
+    affiliation: "Chongqing College of Traditional Chinese Medicine"
+  - family-names: Wang
+    given-names: YaJun
+    affiliation: "Chongqing College of Traditional Chinese Medicine"
+  - family-names: Huang
+    given-names: SiQin
+    affiliation: "Chongqing College of Traditional Chinese Medicine"
+  - family-names: Tang
+    given-names: NianZhen
+    affiliation: "Chongqing Changshou Hospital of Traditional Chinese Medicine"
+  - family-names: Tang
+    given-names: Yong
+    affiliation: "Chongqing College of Traditional Chinese Medicine"
+  - family-names: Zhou
+    given-names: XueZhong
+    affiliation: "Beijing Jiaotong University"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - traditional Chinese medicine
+  - syndrome differentiation
+  - obesity
+  - multi-label classification
+  - distribution-aware network
+  - low computing power
+  - interpretability

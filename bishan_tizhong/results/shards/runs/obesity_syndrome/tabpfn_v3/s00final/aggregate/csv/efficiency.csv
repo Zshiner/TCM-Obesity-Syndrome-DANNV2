@@ -1,0 +1,2 @@
+model,train_time_median_s,train_time_min_s,train_time_max_s,infer_latency_per_sample_ms_median,infer_latency_per_sample_ms_min,infer_latency_per_sample_ms_max,peak_gpu_mb_max,n_params_median,flops_forward_median,family_size,serialized_size_mb_median,origin,device,n_seeds
+br-tabpfn_v3,19.046484143473208,19.046484143473208,19.046484143473208,158.83882052277204,158.83882052277204,158.83882052277204,,,,88.0,175.21277713775635,sklearn_fit,cuda:0,1

@@ -1,0 +1,9 @@
+{
+  "schema_version": "provenance.search_metadata.v1",
+  "artifact_path": "search_metadata.json",
+  "size_bytes": 2,
+  "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "producer": "tcmhubd.search._provenance:write_search_metadata",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T03:27:33Z"
+}

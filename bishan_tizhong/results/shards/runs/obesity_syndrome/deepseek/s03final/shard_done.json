@@ -1,0 +1,617 @@
+{
+ "shard_id": "obesity_syndrome/deepseek/r03f-1",
+ "status": "completed",
+ "fingerprint": {
+  "config_sha256": "12a30ed43a20b78c5eea5a4adc00d98ed17802b3d5b3c84c059d0957a2011f0e",
+  "data_sha256": "736e0f11ac18419ba786d1277dd55980b4184f4e0e1f4a4c6d419f08f5093df1"
+ },
+ "run_dir": "/root/autodl-tmp/bishan_exp/bishan_llm/bishan_tizhong/results/shards/runs/obesity_syndrome/deepseek/s03final",
+ "kind": "p2_final",
+ "dataset": "obesity_syndrome",
+ "model": "deepseek",
+ "repeat": 3,
+ "fold": -1,
+ "wall_seconds": 553.028,
+ "peak_vram_bytes": 0,
+ "budget_override": null,
+ "metric_source": "final_test_metrics_aggregate.csv",
+ "metric_rows": [
+  {
+   "model": "deepseek",
+   "metric": "brier_score",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1416863931523022,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "coverage_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 5.048701298701299,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "expected_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1419451003541912,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4206941867656154,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6512755102040817,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7334673263244691,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.765775332171436,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7420885571859598,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6968093594716971,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6438069145861354,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "f1@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5997515831931416,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "hamming_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2305194805194805,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "label_ranking_average_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8923482974457001,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "label_ranking_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.0806792413935271,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "macro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8127157892962319,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "macro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9287742648435032,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "macro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7059078878155556,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "macro_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5719529643026949,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "macro_recall",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9745028404007005,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "maximum_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5690449649874783,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "micro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8456475532578898,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "micro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.93260761769051,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "micro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.736593591905565,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9123376623376624,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.908898515141999,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8868559265619645,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8932426126708912,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9121724746326886,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9266058785428852,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9340138803916772,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "ndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9418452521265742,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9123376623376624,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8928571428571429,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8106060606060607,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7410714285714286,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6545454545454545,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5735930735930735,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.50139146567718,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "precision@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4468344155844156,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4584598266643358,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.442648727178348,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.406670957786147,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4186481061840512,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4494247291196696,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.471972924084687,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.483607703413786,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4962759108377126,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.4584598266643358,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.413354083383822,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.2828402501909917,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.1761366183051316,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.040785249939291,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9117960364079536,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7969195504966795,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "psp@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7105104828187596,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2863481756338899,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.543421459492888,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.713373531230674,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8463126159554731,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9188620902906616,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9555890538033396,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9710420531849102,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "recall@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9869279529993816,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "sample_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.736695510477978,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "subset_accuracy",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1103896103896103,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "deepseek",
+   "metric": "weighted_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7606793750607398,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  }
+ ],
+ "split_hashes": {
+  "3": "90e197b48679393f2b2a2825bde62afb40a58699a50e3ab699dc6713f28fcbd3"
+ }
+}

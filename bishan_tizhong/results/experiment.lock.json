@@ -1,0 +1,1268 @@
+{
+  "schema": "tcmhubd.experiment.lock/v1",
+  "name": "bishan_tizhong",
+  "frozen_at": "2026-10-14T19:12:54+08:00",
+  "framework": {
+    "version": "1.0.0",
+    "commit": "2cb76b480af270fce38e5daa4c402daa9b5bd4e4"
+  },
+  "definition": {
+    "file": "/root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/bishan_tizhong_experiment.py",
+    "sha256": "44931bf0c7455b595517ebf482ecc823471b5a45cc1fe15d4565d25663921e37"
+  },
+  "core_fingerprint": "7ec9767640c37556817e398cd86f48aa800ec6bf8cd195725f88dcbf12d2592f",
+  "core_parts": {
+    "内部配置": "1d7de3916b6d25a0813361d094229cb3dd57c82a6a50ecaef74beb12c46cc356",
+    "数据": "2ff124a905c0ce761e142d3cc0da6f1f8d11233206e0a31b070db515303a84e6",
+    "指标": "9b495932425222269008b3da312a45a4166fc53a6d92bf9b9634a8f4e8bbf22b"
+  },
+  "learner_fingerprints": {
+    "knn": "b34c8e43716b016d5538cd03e7e25fe4561c5d47a7136c3f12c019097c69b1de",
+    "decision_tree": "94049f64166e4f640b90cfbb4c3a0eb0c3c8c51b888c7bd6d95b5756996e4f72",
+    "random_forest": "187d35cca56c242866f364d96fd1c3703becf9799b47a58255eef67b4860450e",
+    "extra_trees": "75408b05a78b520981513883d9d65668425a506966bcd55b095aea7ec187e3c2",
+    "dannv2_beta": "9228ff8857aaac46615ff18c7afcb6c1d4cb50138558f14960e8b877404874b3",
+    "realmlp": "d46800b3db9b959ea4a5ba248cfc30d13474c9e91a3ba2a84404e1f35b1df59f",
+    "tabpfn_v3": "71a7340afe390be31ba5429d49c0c4a5c028432b3d3a9b8c50da118e555819dd",
+    "tabicl": "2879f83cedb391c932f6d4e6e17e4ce9d187eeb2d36856bab0195099660e0c39",
+    "tabdpt": "118cff8637029c3947d07b3e0b8f505d2826998feb3b7dc5c6111954f3777ecd",
+    "deepseek": "20a2736e496651c5ccc766376bfbc8024943154929c7caf8274e54ee608a90f8",
+    "glm": "dde880c1db4486d2617a9805043d16bfe5bc6daaff298f774cbab6503560b0e0",
+    "qwen": "b0e4d958a51ac4fa146b5132124279d9a703c39d03f55896c8bfe89c44e6bf7f"
+  },
+  "data": [
+    {
+      "name": "obesity_syndrome",
+      "source": "json",
+      "path": "/root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/data/obesity_syndrome/data.json",
+      "sha256": "736e0f11ac18419ba786d1277dd55980b4184f4e0e1f4a4c6d419f08f5093df1",
+      "task_type": "multi_label",
+      "n_dev": 1278,
+      "n_test": 308,
+      "n_features": 348,
+      "n_labels": 11,
+      "missing": {
+        "年龄": -1.0,
+        "性别": -1.0,
+        "病程": -1.0
+      },
+      "continuous": [
+        "年龄",
+        "病程"
+      ],
+      "label_kind": "证素",
+      "value_text": {
+        "年龄": "age_years",
+        "性别": {
+          "0": "女",
+          "1": "男"
+        },
+        "病程": {
+          "1": "不足 1 个月",
+          "2": "1 个月至不足 6 个月",
+          "3": "6 个月至不足 5 年",
+          "4": "5 年及以上"
+        }
+      }
+    }
+  ],
+  "protocol": {
+    "kind": "formal",
+    "reportable": true,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "n_trials": 200,
+    "primary_metric": "macro_f1",
+    "multilabel": [
+      "br"
+    ],
+    "thresholds": true,
+    "bootstrap": 10000,
+    "decision_curve": true,
+    "advanced": {},
+    "derived_overrides": {}
+  },
+  "metrics": [
+    "macro_f1",
+    "micro_f1",
+    "weighted_f1",
+    "sample_f1",
+    "macro_precision",
+    "macro_recall",
+    "subset_accuracy",
+    "hamming_loss",
+    "macro_auroc",
+    "micro_auroc",
+    "macro_auprc",
+    "micro_auprc",
+    "label_ranking_average_precision",
+    "label_ranking_loss",
+    "coverage_error",
+    "brier_score",
+    "expected_calibration_error",
+    "maximum_calibration_error"
+  ],
+  "custom_metrics": [],
+  "learners": [
+    {
+      "name": "knn",
+      "model": {
+        "kind": "builtin",
+        "name": "knn",
+        "class": "sklearn.neighbors._classification.KNeighborsClassifier",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [
+        {
+          "name": "missing_indicator",
+          "class": "tcmhubd.steps.builtin.MissingIndicator",
+          "role": "transform",
+          "params": {
+            "columns": {
+              "cols": "missing"
+            }
+          }
+        },
+        {
+          "name": "impute",
+          "class": "tcmhubd.steps.builtin.Impute",
+          "role": "transform",
+          "params": {
+            "columns": {
+              "cols": "missing"
+            },
+            "strategy": "auto"
+          }
+        },
+        {
+          "name": "standardize",
+          "class": "tcmhubd.steps.builtin.Standardize",
+          "role": "transform",
+          "params": {
+            "columns": {
+              "cols": "continuous"
+            }
+          }
+        }
+      ],
+      "steps_source": "user",
+      "space": {
+        "n_neighbors": {
+          "type": "int",
+          "low": 1,
+          "high": 51,
+          "max_from_data": "n_train_samples",
+          "description": "近邻数",
+          "origin": "search",
+          "origin_note": "范围 [1, 51] 取自 Probst, Boulesteix & Bischl 2019 的可调性研究（k 是 KNN 唯一有显著调优增益的超参，建议区间 [1, ~50]）与 van Rijn & Hutter 2018 的 fANOVA；上界按训练集行数裁剪"
+        },
+        "weights": {
+          "type": "categorical",
+          "choices": [
+            "uniform",
+            "distance"
+          ],
+          "description": "权重方式",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：weights 有小但可测的效果；uniform 与 distance 两种标准方案都保留"
+        },
+        "p": {
+          "type": "categorical",
+          "choices": [
+            1,
+            2
+          ],
+          "description": "Minkowski距离幂参数（1=曼哈顿, 2=欧氏）",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：距离度量影响低；p=1 曼哈顿与 p=2 欧氏覆盖常用场景"
+        }
+      },
+      "space_order": [
+        "n_neighbors",
+        "weights",
+        "p"
+      ],
+      "fixed": {
+        "n_neighbors": 5,
+        "weights": "uniform",
+        "p": 2
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "decision_tree",
+      "model": {
+        "kind": "builtin",
+        "name": "decision_tree",
+        "class": "sklearn.tree._classes.DecisionTreeClassifier",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "max_depth": {
+          "type": "categorical",
+          "choices": [
+            null,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            25,
+            30,
+            40,
+            50
+          ],
+          "description": "树的最大深度（null=不限制）",
+          "origin": "search",
+          "origin_note": "Mantovani et al. 2018 与 Probst et al. 2019：第二重要的剪枝参数；null（不限）到 50 密集覆盖"
+        },
+        "min_samples_split": {
+          "type": "int",
+          "low": 2,
+          "high": 50,
+          "description": "内部节点分裂所需最小样本数",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019 重要性第三、Mantovani et al. 2018 确认其正则化效果；[2, 50]"
+        },
+        "min_samples_leaf": {
+          "type": "int",
+          "low": 1,
+          "high": 50,
+          "description": "叶节点最小样本数",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019 可调性排名第一的决策树超参；[1, 50]"
+        },
+        "criterion": {
+          "type": "categorical",
+          "choices": [
+            "gini",
+            "entropy"
+          ],
+          "description": "分裂质量度量准则",
+          "origin": "search",
+          "origin_note": "Mantovani et al. 2018 与 Probst et al. 2019：gini 与 entropy 影响可忽略、依数据而定；纳入只为完备（用户 2026-10-08 裁决不固定）"
+        },
+        "max_features": {
+          "type": "categorical",
+          "choices": [
+            null,
+            "sqrt",
+            "log2",
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "description": "每次分裂时考虑的最大特征比例",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：高维数据上中等重要；null（全部特征，CART 默认）、sqrt、log2 与 0.2–1.0 比例"
+        }
+      },
+      "space_order": [
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "max_features"
+      ],
+      "fixed": {
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "criterion": "gini",
+        "max_features": null
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "random_forest",
+      "model": {
+        "kind": "builtin",
+        "name": "random_forest",
+        "class": "sklearn.ensemble._forest.RandomForestClassifier",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "n_estimators": {
+          "type": "int",
+          "low": 50,
+          "high": 2000,
+          "description": "森林中决策树的数量",
+          "origin": "search",
+          "origin_note": "Probst & Boulesteix 2018：性能约 500 棵后饱和、理论上不必调；仍保留 [50, 2000] 让数据印证（用户 2026-10-08 裁决保持搜索）"
+        },
+        "max_features": {
+          "type": "categorical",
+          "choices": [
+            "sqrt",
+            "log2",
+            0.1,
+            0.15,
+            0.2,
+            0.25,
+            0.3,
+            0.35,
+            0.4,
+            0.45,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7,
+            0.75,
+            0.8,
+            0.85,
+            0.9,
+            0.95,
+            1.0
+          ],
+          "description": "每次分裂时考虑的最大特征比例",
+          "origin": "search",
+          "origin_note": "Probst, Wright & Boulesteix 2019 的 fANOVA：随机森林最重要的超参；sqrt、log2 与 0.1–1.0 比例"
+        },
+        "max_depth": {
+          "type": "categorical",
+          "choices": [
+            null,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            15,
+            20,
+            25,
+            30,
+            40,
+            50
+          ],
+          "description": "树的最大深度（null=不限制）",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：重要性低、不限深通常即最优；仍给 null 到 50"
+        },
+        "min_samples_split": {
+          "type": "int",
+          "low": 2,
+          "high": 50,
+          "description": "内部节点分裂所需最小样本数",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：与 min_samples_leaf 相关、独立调优增益有限；[2, 50]"
+        },
+        "min_samples_leaf": {
+          "type": "int",
+          "low": 1,
+          "high": 50,
+          "description": "叶节点最小样本数",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019 与 van Rijn & Hutter 2018：仅次于 max_features 的第二重要超参；[1, 50]"
+        },
+        "criterion": {
+          "type": "categorical",
+          "choices": [
+            "gini",
+            "entropy"
+          ],
+          "description": "分裂质量度量准则",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：gini 与 entropy 影响极小；纳入只为完备（用户 2026-10-08 裁决不固定）"
+        },
+        "bootstrap": {
+          "type": "categorical",
+          "choices": [
+            true,
+            false
+          ],
+          "description": "是否使用有放回自助采样",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：无放回子采样在部分场景有小幅正效应（+0.002）；两种都搜"
+        }
+      },
+      "space_order": [
+        "n_estimators",
+        "max_features",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "bootstrap"
+      ],
+      "fixed": {
+        "n_estimators": 500,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "criterion": "gini",
+        "bootstrap": true
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "extra_trees",
+      "model": {
+        "kind": "builtin",
+        "name": "extra_trees",
+        "class": "sklearn.ensemble._forest.ExtraTreesClassifier",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "n_estimators": {
+          "type": "int",
+          "low": 50,
+          "high": 2000,
+          "description": "森林中决策树的数量",
+          "origin": "search",
+          "origin_note": "Probst & Boulesteix 2018：不应调、取计算可行的大值；仍保留 [50, 2000]（用户 2026-10-08 裁决保持搜索）"
+        },
+        "max_features": {
+          "type": "categorical",
+          "choices": [
+            "sqrt",
+            "log2",
+            0.1,
+            0.15,
+            0.2,
+            0.25,
+            0.3,
+            0.35,
+            0.4,
+            0.45,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7,
+            0.75,
+            0.8,
+            0.85,
+            0.9,
+            0.95,
+            1.0
+          ],
+          "description": "每次分裂时考虑的最大特征比例",
+          "origin": "search",
+          "origin_note": "Geurts et al. 2006 的 K（分类默认 √n）；Probst et al. 2019 §3.1 最可调的森林超参（+0.006 AUC）；sqrt、log2 与 0.1–1.0 比例"
+        },
+        "max_depth": {
+          "type": "categorical",
+          "choices": [
+            null,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            15,
+            20,
+            25,
+            30,
+            40,
+            50
+          ],
+          "description": "树的最大深度（null=不限制）",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019：控制树规模的参数增益最小（+0.001）；仍给 null 到 50"
+        },
+        "min_samples_split": {
+          "type": "int",
+          "low": 2,
+          "high": 50,
+          "description": "内部节点分裂所需最小样本数",
+          "origin": "search",
+          "origin_note": "Geurts et al. 2006 的 n_min（分类默认 2，“平滑强度”参数）；[2, 50]"
+        },
+        "min_samples_leaf": {
+          "type": "int",
+          "low": 1,
+          "high": 50,
+          "description": "叶节点最小样本数",
+          "origin": "search",
+          "origin_note": "van Rijn & Hutter 2018 的 fANOVA：与 max_features 并列最关键；[1, 50]"
+        },
+        "criterion": {
+          "type": "categorical",
+          "choices": [
+            "gini",
+            "entropy"
+          ],
+          "description": "分裂质量度量准则",
+          "origin": "search",
+          "origin_note": "Probst et al. 2019 §2.1.5：没有普遍更优的分裂规则；纳入只为完备（用户 2026-10-08 裁决不固定）"
+        },
+        "bootstrap": {
+          "type": "categorical",
+          "choices": [
+            false,
+            true
+          ],
+          "description": "是否使用有放回自助采样（Extra-Trees 默认 false）",
+          "origin": "search",
+          "origin_note": "Geurts et al. 2006 原始算法用整体样本（false）以最小化偏差；Probst et al. 2019 报告无放回有小幅正效应；两者都搜（用户 2026-10-08 裁决保持搜索）"
+        }
+      },
+      "space_order": [
+        "n_estimators",
+        "max_features",
+        "max_depth",
+        "min_samples_split",
+        "min_samples_leaf",
+        "criterion",
+        "bootstrap"
+      ],
+      "fixed": {
+        "n_estimators": 500,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "criterion": "gini",
+        "bootstrap": false
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "dannv2_beta",
+      "model": {
+        "kind": "class",
+        "name": null,
+        "class": "dannv2_beta_ml.DANNV2BetaMLClassifier",
+        "source_sha256": "f88b38e8da546f10bad9fef6fe35641831a0966e5f7e0c97d77ee698693feaa2"
+      },
+      "model_type": "sklearn",
+      "multilabel": "native",
+      "native_multilabel": true,
+      "device": "gpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {},
+      "space_order": [],
+      "fixed": {},
+      "exclusions": [],
+      "use_fixed": true,
+      "external_files": {
+        "dannv2_beta_ml.py": "ba52edf595e8bb19612937d8f5c99595f292b8f89cd99a4369de7d7663ff1ce2"
+      },
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": "dannv2_beta_ml.py",
+        "model_source_file_sha256": "ba52edf595e8bb19612937d8f5c99595f292b8f89cd99a4369de7d7663ff1ce2",
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "realmlp",
+      "model": {
+        "kind": "builtin",
+        "name": "realmlp",
+        "class": "tcmhubd.models.builtins.ml.realmlp.RealMLPClassifierAdapter",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": false,
+      "device": "gpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "n_cv": {
+          "type": "categorical",
+          "choices": [
+            1
+          ],
+          "description": "RealMLP 内部交叉拟合折数（pin 1，关闭以避免与框架 nested-CV 嵌套）",
+          "origin": "framework",
+          "origin_note": "关闭 RealMLP 内部交叉拟合，避免与框架的嵌套交叉验证双层嵌套（库默认即 1）"
+        },
+        "n_refit": {
+          "type": "categorical",
+          "choices": [
+            0
+          ],
+          "description": "RealMLP 内部 refit 集成成员数（pin 0，关闭以避免与框架嵌套）",
+          "origin": "framework",
+          "origin_note": "关闭 RealMLP 内部 refit 集成（库默认即 0）"
+        }
+      },
+      "space_order": [
+        "n_cv",
+        "n_refit"
+      ],
+      "fixed": {
+        "n_cv": 1,
+        "n_refit": 0
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "tabpfn_v3",
+      "model": {
+        "kind": "builtin",
+        "name": "tabpfn_v3",
+        "class": "tcmhubd.models.builtins.ml.tabpfn_v3.TabPFNv3Classifier",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": false,
+      "device": "gpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "n_estimators": {
+          "type": "categorical",
+          "choices": [
+            8
+          ],
+          "description": "TabPFN 集成成员数（pin 8 = 库默认）",
+          "origin": "model_recommended",
+          "origin_note": "tabpfn 8.0.8 库默认 8（作者推荐的免调参配置，同 tabpfn_v2）"
+        },
+        "ignore_pretraining_limits": {
+          "type": "categorical",
+          "choices": [
+            false
+          ],
+          "description": "忽略预训练样本/特征上限（pin False = 超限报错）",
+          "origin": "framework",
+          "origin_note": "超出预训练分布的样本 / 特征上限即报错，不静默外推"
+        }
+      },
+      "space_order": [
+        "n_estimators",
+        "ignore_pretraining_limits"
+      ],
+      "fixed": {
+        "n_estimators": 8,
+        "ignore_pretraining_limits": false
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": true,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "tabicl",
+      "model": {
+        "kind": "builtin",
+        "name": "tabicl",
+        "class": "tcmhubd.models.builtins.ml.tabicl.TabICLClassifierAdapter",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": false,
+      "device": "gpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "n_estimators": {
+          "type": "categorical",
+          "choices": [
+            8
+          ],
+          "description": "TabICL 集成成员数（pin 8 = 库默认）",
+          "origin": "model_recommended",
+          "origin_note": "tabicl 2.1.1 库默认 8；TabArena 2025 评 TabICL 也用 8"
+        }
+      },
+      "space_order": [
+        "n_estimators"
+      ],
+      "fixed": {
+        "n_estimators": 8
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": false,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "tabdpt",
+      "model": {
+        "kind": "builtin",
+        "name": "tabdpt",
+        "class": "tcmhubd.models.builtins.ml.tabdpt.TabDPTClassifierAdapter",
+        "source_sha256": null
+      },
+      "model_type": "sklearn",
+      "multilabel": "auto",
+      "native_multilabel": false,
+      "device": "gpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "use_flash": {
+          "type": "categorical",
+          "choices": [
+            false
+          ],
+          "description": "flash-attention（pin False = 关闭，跨环境安全）",
+          "origin": "framework",
+          "origin_note": "关闭 flash-attention：依赖 flash-attn 包，跨环境安全"
+        },
+        "compile": {
+          "type": "categorical",
+          "choices": [
+            false
+          ],
+          "description": "torch.compile（pin False = 关闭，跨环境安全）",
+          "origin": "framework",
+          "origin_note": "关闭 torch.compile：依赖 Triton / MSVC，跨环境安全"
+        }
+      },
+      "space_order": [
+        "use_flash",
+        "compile"
+      ],
+      "fixed": {
+        "use_flash": false,
+        "compile": false
+      },
+      "exclusions": [],
+      "use_fixed": false,
+      "external_files": {},
+      "save_model": false,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "deepseek",
+      "model": {
+        "kind": "builtin",
+        "name": "deepseek",
+        "class": "tcmhubd.models.builtins.llm.deepseek.DeepSeek",
+        "source_sha256": null
+      },
+      "model_type": "llm",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "model_id": {
+          "type": "categorical",
+          "choices": [
+            "deepseek-v4-pro"
+          ],
+          "description": "接口模型名（缺省 deepseek-v4-pro：DeepSeek-V4-Pro，2026-08-13 正式版）。定义文件里 fixed={\"model_id\": \"…\"} 覆盖即换模型，进学习器指纹与缓存键。"
+        },
+        "thinking_enabled": {
+          "type": "categorical",
+          "choices": [
+            "enabled"
+          ],
+          "description": "思维模式（pin 单值 enabled）。call_api 适配为 extra_body={\"thinking\":{\"type\":...}}。"
+        },
+        "predict_multi_class": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。"
+        },
+        "predict_multi_label": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。"
+        },
+        "feature_importance": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。"
+        },
+        "system_prompt": {
+          "type": "categorical",
+          "choices": [
+            ""
+          ],
+          "description": "system role（pin '' = 不附 system message）。"
+        },
+        "prompt_formatter": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+        },
+        "negatives": {
+          "type": "categorical",
+          "choices": [
+            "omit"
+          ],
+          "description": "0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。"
+        },
+        "temperature": {
+          "choices": [],
+          "description": "采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。",
+          "type": "categorical"
+        },
+        "top_p": {
+          "choices": [],
+          "description": "核采样 top_p（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "max_tokens": {
+          "choices": [],
+          "description": "最大生成 token（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "prompt_data": {
+          "type": "categorical",
+          "choices": [
+            "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+          ]
+        }
+      },
+      "space_order": [
+        "model_id",
+        "thinking_enabled",
+        "predict_multi_class",
+        "predict_multi_label",
+        "feature_importance",
+        "system_prompt",
+        "prompt_formatter",
+        "negatives",
+        "temperature",
+        "top_p",
+        "max_tokens",
+        "prompt_data"
+      ],
+      "fixed": {
+        "model_id": "deepseek-v4-pro",
+        "thinking_enabled": "enabled",
+        "predict_multi_class": "auto",
+        "predict_multi_label": "auto",
+        "feature_importance": "auto",
+        "system_prompt": "",
+        "prompt_formatter": "auto",
+        "negatives": "omit",
+        "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+      },
+      "exclusions": [],
+      "use_fixed": true,
+      "external_files": {},
+      "save_model": false,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "glm",
+      "model": {
+        "kind": "builtin",
+        "name": "glm",
+        "class": "tcmhubd.models.builtins.llm.glm.GLM",
+        "source_sha256": null
+      },
+      "model_type": "llm",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "model_id": {
+          "type": "categorical",
+          "choices": [
+            "glm-5.3"
+          ],
+          "description": "接口模型名（缺省 glm-5.3：GLM-5.3，2026-08-14 发布）。定义文件里 fixed={\"model_id\": \"…\"} 覆盖即换模型，进学习器指纹与缓存键。"
+        },
+        "thinking_enabled": {
+          "type": "categorical",
+          "choices": [
+            "enabled"
+          ],
+          "description": "思维模式（pin 单值 enabled）。call_api 适配为 extra_body={\"thinking\":{\"type\":...}}；GLM-5.3 不能关闭思考。"
+        },
+        "predict_multi_class": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。"
+        },
+        "predict_multi_label": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。"
+        },
+        "feature_importance": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。"
+        },
+        "system_prompt": {
+          "type": "categorical",
+          "choices": [
+            ""
+          ],
+          "description": "system role（pin '' = 不附 system message）。"
+        },
+        "prompt_formatter": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+        },
+        "negatives": {
+          "type": "categorical",
+          "choices": [
+            "omit"
+          ],
+          "description": "0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。"
+        },
+        "temperature": {
+          "choices": [],
+          "description": "采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。",
+          "type": "categorical"
+        },
+        "top_p": {
+          "choices": [],
+          "description": "核采样 top_p（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "max_tokens": {
+          "choices": [],
+          "description": "最大生成 token（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "prompt_data": {
+          "type": "categorical",
+          "choices": [
+            "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+          ]
+        }
+      },
+      "space_order": [
+        "model_id",
+        "thinking_enabled",
+        "predict_multi_class",
+        "predict_multi_label",
+        "feature_importance",
+        "system_prompt",
+        "prompt_formatter",
+        "negatives",
+        "temperature",
+        "top_p",
+        "max_tokens",
+        "prompt_data"
+      ],
+      "fixed": {
+        "model_id": "glm-5.3",
+        "thinking_enabled": "enabled",
+        "predict_multi_class": "auto",
+        "predict_multi_label": "auto",
+        "feature_importance": "auto",
+        "system_prompt": "",
+        "prompt_formatter": "auto",
+        "negatives": "omit",
+        "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+      },
+      "exclusions": [],
+      "use_fixed": true,
+      "external_files": {},
+      "save_model": false,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    },
+    {
+      "name": "qwen",
+      "model": {
+        "kind": "builtin",
+        "name": "qwen",
+        "class": "tcmhubd.models.builtins.llm.qwen.Qwen",
+        "source_sha256": null
+      },
+      "model_type": "llm",
+      "multilabel": "auto",
+      "native_multilabel": true,
+      "device": "cpu",
+      "score_outputs": [
+        "y_prob"
+      ],
+      "steps": [],
+      "steps_source": "none",
+      "space": {
+        "model_id": {
+          "type": "categorical",
+          "choices": [
+            "qwen3.8-max-0902"
+          ],
+          "description": "接口模型名（缺省 qwen3.8-max-0902：Qwen3.8-Max 的 2026-09-02 快照）。定义文件里 fixed={\"model_id\": \"…\"} 覆盖即换模型，进学习器指纹与缓存键。"
+        },
+        "thinking_enabled": {
+          "type": "categorical",
+          "choices": [
+            "enabled"
+          ],
+          "description": "思维模式（pin 单值 enabled）。call_api 适配为 extra_body={\"enable_thinking\": true/false}。"
+        },
+        "predict_multi_class": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。"
+        },
+        "predict_multi_label": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。"
+        },
+        "feature_importance": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。"
+        },
+        "system_prompt": {
+          "type": "categorical",
+          "choices": [
+            ""
+          ],
+          "description": "system role（pin '' = 不附 system message）。"
+        },
+        "prompt_formatter": {
+          "type": "categorical",
+          "choices": [
+            "auto"
+          ],
+          "description": "病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+        },
+        "negatives": {
+          "type": "categorical",
+          "choices": [
+            "omit"
+          ],
+          "description": "0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。"
+        },
+        "temperature": {
+          "choices": [],
+          "description": "采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。",
+          "type": "categorical"
+        },
+        "top_p": {
+          "choices": [],
+          "description": "核采样 top_p（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "max_tokens": {
+          "choices": [],
+          "description": "最大生成 token（空 = 走官方默认）。",
+          "type": "categorical"
+        },
+        "prompt_data": {
+          "type": "categorical",
+          "choices": [
+            "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+          ]
+        }
+      },
+      "space_order": [
+        "model_id",
+        "thinking_enabled",
+        "predict_multi_class",
+        "predict_multi_label",
+        "feature_importance",
+        "system_prompt",
+        "prompt_formatter",
+        "negatives",
+        "temperature",
+        "top_p",
+        "max_tokens",
+        "prompt_data"
+      ],
+      "fixed": {
+        "model_id": "qwen3.8-max-0902",
+        "thinking_enabled": "enabled",
+        "predict_multi_class": "auto",
+        "predict_multi_label": "auto",
+        "feature_importance": "auto",
+        "system_prompt": "",
+        "prompt_formatter": "auto",
+        "negatives": "omit",
+        "prompt_data": "{\"obesity_syndrome\":{\"label_kind\":\"证素\",\"value_text\":{\"年龄\":\"age_years\",\"性别\":{\"0\":\"女\",\"1\":\"男\"},\"病程\":{\"1\":\"不足 1 个月\",\"2\":\"1 个月至不足 6 个月\",\"3\":\"6 个月至不足 5 年\",\"4\":\"5 年及以上\"}}}}"
+      },
+      "exclusions": [],
+      "use_fixed": true,
+      "external_files": {},
+      "save_model": false,
+      "shap": false,
+      "audit": {
+        "model_source_file": null,
+        "model_source_file_sha256": null,
+        "created_in": "bishan_tizhong_experiment.py"
+      }
+    }
+  ],
+  "history": []
+}

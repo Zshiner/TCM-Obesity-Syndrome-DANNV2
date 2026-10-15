@@ -1,0 +1,13 @@
+﻿学习器,模型,家族,内置模型,多标签方式,运行单元,设备,步骤,步骤来源,可搜索维度数,其中步骤参数,调参预算,保存模型,SHAP,学习器指纹
+knn,knn,近邻,是,原生,knn,CPU,"missing_indicator: MissingIndicator(columns=cols.missing) → impute: Impute(columns=cols.missing, strategy='auto') → standardize: Standardize(columns=cols.continuous)",用户指定,3,0,200,True,否,b34c8e43716b016d5538cd03e7e25fe4561c5d47a7136c3f12c019097c69b1de
+decision_tree,decision_tree,决策树,是,原生,decision_tree,CPU,（无）,无,5,0,200,True,否,94049f64166e4f640b90cfbb4c3a0eb0c3c8c51b888c7bd6d95b5756996e4f72
+random_forest,random_forest,随机森林/极端树,是,原生,random_forest,CPU,（无）,无,7,0,200,True,否,187d35cca56c242866f364d96fd1c3703becf9799b47a58255eef67b4860450e
+extra_trees,extra_trees,随机森林/极端树,是,原生,extra_trees,CPU,（无）,无,7,0,200,True,否,75408b05a78b520981513883d9d65668425a506966bcd55b095aea7ec187e3c2
+dannv2_beta,dannv2_beta_ml.DANNV2BetaMLClassifier,（未声明）,否,原生,dannv2_beta,GPU,（无）,无,0,0,0,True,否,9228ff8857aaac46615ff18c7afcb6c1d4cb50138558f14960e8b877404874b3
+realmlp,realmlp,表格深度网络,是,br,br-realmlp,GPU,（无）,无,0,0,0,True,否,d46800b3db9b959ea4a5ba248cfc30d13474c9e91a3ba2a84404e1f35b1df59f
+tabpfn_v3,tabpfn_v3,表格基础模型,是,br,br-tabpfn_v3,GPU,（无）,无,0,0,0,True,否,71a7340afe390be31ba5429d49c0c4a5c028432b3d3a9b8c50da118e555819dd
+tabicl,tabicl,表格基础模型,是,br,br-tabicl,GPU,（无）,无,0,0,0,False,否,2879f83cedb391c932f6d4e6e17e4ce9d187eeb2d36856bab0195099660e0c39
+tabdpt,tabdpt,表格基础模型,是,br,br-tabdpt,GPU,（无）,无,0,0,0,False,否,118cff8637029c3947d07b3e0b8f505d2826998feb3b7dc5c6111954f3777ecd
+deepseek,deepseek,通用大模型,是,原生,deepseek,CPU,（无）,无,0,0,0,False,否,20a2736e496651c5ccc766376bfbc8024943154929c7caf8274e54ee608a90f8
+glm,glm,通用大模型,是,原生,glm,CPU,（无）,无,0,0,0,False,否,dde880c1db4486d2617a9805043d16bfe5bc6daaff298f774cbab6503560b0e0
+qwen,qwen,通用大模型,是,原生,qwen,CPU,（无）,无,0,0,0,False,否,b0e4d958a51ac4fa146b5132124279d9a703c39d03f55896c8bfe89c44e6bf7f

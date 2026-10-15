@@ -1,0 +1,689 @@
+{
+ "shard_id": "obesity_syndrome/extra_trees/r03f-1",
+ "status": "completed",
+ "fingerprint": {
+  "config_sha256": "b56b688abc082e9ea213fdd914fc56bd83771b1ee5f93cb575792335be551739",
+  "data_sha256": "736e0f11ac18419ba786d1277dd55980b4184f4e0e1f4a4c6d419f08f5093df1"
+ },
+ "run_dir": "/root/autodl-tmp/bishan_exp/bishan_tizhong/results/shards/runs/obesity_syndrome/extra_trees/s03final",
+ "kind": "p2_final",
+ "dataset": "obesity_syndrome",
+ "model": "extra_trees",
+ "repeat": 3,
+ "fold": -1,
+ "wall_seconds": 3363.377,
+ "peak_vram_bytes": 0,
+ "budget_override": null,
+ "metric_source": "final_test_metrics_aggregate.csv",
+ "metric_rows": [
+  {
+   "model": "extra_trees",
+   "metric": "brier_score",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1359984791514391,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "coverage_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 5.431818181818182,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "expected_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1662875507296167,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.3873144712430427,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5784786641929499,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6581374974232117,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6905947227375798,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6754818594104308,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6518483140236386,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.630800836969668,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "f1@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5942816202556462,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "hamming_loss",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.1372491145218418,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "hamming_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.19185360094451,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "label_ranking_average_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8304157647907638,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "label_ranking_loss",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1219903112760255,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8542303986085694,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9204858764956784,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7698557488306967,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.3723740325810574,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_precision",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.757793719154039,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_precision",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.778686478144209,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_recall",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7858454199262798,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "macro_recall",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.3181869246517051,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "maximum_calibration_error",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4580900950764599,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "micro_auprc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8281277515053923,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "micro_auroc",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8999141791823666,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "micro_f1",
+   "threshold_kind": "at_tau_micro",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7351616864510847,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "micro_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6260069044879172,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8538961038961039,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.822495713698495,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8008196600600269,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8065588817024267,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8267166501573542,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8528213329156554,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8820285934951649,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "ndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8947240385976443,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8538961038961039,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8035714285714286,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7326839826839827,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6704545454545454,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5967532467532468,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5367965367965367,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4911873840445269,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "precision@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.442775974025974,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.244446168692711,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.209111399798362,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.1925678364558108,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.2149522013872187,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.2547417994648469,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3024598554153068,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.355745079214888,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psndcg@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.3783732484735,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.244446168692711,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.184031890407359,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.0987198550586474,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 1.022429109254628,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.9211051261425784,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8373857424594825,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.77369396688739,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "psp@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7000844197847117,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.2614022881880025,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@2",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.4761054421768707,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@3",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6332328385899815,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@4",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.7576994434137291,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@5",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8314935064935064,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@6",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.8909477427334571,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@7",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.952504638218924,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "recall@8",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.97847866419295,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "sample_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.7842443991794641,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "sample_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.6007498453927026,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "subset_accuracy",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.2435064935064935,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "subset_accuracy",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.1363636363636363,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "weighted_f1",
+   "threshold_kind": "at_tau_per_label",
+   "threshold_source": "phase2_full_train_oof",
+   "seed_mean": 0.796977206523185,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  },
+  {
+   "model": "extra_trees",
+   "metric": "weighted_f1",
+   "threshold_kind": "raw",
+   "threshold_source": NaN,
+   "seed_mean": 0.5337332134153419,
+   "seed_std": NaN,
+   "n_valid_seeds": 1
+  }
+ ],
+ "split_hashes": {
+  "3": "90e197b48679393f2b2a2825bde62afb40a58699a50e3ab699dc6713f28fcbd3"
+ }
+}

@@ -1,0 +1,61 @@
+﻿学习器,论文用名,种子,状态,Release 文件,字节,SHA-256,原模型文件 SHA-256,原环境下与论文存档的预测概率,其他环境下最大绝对差,其他环境下部署阈值判定翻转数
+knn,KNN,0,不公开：模型文件就是全部训练病案（K 近邻没有可学习的权重）,,,,,,,
+knn,KNN,1,不公开：模型文件就是全部训练病案（K 近邻没有可学习的权重）,,,,,,,
+knn,KNN,2,不公开：模型文件就是全部训练病案（K 近邻没有可学习的权重）,,,,,,,
+knn,KNN,3,不公开：模型文件就是全部训练病案（K 近邻没有可学习的权重）,,,,,,,
+knn,KNN,4,不公开：模型文件就是全部训练病案（K 近邻没有可学习的权重）,,,,,,,
+decision_tree,Decision Tree,0,已公开,decision_tree_seed0.joblib,19685,1578063c0f8242f53ec8ac8d67e68114e26e9529d2c9b5422df4e01cd65dae51,f941672677e05e251fe692b31198cf712e41a621d5e9899eeebd19d99bada8ab,逐位一致（CPU）,0,0
+decision_tree,Decision Tree,1,已公开,decision_tree_seed1.joblib,15879,22a931d693cdcc2315bc8247021455038d56866e98e207aff977605d8595cea4,77c62a1cd8dcb11b416509bf233203dd78dadf8c1590d5f3ba56e00afd18e955,逐位一致（CPU）,0,0
+decision_tree,Decision Tree,2,已公开,decision_tree_seed2.joblib,16555,964261837c37db4daafaaac222e48a02438d875c67acf3e73fc32024cea67f1f,994689d13422f00579b2a5e5e5302a39109030999764378862f734540d77fa9e,逐位一致（CPU）,0,0
+decision_tree,Decision Tree,3,已公开,decision_tree_seed3.joblib,21601,5bf577873179ccb760069b97d0622d8050da90b107499dfa5f2697a9ca128ae8,9bae2582d59eacc08c025f2e7067b01d7f5af3064efda346ccddeb1f3f71ab82,逐位一致（CPU）,0,0
+decision_tree,Decision Tree,4,已公开,decision_tree_seed4.joblib,16024,95ed4823cf09251b871c688da35afd67d712e10884a82dc69ca5a71863c525c9,f4d15ce2a78b3240b652d6e81ad4ebb505710678aec6d27883caee2cad2059cf,逐位一致（CPU）,0,0
+random_forest,Random Forest,0,已公开,random_forest_seed0.joblib,22297026,1d8f98e62ea232829f3c00afe1390c47303111fdff16837708a48477c6cc4ecb,9ce4a7d7982b46151f75b555fd4adf996d1ee93fda14eda04314b9a2b76c32a2,逐位一致（CPU）,0,0
+random_forest,Random Forest,1,已公开,random_forest_seed1.joblib,25646918,9c780c86042ffe3066e0d99661be08fb8a8a977b6136162dbde47f9d6a711e65,8c1c1ea5355d5a235f91b3ce47e4f2363f77520eb83d34c95db92d309ce02807,逐位一致（CPU）,0,0
+random_forest,Random Forest,2,已公开,random_forest_seed2.joblib,25576262,eb043836c1eeb8ea318e7c8264bf0fdb705572d290d40f9b277c4473d72b3883,8cb6d00c8930ac4b1596cfcf850edb89bb88a3b071b4db53f448ba1faca230d3,逐位一致（CPU）,0,0
+random_forest,Random Forest,3,已公开,random_forest_seed3.joblib,41350205,4aaf76bc75bb543c697a8c382c6d41e2052cba04b54bd39ba499651ec472d0ab,d11d1dbed83079e98034bdc49d25f7216a8b9763434c998df87d4b18351e1393,逐位一致（CPU）,0,0
+random_forest,Random Forest,4,已公开,random_forest_seed4.joblib,16461891,4bc7b07c3a0f11fe93aaa4507fa2d7fb1b1c65f7b892ec5beeef8d659e1d0e14,6c0a914f5e6b04ef9fecedabd52a4924c83651bfa8d113121f03c2cf17898d50,逐位一致（CPU）,0,0
+extra_trees,Extra Trees,0,已公开,extra_trees_seed0.joblib,12646794,d635c6cf9a07020b6c76037d20ff50b1670a71d969858ed1046c4a8a9b62f40a,8f9c8fa831c14c7cf735ddd12f7aa540d6a96da16caa9e0c3f303c81734cc6d2,逐位一致（CPU）,0,0
+extra_trees,Extra Trees,1,已公开,extra_trees_seed1.joblib,14954509,e70313980362ec0dd89aec1ff7c5082a71bf7e11bd5455ba9e23e79a241203fd,6122f42c3556cf5dbfe5db994522f94fd8cb2004fc231fa2a9c92ef1fc84fc72,逐位一致（CPU）,0,0
+extra_trees,Extra Trees,2,已公开,extra_trees_seed2.joblib,8085430,7ae3d40c5efa2485d7f793a714eaba454a18a6ade6d40d2b710264698ac969f9,b74bb5bad5b15a06b85760582a436f2282aa7a770b86577dc9bacf3bc0959243,逐位一致（CPU）,0,0
+extra_trees,Extra Trees,3,已公开,extra_trees_seed3.joblib,10149098,6aa39c87253bcff20e7beb43ed2992fe98db4eba85792c7be732c92aa2b8c4ab,2c62027660131438e415306b178d9d8af9e96fc0e5995af5742f228d384f9427,逐位一致（CPU）,0,0
+extra_trees,Extra Trees,4,已公开,extra_trees_seed4.joblib,11263153,02040ecde95e76108c671e98141dd506ca5ee601e2972a4e9f035f9dcb00c7ab,e055e1bb77409968260d8ce9aa76ffc04c355262bcc7097f736475fcd666496e,逐位一致（CPU）,0,0
+dannv2_beta,DANNV2-beta,0,已公开,dannv2_beta_seed0.joblib,5883147,883fc948fa0f7244c70b27f5733cbfb50e37d1afa66d834a049516aa294b8f21,8465c9f57453da2c31d2864669e5821485ae1de2f79de9bcc31c80bc39b904a3,逐位一致（A100 GPU）,1.8e-07,0
+dannv2_beta,DANNV2-beta,1,已公开,dannv2_beta_seed1.joblib,5879991,5426d1b81bc64c514037fb4922813c13b719a5a760f9fb9557e04f4d1dd4ae4c,3ab4a098585915fbff828096d8ebd63cab508d7ff8eb542c5808b99e6de59153,逐位一致（A100 GPU）,1.8e-07,0
+dannv2_beta,DANNV2-beta,2,已公开,dannv2_beta_seed2.joblib,5884119,f728059714b6b48c62d431b70ec7a14d500633c2621fe3bb189a91cb1b9a568b,e76b4fdd9a659cb56238272dc9e25d80c8ca87703e3dec63a6c70751ab6733a3,逐位一致（A100 GPU）,1.8e-07,0
+dannv2_beta,DANNV2-beta,3,已公开,dannv2_beta_seed3.joblib,5883975,67af8dc8342bc402ae914ffe0963208ecd220f817a4d9b175fe40feb5f5e330f,348f02ea701b260e493c8189610ee4a145995aac952826a3f780294372c4c09f,逐位一致（A100 GPU）,2.4e-07,0
+dannv2_beta,DANNV2-beta,4,已公开,dannv2_beta_seed4.joblib,5887290,a4842bf5fde5799b8a7df838703d2808c9c9d2c03dd346921db7bdfbac9cc0b5,65717080ba4d97942f3d28e50b662d4493c59e385151dce0fb772c000aa19d74,逐位一致（A100 GPU）,1.8e-07,0
+realmlp,RealMLP,0,已公开,realmlp_seed0.joblib,21382019,6456cae07f580c3f3fb2c5079c79c4d9dc909311c71ab876694f1a7a5d1bda31,16aff868143ded4028359cdd75c0b76c5897b1b1c35758b9c3e757f06d0d8ad7,逐位一致（A100 GPU）,6e-07,0
+realmlp,RealMLP,1,已公开,realmlp_seed1.joblib,21379947,9969014dcf914b7a0a036585a653693f2c47d2e58fe1a58a8acd452ab5ab7997,42c57961a68ef238c55a107747f2f623dc5690077bfcfe6875c1a5e4ac2cc177,逐位一致（A100 GPU）,6.6e-07,0
+realmlp,RealMLP,2,已公开,realmlp_seed2.joblib,21382716,b0357095d6171730b63dad348989491bace909d4687073be9e4c04f6272d3679,4375375f4f27a1e444fab0476274be75d2a3e40a7e0790f0b72c8ef7a26ff7f7,逐位一致（A100 GPU）,6.6e-07,0
+realmlp,RealMLP,3,已公开,realmlp_seed3.joblib,21378273,88af160dbcd8eed70df3a7bcd23a033a545b8e7f3e56bb81d8cb819a530415f9,d5ee5049f6eccca50778b84fa5e0a5e0d65efc5b54e1a5469c8ba2ee34d9dd37,逐位一致（A100 GPU）,6.6e-07,0
+realmlp,RealMLP,4,已公开,realmlp_seed4.joblib,21379574,94fb917c87884172584685d8b839408e520f407b382d6bd43e927a8eeb6aa63b,203906b78c75f238e5bef169ad96beef3c0ac8f8f14bf66b044dface4b9012d9,逐位一致（A100 GPU）,8.1e-07,0
+tabpfn_v3,TabPFN v3,0,不公开：模型文件存着全部训练病案（上下文学习）,,,,,,,
+tabpfn_v3,TabPFN v3,1,不公开：模型文件存着全部训练病案（上下文学习）,,,,,,,
+tabpfn_v3,TabPFN v3,2,不公开：模型文件存着全部训练病案（上下文学习）,,,,,,,
+tabpfn_v3,TabPFN v3,3,不公开：模型文件存着全部训练病案（上下文学习）,,,,,,,
+tabpfn_v3,TabPFN v3,4,不公开：模型文件存着全部训练病案（上下文学习）,,,,,,,
+tabicl,TabICL,0,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabicl,TabICL,1,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabicl,TabICL,2,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabicl,TabICL,3,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabicl,TabICL,4,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabdpt,TabDPT,0,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabdpt,TabDPT,1,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabdpt,TabDPT,2,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabdpt,TabDPT,3,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+tabdpt,TabDPT,4,没有模型文件：上下文学习，模型即预训练权重加全部训练病案，实验设定不保存,,,,,,,
+deepseek,DeepSeek-V4-Pro,0,没有模型文件：经厂商接口零样本调用,,,,,,,
+deepseek,DeepSeek-V4-Pro,1,没有模型文件：经厂商接口零样本调用,,,,,,,
+deepseek,DeepSeek-V4-Pro,2,没有模型文件：经厂商接口零样本调用,,,,,,,
+deepseek,DeepSeek-V4-Pro,3,没有模型文件：经厂商接口零样本调用,,,,,,,
+deepseek,DeepSeek-V4-Pro,4,没有模型文件：经厂商接口零样本调用,,,,,,,
+glm,GLM-5.3,0,没有模型文件：经厂商接口零样本调用,,,,,,,
+glm,GLM-5.3,1,没有模型文件：经厂商接口零样本调用,,,,,,,
+glm,GLM-5.3,2,没有模型文件：经厂商接口零样本调用,,,,,,,
+glm,GLM-5.3,3,没有模型文件：经厂商接口零样本调用,,,,,,,
+glm,GLM-5.3,4,没有模型文件：经厂商接口零样本调用,,,,,,,
+qwen,Qwen3.8-Max,0,没有模型文件：经厂商接口零样本调用,,,,,,,
+qwen,Qwen3.8-Max,1,没有模型文件：经厂商接口零样本调用,,,,,,,
+qwen,Qwen3.8-Max,2,没有模型文件：经厂商接口零样本调用,,,,,,,
+qwen,Qwen3.8-Max,3,没有模型文件：经厂商接口零样本调用,,,,,,,
+qwen,Qwen3.8-Max,4,没有模型文件：经厂商接口零样本调用,,,,,,,

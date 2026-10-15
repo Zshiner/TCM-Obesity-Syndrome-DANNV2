@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "experiment_seed": 2,
+  "tcmhubd_version": "1.0.0",
+  "started_at": "2026-10-12T17:12:12.384041+00:00",
+  "finished_at": "2026-10-12T17:12:12.391391+00:00",
+  "primary_metric": "macro_f1",
+  "dataset_name": "obesity_syndrome",
+  "totals": {
+    "ok": 5,
+    "skipped": 4,
+    "failed": 0
+  },
+  "steps": [
+    {
+      "step_id": "hyperparameter",
+      "display_name": "超参数敏感性 (fANOVA)",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 0.00017571449279785156,
+      "started_at": "2026-10-12T17:12:12.384259+00:00",
+      "finished_at": "2026-10-12T17:12:12.384437+00:00",
+      "skip_reason": "超参数分析：1 个模型都跳过（no_search_history）",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "feature_importance",
+      "display_name": "特征重要性分析",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 0.0002894401550292969,
+      "started_at": "2026-10-12T17:12:12.384881+00:00",
+      "finished_at": "2026-10-12T17:12:12.385173+00:00",
+      "skip_reason": "特征重要性：1 个模型都跳过（no_data: 本分片不训练最终模型（外层折分片），特征重要性由全量分片承担）",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "dann_depth_sign_preservation",
+      "display_name": "DANN 深度 sign-preservation",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 1.2636184692382812e-05,
+      "started_at": "2026-10-12T17:12:12.385451+00:00",
+      "finished_at": "2026-10-12T17:12:12.385464+00:00",
+      "skip_reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "case_study",
+      "display_name": "Case Study",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 9.036064147949219e-05,
+      "started_at": "2026-10-12T17:12:12.385698+00:00",
+      "finished_at": "2026-10-12T17:12:12.385790+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "training_curves",
+      "display_name": "训练曲线",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 9.131431579589844e-05,
+      "started_at": "2026-10-12T17:12:12.385998+00:00",
+      "finished_at": "2026-10-12T17:12:12.386092+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "supplementary",
+      "display_name": "补充分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0001010894775390625,
+      "started_at": "2026-10-12T17:12:12.386292+00:00",
+      "finished_at": "2026-10-12T17:12:12.386395+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "calibration",
+      "display_name": "校准分析 (Brier/ECE/MCE)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0029180049896240234,
+      "started_at": "2026-10-12T17:12:12.386632+00:00",
+      "finished_at": "2026-10-12T17:12:12.389551+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "decision_curve",
+      "display_name": "决策曲线分析 (DCA, per-label)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0010592937469482422,
+      "started_at": "2026-10-12T17:12:12.389872+00:00",
+      "finished_at": "2026-10-12T17:12:12.390933+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "test_set_bootstrap",
+      "display_name": "Patient-level bootstrap CI (final test)",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 9.5367431640625e-06,
+      "started_at": "2026-10-12T17:12:12.391206+00:00",
+      "finished_at": "2026-10-12T17:12:12.391217+00:00",
+      "skip_reason": "本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    }
+  ],
+  "llm_summary": {
+    "deepseek": {
+      "total_api_calls": 0,
+      "total_cache_hits": 252,
+      "cache_hit_rate": 1.0,
+      "drift_events": 0,
+      "parse_failures": 0,
+      "total_prompt_tokens": 0,
+      "total_completion_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,8 @@
+model,outer_fold,param_name,param_value
+extra_trees,0,bootstrap,False
+extra_trees,0,criterion,gini
+extra_trees,0,max_depth,25
+extra_trees,0,max_features,log2
+extra_trees,0,min_samples_leaf,1
+extra_trees,0,min_samples_split,30
+extra_trees,0,n_estimators,1367

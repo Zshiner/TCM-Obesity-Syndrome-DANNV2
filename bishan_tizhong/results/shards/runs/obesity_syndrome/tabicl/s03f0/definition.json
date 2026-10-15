@@ -1,0 +1,14 @@
+{
+ "experiment": "bishan_tizhong",
+ "core_fingerprint": "7ec9767640c37556817e398cd86f48aa800ec6bf8cd195725f88dcbf12d2592f",
+ "learner_fingerprints": {
+  "tabicl": "2879f83cedb391c932f6d4e6e17e4ce9d187eeb2d36856bab0195099660e0c39"
+ },
+ "definition_file": "bishan_tizhong_experiment.py",
+ "definition_sha256": "28b02af8955a9cdc350a217832ad123df5430f38ff19f424360a5edae079d815",
+ "framework": {
+  "version": "1.0.0",
+  "commit": "efdacde48e58581eee80fa5984c6e6c503c712f0"
+ },
+ "written_at": "2026-10-07T09:59:28+08:00"
+}

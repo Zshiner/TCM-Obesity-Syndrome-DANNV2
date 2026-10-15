@@ -1,0 +1,146 @@
+﻿学习器,论文用名,种子,参数,取值,来由
+knn,KNN,0,n_neighbors,49,在全部开发集上调参选出
+knn,KNN,0,p,1,在全部开发集上调参选出
+knn,KNN,0,weights,distance,在全部开发集上调参选出
+knn,KNN,1,n_neighbors,50,在全部开发集上调参选出
+knn,KNN,1,p,1,在全部开发集上调参选出
+knn,KNN,1,weights,distance,在全部开发集上调参选出
+knn,KNN,2,n_neighbors,43,在全部开发集上调参选出
+knn,KNN,2,p,1,在全部开发集上调参选出
+knn,KNN,2,weights,distance,在全部开发集上调参选出
+knn,KNN,3,n_neighbors,49,在全部开发集上调参选出
+knn,KNN,3,p,1,在全部开发集上调参选出
+knn,KNN,3,weights,distance,在全部开发集上调参选出
+knn,KNN,4,n_neighbors,46,在全部开发集上调参选出
+knn,KNN,4,p,1,在全部开发集上调参选出
+knn,KNN,4,weights,distance,在全部开发集上调参选出
+decision_tree,Decision Tree,0,criterion,gini,在全部开发集上调参选出
+decision_tree,Decision Tree,0,max_depth,20,在全部开发集上调参选出
+decision_tree,Decision Tree,0,max_features,None,在全部开发集上调参选出
+decision_tree,Decision Tree,0,min_samples_leaf,1,在全部开发集上调参选出
+decision_tree,Decision Tree,0,min_samples_split,32,在全部开发集上调参选出
+decision_tree,Decision Tree,1,criterion,gini,在全部开发集上调参选出
+decision_tree,Decision Tree,1,max_depth,16,在全部开发集上调参选出
+decision_tree,Decision Tree,1,max_features,0.7,在全部开发集上调参选出
+decision_tree,Decision Tree,1,min_samples_leaf,5,在全部开发集上调参选出
+decision_tree,Decision Tree,1,min_samples_split,41,在全部开发集上调参选出
+decision_tree,Decision Tree,2,criterion,gini,在全部开发集上调参选出
+decision_tree,Decision Tree,2,max_depth,14,在全部开发集上调参选出
+decision_tree,Decision Tree,2,max_features,0.7,在全部开发集上调参选出
+decision_tree,Decision Tree,2,min_samples_leaf,2,在全部开发集上调参选出
+decision_tree,Decision Tree,2,min_samples_split,42,在全部开发集上调参选出
+decision_tree,Decision Tree,3,criterion,gini,在全部开发集上调参选出
+decision_tree,Decision Tree,3,max_depth,25,在全部开发集上调参选出
+decision_tree,Decision Tree,3,max_features,None,在全部开发集上调参选出
+decision_tree,Decision Tree,3,min_samples_leaf,1,在全部开发集上调参选出
+decision_tree,Decision Tree,3,min_samples_split,26,在全部开发集上调参选出
+decision_tree,Decision Tree,4,criterion,gini,在全部开发集上调参选出
+decision_tree,Decision Tree,4,max_depth,12,在全部开发集上调参选出
+decision_tree,Decision Tree,4,max_features,0.5,在全部开发集上调参选出
+decision_tree,Decision Tree,4,min_samples_leaf,2,在全部开发集上调参选出
+decision_tree,Decision Tree,4,min_samples_split,34,在全部开发集上调参选出
+random_forest,Random Forest,0,bootstrap,True,在全部开发集上调参选出
+random_forest,Random Forest,0,criterion,entropy,在全部开发集上调参选出
+random_forest,Random Forest,0,max_depth,None,在全部开发集上调参选出
+random_forest,Random Forest,0,max_features,log2,在全部开发集上调参选出
+random_forest,Random Forest,0,min_samples_leaf,1,在全部开发集上调参选出
+random_forest,Random Forest,0,min_samples_split,18,在全部开发集上调参选出
+random_forest,Random Forest,0,n_estimators,1138,在全部开发集上调参选出
+random_forest,Random Forest,1,bootstrap,False,在全部开发集上调参选出
+random_forest,Random Forest,1,criterion,entropy,在全部开发集上调参选出
+random_forest,Random Forest,1,max_depth,30,在全部开发集上调参选出
+random_forest,Random Forest,1,max_features,log2,在全部开发集上调参选出
+random_forest,Random Forest,1,min_samples_leaf,1,在全部开发集上调参选出
+random_forest,Random Forest,1,min_samples_split,29,在全部开发集上调参选出
+random_forest,Random Forest,1,n_estimators,1285,在全部开发集上调参选出
+random_forest,Random Forest,2,bootstrap,True,在全部开发集上调参选出
+random_forest,Random Forest,2,criterion,gini,在全部开发集上调参选出
+random_forest,Random Forest,2,max_depth,20,在全部开发集上调参选出
+random_forest,Random Forest,2,max_features,log2,在全部开发集上调参选出
+random_forest,Random Forest,2,min_samples_leaf,1,在全部开发集上调参选出
+random_forest,Random Forest,2,min_samples_split,5,在全部开发集上调参选出
+random_forest,Random Forest,2,n_estimators,883,在全部开发集上调参选出
+random_forest,Random Forest,3,bootstrap,False,在全部开发集上调参选出
+random_forest,Random Forest,3,criterion,gini,在全部开发集上调参选出
+random_forest,Random Forest,3,max_depth,25,在全部开发集上调参选出
+random_forest,Random Forest,3,max_features,log2,在全部开发集上调参选出
+random_forest,Random Forest,3,min_samples_leaf,1,在全部开发集上调参选出
+random_forest,Random Forest,3,min_samples_split,19,在全部开发集上调参选出
+random_forest,Random Forest,3,n_estimators,1689,在全部开发集上调参选出
+random_forest,Random Forest,4,bootstrap,False,在全部开发集上调参选出
+random_forest,Random Forest,4,criterion,gini,在全部开发集上调参选出
+random_forest,Random Forest,4,max_depth,25,在全部开发集上调参选出
+random_forest,Random Forest,4,max_features,log2,在全部开发集上调参选出
+random_forest,Random Forest,4,min_samples_leaf,2,在全部开发集上调参选出
+random_forest,Random Forest,4,min_samples_split,10,在全部开发集上调参选出
+random_forest,Random Forest,4,n_estimators,811,在全部开发集上调参选出
+extra_trees,Extra Trees,0,bootstrap,True,在全部开发集上调参选出
+extra_trees,Extra Trees,0,criterion,gini,在全部开发集上调参选出
+extra_trees,Extra Trees,0,max_depth,20,在全部开发集上调参选出
+extra_trees,Extra Trees,0,max_features,log2,在全部开发集上调参选出
+extra_trees,Extra Trees,0,min_samples_leaf,1,在全部开发集上调参选出
+extra_trees,Extra Trees,0,min_samples_split,27,在全部开发集上调参选出
+extra_trees,Extra Trees,0,n_estimators,822,在全部开发集上调参选出
+extra_trees,Extra Trees,1,bootstrap,False,在全部开发集上调参选出
+extra_trees,Extra Trees,1,criterion,entropy,在全部开发集上调参选出
+extra_trees,Extra Trees,1,max_depth,50,在全部开发集上调参选出
+extra_trees,Extra Trees,1,max_features,log2,在全部开发集上调参选出
+extra_trees,Extra Trees,1,min_samples_leaf,1,在全部开发集上调参选出
+extra_trees,Extra Trees,1,min_samples_split,43,在全部开发集上调参选出
+extra_trees,Extra Trees,1,n_estimators,872,在全部开发集上调参选出
+extra_trees,Extra Trees,2,bootstrap,True,在全部开发集上调参选出
+extra_trees,Extra Trees,2,criterion,gini,在全部开发集上调参选出
+extra_trees,Extra Trees,2,max_depth,None,在全部开发集上调参选出
+extra_trees,Extra Trees,2,max_features,log2,在全部开发集上调参选出
+extra_trees,Extra Trees,2,min_samples_leaf,1,在全部开发集上调参选出
+extra_trees,Extra Trees,2,min_samples_split,18,在全部开发集上调参选出
+extra_trees,Extra Trees,2,n_estimators,363,在全部开发集上调参选出
+extra_trees,Extra Trees,3,bootstrap,True,在全部开发集上调参选出
+extra_trees,Extra Trees,3,criterion,entropy,在全部开发集上调参选出
+extra_trees,Extra Trees,3,max_depth,40,在全部开发集上调参选出
+extra_trees,Extra Trees,3,max_features,log2,在全部开发集上调参选出
+extra_trees,Extra Trees,3,min_samples_leaf,2,在全部开发集上调参选出
+extra_trees,Extra Trees,3,min_samples_split,34,在全部开发集上调参选出
+extra_trees,Extra Trees,3,n_estimators,819,在全部开发集上调参选出
+extra_trees,Extra Trees,4,bootstrap,True,在全部开发集上调参选出
+extra_trees,Extra Trees,4,criterion,gini,在全部开发集上调参选出
+extra_trees,Extra Trees,4,max_depth,25,在全部开发集上调参选出
+extra_trees,Extra Trees,4,max_features,log2,在全部开发集上调参选出
+extra_trees,Extra Trees,4,min_samples_leaf,1,在全部开发集上调参选出
+extra_trees,Extra Trees,4,min_samples_split,21,在全部开发集上调参选出
+extra_trees,Extra Trees,4,n_estimators,582,在全部开发集上调参选出
+realmlp,RealMLP,0,n_cv,1,固定取值（这个学习器不调参）
+realmlp,RealMLP,0,n_refit,0,固定取值（这个学习器不调参）
+realmlp,RealMLP,1,n_cv,1,固定取值（这个学习器不调参）
+realmlp,RealMLP,1,n_refit,0,固定取值（这个学习器不调参）
+realmlp,RealMLP,2,n_cv,1,固定取值（这个学习器不调参）
+realmlp,RealMLP,2,n_refit,0,固定取值（这个学习器不调参）
+realmlp,RealMLP,3,n_cv,1,固定取值（这个学习器不调参）
+realmlp,RealMLP,3,n_refit,0,固定取值（这个学习器不调参）
+realmlp,RealMLP,4,n_cv,1,固定取值（这个学习器不调参）
+realmlp,RealMLP,4,n_refit,0,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,0,ignore_pretraining_limits,False,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,0,n_estimators,8,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,1,ignore_pretraining_limits,False,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,1,n_estimators,8,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,2,ignore_pretraining_limits,False,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,2,n_estimators,8,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,3,ignore_pretraining_limits,False,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,3,n_estimators,8,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,4,ignore_pretraining_limits,False,固定取值（这个学习器不调参）
+tabpfn_v3,TabPFN v3,4,n_estimators,8,固定取值（这个学习器不调参）
+tabicl,TabICL,0,n_estimators,8,固定取值（这个学习器不调参）
+tabicl,TabICL,1,n_estimators,8,固定取值（这个学习器不调参）
+tabicl,TabICL,2,n_estimators,8,固定取值（这个学习器不调参）
+tabicl,TabICL,3,n_estimators,8,固定取值（这个学习器不调参）
+tabicl,TabICL,4,n_estimators,8,固定取值（这个学习器不调参）
+tabdpt,TabDPT,0,compile,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,0,use_flash,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,1,compile,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,1,use_flash,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,2,compile,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,2,use_flash,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,3,compile,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,3,use_flash,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,4,compile,False,固定取值（这个学习器不调参）
+tabdpt,TabDPT,4,use_flash,False,固定取值（这个学习器不调参）

@@ -1,0 +1,6 @@
+model,param_name,unique_ratio,cv,n_folds_present
+decision_tree,criterion,1.0,nan,1
+decision_tree,max_depth,1.0,nan,1
+decision_tree,max_features,1.0,0.0,1
+decision_tree,min_samples_leaf,1.0,0.0,1
+decision_tree,min_samples_split,1.0,0.0,1

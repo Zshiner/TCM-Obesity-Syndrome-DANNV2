@@ -1,0 +1,463 @@
+{
+  "schema_version": "3.0",
+  "tcmhubd_version": "1.0.0",
+  "metadata": {
+    "experiment_name": "obesity_syndrome__random_forest__s01final",
+    "started_at": "2026-10-06T02:29:21.191Z",
+    "ended_at": "2026-10-06T03:44:15.924Z",
+    "total_seconds": 4494.733208209276,
+    "output_dir": "/root/autodl-tmp/bishan_exp/bishan_tizhong/results/shards/runs/obesity_syndrome/random_forest/s01final/seed_1",
+    "exit_status": "ok",
+    "run_id": "20261006-e083a206",
+    "events_jsonl_path": "/root/autodl-tmp/bishan_exp/bishan_tizhong/results/shards/runs/obesity_syndrome/random_forest/s01final/seed_1/events.jsonl.gz",
+    "events_jsonl_sha256": "4988685b55afae47e4d731461b6946f314570502236809f9801054c802dd5931",
+    "primary_seed": 1,
+    "all_seeds": [
+      1
+    ],
+    "git_commit": null
+  },
+  "config_snapshot": {
+    "config_version": "1.0",
+    "experiment_name": "obesity_syndrome__random_forest__s01final",
+    "seeds": [
+      1
+    ],
+    "parallelism": 1,
+    "phase1_nested_cv": false,
+    "p1_fold_only": null,
+    "multilabel_strategies": [
+      "br"
+    ],
+    "data": {
+      "data_dir": "/root/autodl-tmp/bishan_exp/bishan_tizhong/data",
+      "nan_strategy": "warn",
+      "validate_data": true,
+      "datasets": [
+        "obesity_syndrome"
+      ],
+      "column_roles": {
+        "obesity_syndrome": {
+          "missing": {
+            "年龄": -1.0,
+            "性别": -1.0,
+            "病程": -1.0
+          },
+          "continuous": [
+            "年龄",
+            "病程"
+          ]
+        }
+      }
+    },
+    "models": [
+      {
+        "name": "random_forest",
+        "class_path": "random_forest",
+        "enabled": true,
+        "shap": false,
+        "save_model": null
+      }
+    ],
+    "training": {
+      "max_epochs": 1000,
+      "early_stopping_patience": 16,
+      "loss": "auto",
+      "gradient_clipping": null,
+      "mixed_precision": false,
+      "checkpoint_every_n_epochs": 50,
+      "multilabel_threshold": 0.5
+    },
+    "evaluation": {
+      "primary_metric": "macro_f1",
+      "metrics": [
+        "macro_f1",
+        "micro_f1",
+        "weighted_f1",
+        "sample_f1",
+        "macro_precision",
+        "macro_recall",
+        "subset_accuracy",
+        "hamming_loss",
+        "macro_auroc",
+        "micro_auroc",
+        "macro_auprc",
+        "micro_auprc",
+        "label_ranking_average_precision",
+        "label_ranking_loss",
+        "coverage_error",
+        "brier_score",
+        "expected_calibration_error",
+        "maximum_calibration_error"
+      ],
+      "cv_folds": 5,
+      "k_inner": 3,
+      "epoch_aggregator": "median",
+      "focus_k_values": [
+        3
+      ],
+      "optimize_threshold": true,
+      "threshold_search_grid": null,
+      "propensity_a": null,
+      "propensity_b": null,
+      "compute_decision_curve": true
+    },
+    "search": {
+      "strategy": "optuna",
+      "n_trials_budget": 200,
+      "timeout_seconds": null,
+      "infra_max_retry": 3,
+      "infra_retry_backoff_seconds": 1.0,
+      "pruner": {
+        "type": "none"
+      },
+      "tpe_n_startup_trials": 10,
+      "tpe_group": false,
+      "failed_ratio_threshold": null,
+      "failed_min_terminal_trials": 5,
+      "early_fail_threshold": null,
+      "watchdog_stall_seconds": 1800,
+      "watchdog_poll_interval_seconds": 5,
+      "worker_cleanup_grace_seconds": 60,
+      "halt_poll_interval_seconds": 2,
+      "storage_backend": "journal"
+    },
+    "prompts": null,
+    "analysis": {
+      "case_study_n_samples": 10,
+      "max_plot_features": 10,
+      "max_plot_labels": 5,
+      "max_plot_params": 4,
+      "fanova_min_trials": 30,
+      "fanova_bias_ratio_threshold": 0.3,
+      "feature_importance": {
+        "channels": [
+          "magnitude",
+          "signed"
+        ],
+        "top_k": 20,
+        "shap_kernel_background_size": 200,
+        "shap_kernel_explain_size": -1,
+        "shap_tree_explain_size": -1,
+        "background_split": "train_pool",
+        "explain_split": "train_pool",
+        "pin_library_versions": true
+      },
+      "test_set_bootstrap": {
+        "enabled": true,
+        "n_boot": 10000,
+        "method": "percentile",
+        "confidence": 0.95
+      },
+      "required": [],
+      "fail_fast": false
+    },
+    "output": {
+      "dir": "/root/autodl-tmp/bishan_exp/bishan_tizhong/results/shards/runs/obesity_syndrome/random_forest/s01final/seed_1",
+      "formats": [
+        "csv",
+        "pdf"
+      ],
+      "log_batch_losses": false,
+      "auto_cleanup_checkpoints": true,
+      "save_models": true,
+      "save_cv_predictions": true
+    },
+    "runtime": {
+      "device": "cuda",
+      "gpu_ids": "auto",
+      "dl_vram_safety_fraction": 0.95,
+      "num_workers": 0,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false,
+      "allow_reactive_micro_halving": false,
+      "pinned_micro_batch": null,
+      "llm_max_retries": 3,
+      "retry_llm_failures": false
+    },
+    "custom_models_dir": null,
+    "definition": {
+      "file": "/root/autodl-tmp/bishan_exp/bishan_tizhong/bishan_tizhong_experiment.py",
+      "experiment": "bishan_tizhong",
+      "fingerprint": "7ec9767640c37556817e398cd86f48aa800ec6bf8cd195725f88dcbf12d2592f",
+      "learner_fingerprints": {
+        "random_forest": "187d35cca56c242866f364d96fd1c3703becf9799b47a58255eef67b4860450e"
+      }
+    }
+  },
+  "environment": {
+    "python_version": "3.12.13 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:38:16) [GCC 14.3.0]",
+    "python_implementation": "CPython",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "hostname": "autodl-container-43724ba760-0092a71f",
+    "pid": 455615,
+    "executable": "/root/autodl-tmp/feipang_exp/venv/bin/python",
+    "git": {
+      "commit": null,
+      "branch": null,
+      "is_dirty": false
+    }
+  },
+  "datasets": [
+    {
+      "name": "obesity_syndrome",
+      "task_type": "multi_label",
+      "n_train": 1278,
+      "n_test": 308,
+      "n_features": 348,
+      "n_labels": 11,
+      "started_at": "2026-10-06T02:29:21.372Z",
+      "ended_at": "2026-10-06T03:31:04.125Z",
+      "total_seconds": 3702.752878301777,
+      "outcome": "completed",
+      "models": [
+        {
+          "name": "random_forest",
+          "model_type": "sklearn",
+          "class_path": "sklearn:random_forest",
+          "started_at": "2026-10-06T02:29:22.132Z",
+          "ended_at": "2026-10-06T03:31:04.120Z",
+          "total_seconds": 3701.987273477949,
+          "outcome": "completed",
+          "phase_2_full_train_hpo": {
+            "best_metric": 0.7543718902462353,
+            "best_params": {
+              "bootstrap": false,
+              "criterion": "entropy",
+              "max_depth": 30,
+              "max_features": "log2",
+              "min_samples_leaf": 1,
+              "min_samples_split": 29,
+              "n_estimators": 1285
+            },
+            "trial_count": 200,
+            "trial_completed": 200,
+            "trial_pruned": null,
+            "trial_failed": null,
+            "total_seconds": 3694.8453055480495,
+            "outcome": "completed"
+          },
+          "phase_3_final_fit_test": {
+            "refit_total_seconds": 4.994088829495013,
+            "fi_total_seconds": 0.00026587676256895065,
+            "test_eval_total_seconds": 2.0229282900691032,
+            "final_test_metrics": {
+              "precision@1": "Computed(value=0.8993506493506493, n_effective=308, provenance=None)",
+              "recall@1": "Computed(value=0.2772031539888683, n_effective=308, provenance=None)",
+              "f1@1": "Computed(value=0.41036641929499074, n_effective=308, provenance=None)",
+              "ndcg@1": "Computed(value=0.8993506493506493, n_effective=308, provenance=None)",
+              "psp@1": "Computed(value=1.3272854447361684, n_effective=308, provenance=None)",
+              "psndcg@1": "Computed(value=1.3272854447361684, n_effective=308, provenance=None)",
+              "precision@2": "Computed(value=0.8327922077922078, n_effective=308, provenance=None)",
+              "recall@2": "Computed(value=0.4956941867656152, n_effective=308, provenance=None)",
+              "f1@2": "Computed(value=0.601321892393321, n_effective=308, provenance=None)",
+              "ndcg@2": "Computed(value=0.8553901030739969, n_effective=308, provenance=None)",
+              "psp@2": "Computed(value=1.2364561560994507, n_effective=308, provenance=None)",
+              "psndcg@2": "Computed(value=1.2684184115688324, n_effective=308, provenance=None)",
+              "precision@3": "Computed(value=0.7608225108225108, n_effective=308, provenance=None)",
+              "recall@3": "Computed(value=0.658665739022882, n_effective=308, provenance=None)",
+              "f1@3": "Computed(value=0.684335703978561, n_effective=308, provenance=None)",
+              "ndcg@3": "Computed(value=0.8337862867118772, n_effective=308, provenance=None)",
+              "psp@3": "Computed(value=1.1510805496317023, n_effective=308, provenance=None)",
+              "psndcg@3": "Computed(value=1.2532148777748207, n_effective=308, provenance=None)",
+              "precision@4": "Computed(value=0.6883116883116883, n_effective=308, provenance=None)",
+              "recall@4": "Computed(value=0.7797541743970315, n_effective=308, provenance=None)",
+              "f1@4": "Computed(value=0.7092560577950189, n_effective=308, provenance=None)",
+              "ndcg@4": "Computed(value=0.8349057738022544, n_effective=308, provenance=None)",
+              "psp@4": "Computed(value=1.0570158799595135, n_effective=308, provenance=None)",
+              "psndcg@4": "Computed(value=1.26788376783612, n_effective=308, provenance=None)",
+              "precision@5": "Computed(value=0.6162337662337661, n_effective=308, provenance=None)",
+              "recall@5": "Computed(value=0.8617424242424243, n_effective=308, provenance=None)",
+              "f1@5": "Computed(value=0.6981116826896047, n_effective=308, provenance=None)",
+              "ndcg@5": "Computed(value=0.8589659240262085, n_effective=308, provenance=None)",
+              "psp@5": "Computed(value=0.9581453517173653, n_effective=308, provenance=None)",
+              "psndcg@5": "Computed(value=1.3145814199947743, n_effective=308, provenance=None)",
+              "precision@6": "Computed(value=0.5497835497835497, n_effective=308, provenance=None)",
+              "recall@6": "Computed(value=0.9142702535559678, n_effective=308, provenance=None)",
+              "f1@6": "Computed(value=0.6677143022922243, n_effective=308, provenance=None)",
+              "ndcg@6": "Computed(value=0.8815704626760318, n_effective=308, provenance=None)",
+              "psp@6": "Computed(value=0.8615665808139815, n_effective=308, provenance=None)",
+              "psndcg@6": "Computed(value=1.3555391649877375, n_effective=308, provenance=None)",
+              "precision@7": "Computed(value=0.4944341372912801, n_effective=308, provenance=None)",
+              "recall@7": "Computed(value=0.9582946815089672, n_effective=308, provenance=None)",
+              "f1@7": "Computed(value=0.6349111206254064, n_effective=308, provenance=None)",
+              "ndcg@7": "Computed(value=0.9026084312899437, n_effective=308, provenance=None)",
+              "psp@7": "Computed(value=0.7801781079305078, n_effective=308, provenance=None)",
+              "psndcg@7": "Computed(value=1.393850248024159, n_effective=308, provenance=None)",
+              "precision@8": "Computed(value=0.44358766233766234, n_effective=308, provenance=None)",
+              "recall@8": "Computed(value=0.9800247371675943, n_effective=308, provenance=None)",
+              "f1@8": "Computed(value=0.5953048394606836, n_effective=308, provenance=None)",
+              "ndcg@8": "Computed(value=0.9132479209523038, n_effective=308, provenance=None)",
+              "psp@8": "Computed(value=0.7017050368862269, n_effective=308, provenance=None)",
+              "psndcg@8": "Computed(value=1.412427635594884, n_effective=308, provenance=None)",
+              "macro_f1": "Computed(value=0.4473437025266893, n_effective=308, provenance=None)",
+              "micro_f1": "Computed(value=0.6580135440180587, n_effective=308, provenance=None)",
+              "weighted_f1": "Computed(value=0.5857983606742951, n_effective=308, provenance=None)",
+              "sample_f1": "Computed(value=0.6271965948914, n_effective=308, provenance=None)",
+              "macro_precision": "Computed(value=0.9638636727710882, n_effective=308, provenance=None)",
+              "macro_recall": "Computed(value=0.36713338998074546, n_effective=308, provenance=None)",
+              "subset_accuracy": "Computed(value=0.16558441558441558, n_effective=308, provenance=None)",
+              "hamming_loss": "Computed(value=0.17886658795749705, n_effective=308, provenance=None)",
+              "macro_auroc": "Computed(value=0.924644476667792, n_effective=308, provenance=None)",
+              "micro_auroc": "Computed(value=0.9137207361449005, n_effective=308, provenance=None)",
+              "macro_auprc": "Computed(value=0.8650845351313614, n_effective=308, provenance=None)",
+              "micro_auprc": "Computed(value=0.8502102626112696, n_effective=308, provenance=None)",
+              "label_ranking_average_precision": "Computed(value=0.856531449701092, n_effective=308, provenance=None)",
+              "label_ranking_loss": "Computed(value=0.10254973201401774, n_effective=308, provenance=None)",
+              "coverage_error": "Computed(value=5.2435064935064934, n_effective=308, provenance=None)",
+              "brier_score": "Computed(value=0.12848486978822188, n_effective=308, provenance=None)",
+              "expected_calibration_error": "Computed(value=0.15393297285445004, n_effective=308, provenance=None)",
+              "maximum_calibration_error": "Computed(value=0.44068340882690865, n_effective=308, provenance=None)",
+              "macro_f1_at_tau_per_label": "Computed(value=0.7777643279282622, n_effective=308, provenance=None)",
+              "weighted_f1_at_tau_per_label": "Computed(value=0.8027954633924821, n_effective=308, provenance=None)",
+              "sample_f1_at_tau_per_label": "Computed(value=0.7913550554784321, n_effective=308, provenance=None)",
+              "macro_precision_at_tau_per_label": "Computed(value=0.7597594873430192, n_effective=308, provenance=None)",
+              "macro_recall_at_tau_per_label": "Computed(value=0.801126339734558, n_effective=308, provenance=None)",
+              "subset_accuracy_at_tau_per_label": "Computed(value=0.24025974025974026, n_effective=308, provenance=None)",
+              "hamming_loss_at_tau_per_label": "Computed(value=0.13488783943329397, n_effective=308, provenance=None)",
+              "micro_f1_at_tau_micro": "Computed(value=0.7515553712152634, n_effective=308, provenance=None)"
+            },
+            "total_seconds": 7.019711886532605,
+            "outcome": "completed"
+          }
+        }
+      ],
+      "analysis": {
+        "started_at": "2026-10-06T03:31:04.127Z",
+        "ended_at": "2026-10-06T03:44:14.969Z",
+        "total_seconds": 790.842131706886,
+        "outcome": "completed",
+        "items": [
+          {
+            "item": "超参数敏感性 (fANOVA)",
+            "started_at": "2026-10-06T03:31:04.129Z",
+            "ended_at": "2026-10-06T03:31:04.129Z",
+            "total_seconds": 0.00015497207641601562,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "特征重要性分析",
+            "started_at": "2026-10-06T03:31:04.129Z",
+            "ended_at": "2026-10-06T03:31:04.130Z",
+            "total_seconds": 0.0002853870391845703,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "DANN 深度 sign-preservation",
+            "started_at": "2026-10-06T03:31:04.130Z",
+            "ended_at": "2026-10-06T03:31:04.130Z",
+            "total_seconds": 1.1205673217773438e-05,
+            "outcome": "skipped",
+            "skip_reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个"
+          },
+          {
+            "item": "Case Study",
+            "started_at": "2026-10-06T03:31:04.130Z",
+            "ended_at": "2026-10-06T03:31:04.132Z",
+            "total_seconds": 0.0005986690521240234,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "训练曲线",
+            "started_at": "2026-10-06T03:31:04.132Z",
+            "ended_at": "2026-10-06T03:31:04.132Z",
+            "total_seconds": 1.0251998901367188e-05,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "补充分析",
+            "started_at": "2026-10-06T03:31:04.132Z",
+            "ended_at": "2026-10-06T03:31:04.133Z",
+            "total_seconds": 0.0002980232238769531,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "校准分析 (Brier/ECE/MCE)",
+            "started_at": "2026-10-06T03:31:04.133Z",
+            "ended_at": "2026-10-06T03:31:04.136Z",
+            "total_seconds": 0.003062725067138672,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "决策曲线分析 (DCA, per-label)",
+            "started_at": "2026-10-06T03:31:04.136Z",
+            "ended_at": "2026-10-06T03:31:04.138Z",
+            "total_seconds": 0.0012869834899902344,
+            "outcome": "completed",
+            "skip_reason": null
+          },
+          {
+            "item": "Patient-level bootstrap CI (final test)",
+            "started_at": "2026-10-06T03:31:04.138Z",
+            "ended_at": "2026-10-06T03:44:14.966Z",
+            "total_seconds": 790.8269248008728,
+            "outcome": "completed",
+            "skip_reason": null
+          }
+        ]
+      },
+      "output": {
+        "started_at": "2026-10-06T03:44:14.972Z",
+        "ended_at": "2026-10-06T03:44:15.923Z",
+        "total_seconds": 0.9510478656738997,
+        "outcome": "completed",
+        "formats": [
+          "csv",
+          "pdf"
+        ],
+        "items": []
+      }
+    }
+  ],
+  "degradations": [
+    {
+      "kind": "analysis_step_skipped",
+      "stage_label": "analysis/obesity_syndrome/dann_depth_sign_preservation",
+      "message": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "details": {
+        "step_id": "dann_depth_sign_preservation",
+        "required": false,
+        "elapsed_s": 1.1205673217773438e-05,
+        "dataset": "obesity_syndrome"
+      },
+      "traceback": null,
+      "breadcrumb_at_emit": [
+        {
+          "kind": "dataset",
+          "name": "obesity_syndrome",
+          "depth": 3
+        },
+        {
+          "kind": "analysis",
+          "name": "",
+          "depth": 4
+        }
+      ],
+      "timestamp": "2026-10-06T03:44:14.968Z",
+      "sequence": 3533
+    }
+  ],
+  "errors": [],
+  "cancellations": [],
+  "cost_summary": {
+    "total_seconds": 4494.733208209276,
+    "by_stage": {
+      "config": 0.0012195827439427376,
+      "data": 0.17861999478191137,
+      "run": 3702.7537499358878,
+      "analysis_output": 791.798056345433
+    },
+    "by_phase": {},
+    "orchestration_seconds": null,
+    "peak_gpu_memory_mb": null,
+    "events_total": 3787,
+    "events_jsonl_size_bytes": 105023,
+    "experiment_json_size_bytes": 19561
+  }
+}

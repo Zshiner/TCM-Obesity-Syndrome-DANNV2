@@ -1,0 +1,5 @@
+﻿stage,kind,model,reason,message,first_seen_at,count
+analysis/obesity_syndrome/hyperparameter,analysis_step_skipped,,超参数分析,超参数分析：1 个模型都跳过（no_search_history）,2026-10-12T16:40:24+00:00,1
+analysis/obesity_syndrome/feature_importance,analysis_step_skipped,,特征重要性,特征重要性：1 个模型都跳过（no_data: 本分片不训练最终模型（外层折分片），特征重要性由全量分片承担）,2026-10-12T16:40:24+00:00,1
+analysis/obesity_syndrome/dann_depth_sign_preservation,analysis_step_skipped,,需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个,需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个,2026-10-12T16:40:24+00:00,1
+analysis/obesity_syndrome/test_set_bootstrap,analysis_step_skipped,,本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap,本次运行未评估外部测试集（如 p1_fold 分片），无测试集预测可做 bootstrap,2026-10-12T16:40:24+00:00,1

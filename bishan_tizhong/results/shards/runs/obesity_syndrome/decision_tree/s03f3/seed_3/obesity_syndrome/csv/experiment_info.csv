@@ -1,0 +1,14 @@
+﻿key,value
+dataset_name,obesity_syndrome
+seed,3
+device,cuda
+n_folds,5
+total_time_seconds,388.6170017234981
+device_torch_version,2.6.0+cu124
+device_cuda_version,12.4
+device_cudnn_version,90100
+device_cudnn_deterministic,True
+device_cudnn_benchmark,False
+device_gpu_name,NVIDIA A100 80GB PCIe
+device_gpu_count,1
+time_decision_tree,387.85s

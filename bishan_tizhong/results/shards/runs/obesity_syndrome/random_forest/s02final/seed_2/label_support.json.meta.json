@@ -1,0 +1,9 @@
+{
+  "schema_version": "label_support.v1",
+  "artifact_path": "label_support.json",
+  "size_bytes": 941,
+  "sha256": "cc9152b441f7e0194e7b4025edfff5a755277b1519cb301c709eda3e726bbe10",
+  "producer": "tcmhubd.core.engine.ExperimentEngine._run_dataset",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T02:30:21Z"
+}

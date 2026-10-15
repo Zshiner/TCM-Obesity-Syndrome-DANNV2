@@ -1,0 +1,2 @@
+model,hpo_search_budget_median_s,hpo_search_budget_min_s,hpo_search_budget_max_s,oof_calibration_median_s,n_outer_folds,n_seeds
+extra_trees,2688.598867876455,2688.598867876455,2688.598867876455,8.908531335182488,0,1

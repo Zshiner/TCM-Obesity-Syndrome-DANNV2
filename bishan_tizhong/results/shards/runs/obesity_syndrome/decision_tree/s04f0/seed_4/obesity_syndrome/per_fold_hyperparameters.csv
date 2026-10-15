@@ -1,0 +1,6 @@
+model,outer_fold,param_name,param_value
+decision_tree,0,criterion,gini
+decision_tree,0,max_depth,12
+decision_tree,0,max_features,0.7
+decision_tree,0,min_samples_leaf,7
+decision_tree,0,min_samples_split,21

@@ -1,0 +1,2 @@
+﻿model,origin,device,n_outer_folds,p1_hpo_search_s,p1_train_s,p1_infer_s,p1_eval_overhead_s,p2_hpo_search_s,p2_oof_calibration_s,p3_train_s,p3_infer_s,p3_eval_overhead_s,orchestration_s,model_wall_clock_s,infer_latency_per_sample_ms,n_params,flops_forward,family_size,serialized_size_mb,peak_gpu_mb,selected_params_hash
+br-tabicl,sklearn_fit,cuda:0,0,0.0,0.0,0.0,0.0,0.0,586.9003870952874,38.487529824487865,72.7563115414232,90.29857069719583,0.6586748138070107,789.1014739722013,236.2217907189065,,,88.0,112.98950290679932,,c0389d3ecd135c4c562d2091a98c6745d13f2137

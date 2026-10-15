@@ -1,0 +1,51 @@
+{
+  "datasets": {
+    "obesity_syndrome": {
+      "心": {
+        "n_pos_test": 34,
+        "n_pos_train": 146
+      },
+      "气滞": {
+        "n_pos_test": 75,
+        "n_pos_train": 271
+      },
+      "气虚": {
+        "n_pos_test": 121,
+        "n_pos_train": 464
+      },
+      "湿": {
+        "n_pos_test": 212,
+        "n_pos_train": 794
+      },
+      "热": {
+        "n_pos_test": 135,
+        "n_pos_train": 548
+      },
+      "痰": {
+        "n_pos_test": 119,
+        "n_pos_train": 469
+      },
+      "肝": {
+        "n_pos_test": 71,
+        "n_pos_train": 279
+      },
+      "肾": {
+        "n_pos_test": 58,
+        "n_pos_train": 257
+      },
+      "脾": {
+        "n_pos_test": 170,
+        "n_pos_train": 614
+      },
+      "血瘀": {
+        "n_pos_test": 79,
+        "n_pos_train": 370
+      },
+      "阳虚": {
+        "n_pos_test": 45,
+        "n_pos_train": 169
+      }
+    }
+  },
+  "schema_version": 1
+}

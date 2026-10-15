@@ -1,0 +1,9 @@
+{
+  "schema_version": "result.json.v1",
+  "artifact_path": "result.json",
+  "size_bytes": 112451,
+  "sha256": "5a5909b372ff9a6feb93b9162fb6a16c452edface1e2683f0af7c37210278d50",
+  "producer": "tcmhubd.output.persistence.ModelPersister.write_result_json",
+  "tcmhubd_version": "1.0.0",
+  "created_at": "2026-10-06T05:10:43Z"
+}

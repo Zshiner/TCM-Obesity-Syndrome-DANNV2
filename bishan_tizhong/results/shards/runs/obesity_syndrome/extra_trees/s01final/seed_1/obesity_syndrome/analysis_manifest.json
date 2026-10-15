@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "experiment_seed": 1,
+  "tcmhubd_version": "1.0.0",
+  "started_at": "2026-10-06T02:15:54.508441+00:00",
+  "finished_at": "2026-10-06T02:29:11.386127+00:00",
+  "primary_metric": "macro_f1",
+  "dataset_name": "obesity_syndrome",
+  "totals": {
+    "ok": 8,
+    "skipped": 1,
+    "failed": 0
+  },
+  "steps": [
+    {
+      "step_id": "hyperparameter",
+      "display_name": "超参数敏感性 (fANOVA)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.000278472900390625,
+      "started_at": "2026-10-06T02:15:54.508658+00:00",
+      "finished_at": "2026-10-06T02:15:54.508939+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "feature_importance",
+      "display_name": "特征重要性分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.00029087066650390625,
+      "started_at": "2026-10-06T02:15:54.509286+00:00",
+      "finished_at": "2026-10-06T02:15:54.509579+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "dann_depth_sign_preservation",
+      "display_name": "DANN 深度 sign-preservation",
+      "state": "skipped",
+      "required": false,
+      "elapsed_s": 1.2636184692382812e-05,
+      "started_at": "2026-10-06T02:15:54.511118+00:00",
+      "finished_at": "2026-10-06T02:15:54.511132+00:00",
+      "skip_reason": "需要至少 2 个 DANN 深度变体（含 n_hidden_layers + trained_weights artifact + signed d_sub），实际 0 个",
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "case_study",
+      "display_name": "Case Study",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0005831718444824219,
+      "started_at": "2026-10-06T02:15:54.511418+00:00",
+      "finished_at": "2026-10-06T02:15:54.512003+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "training_curves",
+      "display_name": "训练曲线",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 1.0967254638671875e-05,
+      "started_at": "2026-10-06T02:15:54.512280+00:00",
+      "finished_at": "2026-10-06T02:15:54.512292+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "supplementary",
+      "display_name": "补充分析",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0002875328063964844,
+      "started_at": "2026-10-06T02:15:54.512553+00:00",
+      "finished_at": "2026-10-06T02:15:54.512842+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "calibration",
+      "display_name": "校准分析 (Brier/ECE/MCE)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.002985239028930664,
+      "started_at": "2026-10-06T02:15:54.513121+00:00",
+      "finished_at": "2026-10-06T02:15:54.516108+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "decision_curve",
+      "display_name": "决策曲线分析 (DCA, per-label)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 0.0012700557708740234,
+      "started_at": "2026-10-06T02:15:54.516460+00:00",
+      "finished_at": "2026-10-06T02:15:54.517731+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    },
+    {
+      "step_id": "test_set_bootstrap",
+      "display_name": "Patient-level bootstrap CI (final test)",
+      "state": "ok",
+      "required": false,
+      "elapsed_s": 796.8675034046173,
+      "started_at": "2026-10-06T02:15:54.518059+00:00",
+      "finished_at": "2026-10-06T02:29:11.385566+00:00",
+      "skip_reason": null,
+      "error_type": null,
+      "error_message": null,
+      "traceback": null
+    }
+  ]
+}

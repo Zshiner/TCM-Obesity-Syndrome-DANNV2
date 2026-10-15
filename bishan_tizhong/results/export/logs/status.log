@@ -1,0 +1,8 @@
+$ -B -m tcmhubd status bishan_tizhong/bishan_tizhong_experiment.py --sample-seconds 0
+退出码 0
+---- 标准输出 ----
+实验 'bishan_tizhong'：结果目录 /root/autodl-tmp/bishan_exp/bishan_llm/_export_v4/运行目录/bishan_tizhong/results
+完备性：60/60 个 学习器 × 种子 已齐全
+  汇总：python -m tcmhubd report <定义文件>（主结果在 summary/main/，存档在 summary/archive/）
+
+---- 标准错误 ----

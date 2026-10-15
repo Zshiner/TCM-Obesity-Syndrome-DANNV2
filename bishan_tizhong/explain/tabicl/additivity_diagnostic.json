@@ -1,0 +1,19 @@
+{
+  "definition": "逐例误差 = |sum_f shap[i,f,l] + expected_value[l] - f_x[i,l]|；f_x 取存档 final_test.npz 的 y_prob（rebuild_check：重建模型整批预测与它最大绝对差 0）；expected_value 为参考样本单行预测",
+  "n_cases": 308,
+  "n_exact(M<=11)": 28,
+  "n_sampled(M>11)": 280,
+  "exact_cases": {
+    "max": 0.0010828375816345215,
+    "median": 7.442198693752289e-06,
+    "mean": 6.146518372387819e-05
+  },
+  "sampled_cases": {
+    "max": 0.001080930233001709,
+    "median": 6.9872476160526276e-06,
+    "mean": 7.266810385098998e-05
+  },
+  "overall_max": 0.0010828375816345215,
+  "probe_single_case_additivity_err": "探针阶段单例计算（f(x) 以单行预测得到）误差 2.2e-16（M=17）与 2.8e-17（M=38），见 probe.json",
+  "conclusion": "精确枚举例与采样例的逐例误差同量级（中位数 7.4e-06 vs 7.0e-06），且探针里以单行预测为 f(x) 时误差为机器精度：误差不来自 KernelSHAP 的采样或求和约束，而是 TabICL 推理结果随批次组成的浮点波动（解释器内部按单行/合成批算 f(x)，核对时用整批 308 例的预测）。可加性成立到模型自身的数值精度（约 1e-3）。"
+}

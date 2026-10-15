@@ -1,0 +1,67 @@
+﻿学习器,参数,处理,范围或取值,来由,说明
+knn,n_neighbors,搜索,1–51（整数）,内置搜索空间,"范围 [1, 51] 取自 Probst, Boulesteix & Bischl 2019 的可调性研究（k 是 KNN 唯一有显著调优增益的超参，建议区间 [1, ~50]）与 van Rijn & Hutter 2018 的 fANOVA；上界按训练集行数裁剪"
+knn,weights,搜索,候选：uniform、distance,内置搜索空间,Probst et al. 2019：weights 有小但可测的效果；uniform 与 distance 两种标准方案都保留
+knn,p,搜索,候选：1、2,内置搜索空间,Probst et al. 2019：距离度量影响低；p=1 曼哈顿与 p=2 欧氏覆盖常用场景
+decision_tree,max_depth,搜索,候选：None、2、3、4、5、6、7、8、9、10、12、14、16、18、20、25、30、40、50,内置搜索空间,Mantovani et al. 2018 与 Probst et al. 2019：第二重要的剪枝参数；null（不限）到 50 密集覆盖
+decision_tree,min_samples_split,搜索,2–50（整数）,内置搜索空间,"Probst et al. 2019 重要性第三、Mantovani et al. 2018 确认其正则化效果；[2, 50]"
+decision_tree,min_samples_leaf,搜索,1–50（整数）,内置搜索空间,"Probst et al. 2019 可调性排名第一的决策树超参；[1, 50]"
+decision_tree,criterion,搜索,候选：gini、entropy,内置搜索空间,Mantovani et al. 2018 与 Probst et al. 2019：gini 与 entropy 影响可忽略、依数据而定；纳入只为完备（用户 2026-10-08 裁决不固定）
+decision_tree,max_features,搜索,候选：None、sqrt、log2、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、1,内置搜索空间,Probst et al. 2019：高维数据上中等重要；null（全部特征，CART 默认）、sqrt、log2 与 0.2–1.0 比例
+random_forest,n_estimators,搜索,50–2000（整数）,内置搜索空间,"Probst & Boulesteix 2018：性能约 500 棵后饱和、理论上不必调；仍保留 [50, 2000] 让数据印证（用户 2026-10-08 裁决保持搜索）"
+random_forest,max_features,搜索,候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1,内置搜索空间,"Probst, Wright & Boulesteix 2019 的 fANOVA：随机森林最重要的超参；sqrt、log2 与 0.1–1.0 比例"
+random_forest,max_depth,搜索,候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50,内置搜索空间,Probst et al. 2019：重要性低、不限深通常即最优；仍给 null 到 50
+random_forest,min_samples_split,搜索,2–50（整数）,内置搜索空间,"Probst et al. 2019：与 min_samples_leaf 相关、独立调优增益有限；[2, 50]"
+random_forest,min_samples_leaf,搜索,1–50（整数）,内置搜索空间,"Probst et al. 2019 与 van Rijn & Hutter 2018：仅次于 max_features 的第二重要超参；[1, 50]"
+random_forest,criterion,搜索,候选：gini、entropy,内置搜索空间,Probst et al. 2019：gini 与 entropy 影响极小；纳入只为完备（用户 2026-10-08 裁决不固定）
+random_forest,bootstrap,搜索,候选：True、False,内置搜索空间,Probst et al. 2019：无放回子采样在部分场景有小幅正效应（+0.002）；两种都搜
+extra_trees,n_estimators,搜索,50–2000（整数）,内置搜索空间,"Probst & Boulesteix 2018：不应调、取计算可行的大值；仍保留 [50, 2000]（用户 2026-10-08 裁决保持搜索）"
+extra_trees,max_features,搜索,候选：sqrt、log2、0.1、0.15、0.2、0.25、0.3、0.35、0.4、0.45、0.5、0.55、0.6、0.65、0.7、0.75、0.8、0.85、0.9、0.95、1,内置搜索空间,Geurts et al. 2006 的 K（分类默认 √n）；Probst et al. 2019 §3.1 最可调的森林超参（+0.006 AUC）；sqrt、log2 与 0.1–1.0 比例
+extra_trees,max_depth,搜索,候选：None、2、3、4、5、6、7、8、9、10、12、15、20、25、30、40、50,内置搜索空间,Probst et al. 2019：控制树规模的参数增益最小（+0.001）；仍给 null 到 50
+extra_trees,min_samples_split,搜索,2–50（整数）,内置搜索空间,"Geurts et al. 2006 的 n_min（分类默认 2，“平滑强度”参数）；[2, 50]"
+extra_trees,min_samples_leaf,搜索,1–50（整数）,内置搜索空间,"van Rijn & Hutter 2018 的 fANOVA：与 max_features 并列最关键；[1, 50]"
+extra_trees,criterion,搜索,候选：gini、entropy,内置搜索空间,Probst et al. 2019 §2.1.5：没有普遍更优的分裂规则；纳入只为完备（用户 2026-10-08 裁决不固定）
+extra_trees,bootstrap,搜索,候选：False、True,内置搜索空间,Geurts et al. 2006 原始算法用整体样本（false）以最小化偏差；Probst et al. 2019 报告无放回有小幅正效应；两者都搜（用户 2026-10-08 裁决保持搜索）
+dannv2_beta,,—,没有声明参数：全部使用模型类自己的默认值,—,
+realmlp,n_cv,固定,1,框架约定,关闭 RealMLP 内部交叉拟合，避免与框架的嵌套交叉验证双层嵌套（库默认即 1）
+realmlp,n_refit,固定,0,框架约定,关闭 RealMLP 内部 refit 集成（库默认即 0）
+tabpfn_v3,n_estimators,固定,8,模型推荐值,tabpfn 8.0.8 库默认 8（作者推荐的免调参配置，同 tabpfn_v2）
+tabpfn_v3,ignore_pretraining_limits,固定,False,框架约定,超出预训练分布的样本 / 特征上限即报错，不静默外推
+tabicl,n_estimators,固定,8,模型推荐值,tabicl 2.1.1 库默认 8；TabArena 2025 评 TabICL 也用 8
+tabdpt,use_flash,固定,False,框架约定,关闭 flash-attention：依赖 flash-attn 包，跨环境安全
+tabdpt,compile,固定,False,框架约定,关闭 torch.compile：依赖 Triton / MSVC，跨环境安全
+deepseek,model_id,固定,deepseek-v4-pro,内置默认（未注明来由）,"接口模型名（缺省 deepseek-v4-pro：DeepSeek-V4-Pro，2026-08-13 正式版）。定义文件里 fixed={""model_id"": ""…""} 覆盖即换模型，进学习器指纹与缓存键。"
+deepseek,thinking_enabled,固定,enabled,内置默认（未注明来由）,"思维模式（pin 单值 enabled）。call_api 适配为 extra_body={""thinking"":{""type"":...}}。"
+deepseek,predict_multi_class,固定,auto,内置默认（未注明来由）,多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。
+deepseek,predict_multi_label,固定,auto,内置默认（未注明来由）,多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。
+deepseek,feature_importance,固定,auto,内置默认（未注明来由）,LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。
+deepseek,system_prompt,固定,,内置默认（未注明来由）,system role（pin '' = 不附 system message）。
+deepseek,prompt_formatter,固定,auto,内置默认（未注明来由）,"病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+deepseek,negatives,固定,omit,内置默认（未注明来由）,0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。
+deepseek,temperature,省略,用模型自己的默认值,—,采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。
+deepseek,top_p,省略,用模型自己的默认值,—,核采样 top_p（空 = 走官方默认）。
+deepseek,max_tokens,省略,用模型自己的默认值,—,最大生成 token（空 = 走官方默认）。
+deepseek,prompt_data,固定,"{""obesity_syndrome"":{""label_kind"":""证素"",""value_text"":{""年龄"":""age_years"",""性别"":{""0"":""女"",""1"":""男""},""病程"":{""1"":""不足 1 个月"",""2"":""1 个月至不足 6 个月"",""3"":""6 个月至不足 5 年"",""4"":""5 年及以上""}}}}",数据集声明（label_kind / value_text）,数据集的标签类别名与取值文字说明，随大模型学习器下发（进它的指纹）
+glm,model_id,固定,glm-5.3,内置默认（未注明来由）,"接口模型名（缺省 glm-5.3：GLM-5.3，2026-08-14 发布）。定义文件里 fixed={""model_id"": ""…""} 覆盖即换模型，进学习器指纹与缓存键。"
+glm,thinking_enabled,固定,enabled,内置默认（未注明来由）,"思维模式（pin 单值 enabled）。call_api 适配为 extra_body={""thinking"":{""type"":...}}；GLM-5.3 不能关闭思考。"
+glm,predict_multi_class,固定,auto,内置默认（未注明来由）,多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。
+glm,predict_multi_label,固定,auto,内置默认（未注明来由）,多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。
+glm,feature_importance,固定,auto,内置默认（未注明来由）,LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。
+glm,system_prompt,固定,,内置默认（未注明来由）,system role（pin '' = 不附 system message）。
+glm,prompt_formatter,固定,auto,内置默认（未注明来由）,"病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+glm,negatives,固定,omit,内置默认（未注明来由）,0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。
+glm,temperature,省略,用模型自己的默认值,—,采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。
+glm,top_p,省略,用模型自己的默认值,—,核采样 top_p（空 = 走官方默认）。
+glm,max_tokens,省略,用模型自己的默认值,—,最大生成 token（空 = 走官方默认）。
+glm,prompt_data,固定,"{""obesity_syndrome"":{""label_kind"":""证素"",""value_text"":{""年龄"":""age_years"",""性别"":{""0"":""女"",""1"":""男""},""病程"":{""1"":""不足 1 个月"",""2"":""1 个月至不足 6 个月"",""3"":""6 个月至不足 5 年"",""4"":""5 年及以上""}}}}",数据集声明（label_kind / value_text）,数据集的标签类别名与取值文字说明，随大模型学习器下发（进它的指纹）
+qwen,model_id,固定,qwen3.8-max-0902,内置默认（未注明来由）,"接口模型名（缺省 qwen3.8-max-0902：Qwen3.8-Max 的 2026-09-02 快照）。定义文件里 fixed={""model_id"": ""…""} 覆盖即换模型，进学习器指纹与缓存键。"
+qwen,thinking_enabled,固定,enabled,内置默认（未注明来由）,"思维模式（pin 单值 enabled）。call_api 适配为 extra_body={""enable_thinking"": true/false}。"
+qwen,predict_multi_class,固定,auto,内置默认（未注明来由）,多分类提示词模板（auto = 内置默认，协议 v4：标签类别名取数据集的 label_kind、out 只用候选原词、概率为 0~1 小数）。自定义模板必须含 {symptoms}{candidates}，可选 {label_kind}。
+qwen,predict_multi_label,固定,auto,内置默认（未注明来由）,多标签提示词模板（auto = 内置默认）。约束同 predict_multi_class。
+qwen,feature_importance,固定,auto,内置默认（未注明来由）,LLM 特征重要性已被框架禁用（方法论引用 Trienes et al. ACL Findings 2025）；保留以满足 V7 必填校验。
+qwen,system_prompt,固定,,内置默认（未注明来由）,system role（pin '' = 不附 system message）。
+qwen,prompt_formatter,固定,auto,内置默认（未注明来由）,"病例文字与候选的渲染函数（auto = 内置 builtin，多分类、多标签通用：缺失不写、取值转文字、0/1 特征按 negatives 写、同前缀合并）。自定义用 '包.模块.函数' 全名，签名 formatter(x_row, ctx)。"
+qwen,negatives,固定,omit,内置默认（未注明来由）,0/1 特征取 0 时的写法：omit = 只写阳性（未列出的即未记载）；write = 写“无××”。
+qwen,temperature,省略,用模型自己的默认值,—,采样温度（空 = 不下发、走官方默认）。改非空 choices 或 typed 范围即进调参。
+qwen,top_p,省略,用模型自己的默认值,—,核采样 top_p（空 = 走官方默认）。
+qwen,max_tokens,省略,用模型自己的默认值,—,最大生成 token（空 = 走官方默认）。
+qwen,prompt_data,固定,"{""obesity_syndrome"":{""label_kind"":""证素"",""value_text"":{""年龄"":""age_years"",""性别"":{""0"":""女"",""1"":""男""},""病程"":{""1"":""不足 1 个月"",""2"":""1 个月至不足 6 个月"",""3"":""6 个月至不足 5 年"",""4"":""5 年及以上""}}}}",数据集声明（label_kind / value_text）,数据集的标签类别名与取值文字说明，随大模型学习器下发（进它的指纹）

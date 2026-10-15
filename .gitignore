@@ -1,0 +1,13 @@
+# 病案数据与含病案内容的文件一律不入库（见 README「不包含的内容」）。
+# 申请到数据后放进来重跑时，这几条防止误提交。
+bishan_tizhong/data/obesity_syndrome/
+bishan_tizhong/results/llm_cache/
+bishan_tizhong/results/shards/**/predictions/**/*.npz
+bishan_tizhong/questionnaire/
+
+# 模型文件放 GitHub Release，不进仓库
+*.joblib
+
+# Python 运行时缓存（含本机路径）
+__pycache__/
+*.pyc

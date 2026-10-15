@@ -1,0 +1,13 @@
+﻿dataset,learner,commit,version,n_shards
+obesity_syndrome,knn,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,decision_tree,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,random_forest,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,extra_trees,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,dannv2_beta,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,realmlp,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,tabpfn_v3,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,tabicl,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,tabdpt,efdacde48e58581eee80fa5984c6e6c503c712f0,1.0.0,30
+obesity_syndrome,deepseek,8c6e2abad84b5115b7f73d91e38db2f50a82bf2d,1.0.0,30
+obesity_syndrome,glm,8c6e2abad84b5115b7f73d91e38db2f50a82bf2d,1.0.0,30
+obesity_syndrome,qwen,8c6e2abad84b5115b7f73d91e38db2f50a82bf2d,1.0.0,30

@@ -1,0 +1,8 @@
+model,outer_fold,param_name,param_value
+random_forest,0,bootstrap,False
+random_forest,0,criterion,gini
+random_forest,0,max_depth,20
+random_forest,0,max_features,log2
+random_forest,0,min_samples_leaf,1
+random_forest,0,min_samples_split,35
+random_forest,0,n_estimators,734
